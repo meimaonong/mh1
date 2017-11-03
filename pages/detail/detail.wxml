@@ -12,7 +12,6 @@
   </view>
   <view class="item">
     <image src="http://www.meimaonong.com/type2.png"/>
-    <text>产品说明-含量99.5</text>
     <view class="i_d">
     此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明。
     </view>
@@ -27,6 +26,6 @@
 </view>
 <view class="op">
 <view class="price">￥5480</view>
-<view class="buy">直采</view>
+<view class="buy">购买作品</view>
 </view>
 </view>

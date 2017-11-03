@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/category_list/category_list",
     "pages/detail/detail",
     "pages/home/home",
     "pages/category/category",

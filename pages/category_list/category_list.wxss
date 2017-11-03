@@ -1,0 +1,48 @@
+/* pages/category_list/category_list.wxss */
+page{
+  background-color: #fff;
+}
+.container{
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 10rpx 60rpx 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+.w{
+  flex: 1;
+  box-sizing: border-box;
+  padding:10rpx;
+  overflow: hidden;
+}
+.nv {
+  width: 100%;
+  padding-bottom: 15rpx;
+}
+.ct_img_w {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ct_n {
+  text-align: left;
+  color: #999;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.ct_p {
+  text-align: left;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 40rpx;
+}
+
+.no{
+  font-size: 30rpx;
+  text-align: center;
+  color: #aaa;
+  padding-bottom: 50rpx;
+}
