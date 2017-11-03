@@ -1,0 +1,32 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+<view class="w">
+  <view class="t">芳烃产品说明标题</view>
+  <view class="d">芳烃产品描述芳烃产品描述，芳烃产品描述芳烃产品描述芳烃产品描述。芳烃产品描述芳烃产品描述芳烃产品描述芳烃产品描述，芳烃产品描述。</view>
+  <view class="item">
+    <image src="http://www.meimaonong.com/type2.png"/>
+    <text>产品说明-含量99.5</text>
+    <view class="i_d">
+    此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明。
+    </view>
+  </view>
+  <view class="item">
+    <image src="http://www.meimaonong.com/type2.png"/>
+    <text>产品说明-含量99.5</text>
+    <view class="i_d">
+    此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明。
+    </view>
+  </view>
+  <view class="item">
+    <image src="http://www.meimaonong.com/type2.png"/>
+    <text>产品说明-含量99.5</text>
+    <view class="i_d">
+    此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明，此产品含量说明。
+    </view>
+  </view>
+</view>
+<view class="op">
+<view class="price"><text>￥5480</text></view>
+<view class="buy"><text>直采</text></view>
+</view>
+</view>
