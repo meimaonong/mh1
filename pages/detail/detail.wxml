@@ -26,7 +26,7 @@
   </view>
 </view>
 <view class="op">
-<view class="price"><text>￥5480</text></view>
-<view class="buy"><text>直采</text></view>
+<view class="price">￥5480</view>
+<view class="buy">直采</view>
 </view>
 </view>
