@@ -1,1 +1,34 @@
 /* pages/category/category.wxss */
+.w {
+  box-sizing: border-box;
+  padding: 50rpx 0 50rpx 50rpx;
+  overflow: hidden;
+}
+.w navigator{
+  width: 203rpx;
+  height: 203rpx;
+  float: left;
+  margin: 0 20rpx 20rpx 0;
+  display: block;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.w image{
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+.w text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  line-height: 203rpx;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}

@@ -7,17 +7,17 @@ Page({
   data: {
     navUrls: [
       {
-        link: '/pages/logs/logs',
+        link: '/pages/category/category',
         //imgUrl: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         imgUrl: 'http://www.meimaonong.com/type1.png'
       },
       {
-        link: '/pages/logs/logs',
+        link: '/pages/category/category',
         //imgUrl: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
         imgUrl: 'http://www.meimaonong.com/type2.png'
       },
       {
-        link: '/pages/logs/logs',
+        link: '/pages/category/category',
         //imgUrl: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
         imgUrl: 'http://www.meimaonong.com/type3.png'
       }

@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!--pages/home/home.wxml-->
 <view class="container">
 
 <swiper indicator-dots="true" autoplay="true" interval="3500" duration="600" class="h">
@@ -14,28 +14,28 @@
 <view class="ct">
   <view class="ct_t"><text>芳烃类别</text></view>
   <view class="ct_b">
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
@@ -48,28 +48,28 @@
 <view class="ct">
   <view class="ct_t"><text>芳烃类别</text></view>
   <view class="ct_b">
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
     <view class="ct_n">芳烃名称</view>
     <view class='ct_p'>￥5430</view>
     </navigator>
-    <navigator url="/pages/logs/logs" class="nv">
+    <navigator url="/pages/category/category" class="nv">
     <view class="ct_img_w">
     <image src="http://www.meimaonong.com/type2.png" class="ct_img"/>
     </view>
