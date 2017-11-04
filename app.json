@@ -1,10 +1,10 @@
 {
   "pages":[
+    "pages/work_edit/work_edit",
     "pages/adress_edit/adress_edit",
     "pages/adress/adress",
     "pages/album_d/album_d",
     "pages/album/album",
-    
     "pages/my/my",
     "pages/category_list/category_list",
     "pages/detail/detail",
