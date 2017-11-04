@@ -10,11 +10,12 @@
   overflow: hidden;
   margin: 0 20rpx 20rpx 0;
 }
-.w navigator .txt{
+.txt{
   display: block;
   width: 100%;
   font-size: 30rpx;
   color: #fff;
+  box-sizing: border-box;
   padding: 0 20rpx;
   position: absolute;
   left: 0;
@@ -22,6 +23,10 @@
   height: 65rpx;
   line-height: 65rpx;
   background: rgba(0, 0, 0, 0.5);
+  
+}
+.txt text{
+  display: block;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;

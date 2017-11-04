@@ -4,22 +4,22 @@
 
 <navigator url="/pages/logs/logs">
 <image src="http://www.meimaonong.com/type2.png"/>
-<view class="txt">产品标题</view>
+<view class="txt"><text>产品标题</text></view>
 </navigator>
 
 <navigator url="/pages/logs/logs">
 <image src="http://www.meimaonong.com/type2.png"/>
-<view class="txt">产品标题</view>
+<view class="txt"><text>产品标题</text></view>
 </navigator>
 
 <navigator url="/pages/logs/logs">
 <image src="http://www.meimaonong.com/type2.png"/>
-<view class="txt">产品标题产品标题产品标题</view>
+<view class="txt"><text>产品标题产品标题产品标题</text></view>
 </navigator>
 
 <navigator url="/pages/logs/logs">
 <image src="http://www.meimaonong.com/type2.png"/>
-<view class="txt">产品标题</view>
+<view class="txt"><text>产品标题</text></view>
 </navigator>
 
 </view>
