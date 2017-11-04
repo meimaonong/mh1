@@ -63,6 +63,7 @@
   flex: 1;
   height: 170rpx;
   text-align: center;
+  position: relative;
 }
 .p2 image{
   width: 52rpx;
@@ -74,6 +75,18 @@
   color: #666;
   line-height: 75rpx;
   font-size: 28rpx;
+}
+.p2 view{
+  position: absolute;
+  left:55%;
+  top:35rpx;
+  background: #f00;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 50%;
 }
 .n2{
   border-left: 1rpx solid #e5e5e5;
