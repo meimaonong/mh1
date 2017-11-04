@@ -1,0 +1,26 @@
+<!--pages/album_d/album_d.wxml-->
+<view class="container">
+<view class="w">
+
+<navigator url="/pages/logs/logs">
+<image src="http://www.meimaonong.com/type2.png"/>
+<view class="txt">产品标题</view>
+</navigator>
+
+<navigator url="/pages/logs/logs">
+<image src="http://www.meimaonong.com/type2.png"/>
+<view class="txt">产品标题</view>
+</navigator>
+
+<navigator url="/pages/logs/logs">
+<image src="http://www.meimaonong.com/type2.png"/>
+<view class="txt">产品标题产品标题产品标题</view>
+</navigator>
+
+<navigator url="/pages/logs/logs">
+<image src="http://www.meimaonong.com/type2.png"/>
+<view class="txt">产品标题</view>
+</navigator>
+
+</view>
+</view>
