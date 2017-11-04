@@ -1,0 +1,60 @@
+/* pages/adress/adress.wxss */
+.b_h{
+  height: 94rpx;
+  line-height: 94rpx;
+  background: #fff;
+  border-top: 1rpx solid #efefef;
+  border-bottom: 1rpx solid #efefef;
+  overflow: hidden;
+}
+.b_h text{
+  display: block;
+  padding: 0 50rpx;
+  color: #576b95;
+  font-size: 30rpx;
+  float: right;
+}
+.b_h text.l_cancel{
+  display: none;
+}
+.b{
+  background: #fff;
+  margin-bottom: 30rpx;
+  padding: 50rpx;
+}
+.b_t{
+  color: #333;
+  font-size: 32rpx;
+  padding-bottom: 8rpx;
+}
+.b_p, .b_a{
+  display: flex;
+  flex-direction: row;
+  line-height: 50rpx;
+  color: #999;
+  font-size: 30rpx;
+  padding:16rpx 0 0;
+}
+.b_p_i{
+  width: 28rpx;
+  height: 35rpx;
+  position: relative;
+  top: 6rpx;
+}
+.b_p_d{
+  flex: 1;
+  padding-left: 20rpx;
+}
+.op{
+  overflow: hidden;
+  padding: 20rpx 0 0 28rpx;
+}
+.l_btn{
+  float: left;
+  color: #353535;
+  width:200rpx;
+  margin:0 60rpx 0 0;
+  line-height: 55rpx;
+  height: 55rpx;
+  font-size: 28rpx;
+}

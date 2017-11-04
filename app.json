@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/adress/adress",
     "pages/album/album",
     "pages/my/my",
     "pages/category_list/category_list",
