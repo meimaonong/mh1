@@ -1,4 +1,27 @@
 <!--pages/adress_edit/adress_edit.wxml-->
 <view class="container">
+<view class="w">
+
+<view class="b">
+<label>收货人：</label>
+<input></input>
+</view>
+<view class="b">
+<label>手机号：</label>
+<input></input>
+</view>
+<view class="b">
+<label>城市：</label>
+<input></input>
+</view>
+<view class="b">
+<label>详细地址：</label>
+<textarea auto-height />
+</view>
+
+</view>
+
+<view class="save"> 保存 </view>
+<view class="back"> 返回 </view>
 
 </view>
