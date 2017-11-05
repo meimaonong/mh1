@@ -1,66 +1,132 @@
 // pages/adress_edit/adress_edit.js
+var tcity = require("../../utils/citys.js");
+var app = getApp()
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    provinces: [],
+    province: "",
+    citys: [],
+    city: "",
+    countys: [],
+    county: '',
+    value: [0, 0, 0],
+    values: [0, 0, 0],
+    condition: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  hidePicker: function() {
+    this.setData({
+      condition: !this.data.condition
+    })
   },
+  stopPop: function() {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  move: function() {
+    console.log('move')
   },
+  bindChange: function (e) {
+    //console.log(e);
+    var val = e.detail.value
+    var t = this.data.values;
+    var cityData = this.data.cityData;
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+    if (val[0] != t[0]) {
+      console.log('province no ');
+      const citys = [];
+      const countys = [];
+
+      for (let i = 0; i < cityData[val[0]].sub.length; i++) {
+        citys.push(cityData[val[0]].sub[i].name)
+      }
+      for (let i = 0; i < cityData[val[0]].sub[0].sub.length; i++) {
+        countys.push(cityData[val[0]].sub[0].sub[i].name)
+      }
+
+      this.setData({
+        province: this.data.provinces[val[0]],
+        city: cityData[val[0]].sub[0].name,
+        citys: citys,
+        county: cityData[val[0]].sub[0].sub[0].name,
+        countys: countys,
+        values: val,
+        value: [val[0], 0, 0]
+      })
+
+      return;
+    }
+    if (val[1] != t[1]) {
+      console.log('city no');
+      const countys = [];
+
+      for (let i = 0; i < cityData[val[0]].sub[val[1]].sub.length; i++) {
+        countys.push(cityData[val[0]].sub[val[1]].sub[i].name)
+      }
+
+      this.setData({
+        city: this.data.citys[val[1]],
+        county: cityData[val[0]].sub[val[1]].sub[0].name,
+        countys: countys,
+        values: val,
+        value: [val[0], val[1], 0]
+      })
+      return;
+    }
+    if (val[2] != t[2]) {
+      console.log('county no');
+      this.setData({
+        county: this.data.countys[val[2]],
+        values: val
+      })
+      return;
+    }
+
+
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  open: function () {
+    let b = !this.data.condition;
+    this.setData({
+      condition: b,
+      isMask: b
+    })
   },
+  onLoad: function () {
+    console.log("onLoad");
+    var that = this;
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
+    tcity.init(that);
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
+    var cityData = that.data.cityData;
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+
+    const provinces = [];
+    const citys = [];
+    const countys = [];
+
+    for (let i = 0; i < cityData.length; i++) {
+      provinces.push(cityData[i].name);
+    }
+    console.log('省份完成');
+    for (let i = 0; i < cityData[0].sub.length; i++) {
+      citys.push(cityData[0].sub[i].name)
+    }
+    console.log('city完成');
+    for (let i = 0; i < cityData[0].sub[0].sub.length; i++) {
+      countys.push(cityData[0].sub[0].sub[i].name)
+    }
+
+    that.setData({
+      'provinces': provinces,
+      'citys': citys,
+      'countys': countys,
+      'province': cityData[0].name,
+      'city': cityData[0].sub[0].name,
+      'county': cityData[0].sub[0].sub[0].name
+    })
+    console.log('初始化完成');
+
+
   }
+  
 })

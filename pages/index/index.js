@@ -16,17 +16,27 @@ Page({
     })
   },
   onLoad: function () {
-    // wx.request({
-    //   url: 'http://api.p1.org/v1/user/get-user', //仅为示例，并非真实的接口地址
-    //   data: {},
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   method: 'post',
-    //   success: function (res) {
-    //     console.log(res.data)
-    //   }
-    // })
+
+    /*
+    setTimeout(function() {
+      wx.request({
+        url: 'http://api.p1.org/v1/user/get-users', //仅为示例，并非真实的接口地址
+        data: {},
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'access_token': app.globalData.sessionId
+        },
+        method: 'post',
+        success: function (res) {
+          console.log(res.data)
+        }
+      })
+    }, 2000);
+    */
+
+
+
+
     
     if (app.globalData.userInfo) {
       console.log(app.globalData.userInfo)
@@ -57,6 +67,8 @@ Page({
         }
       })
     }
+
+    
   },
   getUserInfo: function(e) {
     console.log(e)
