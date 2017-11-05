@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    isMask: true
   },
+  tap: function() {
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

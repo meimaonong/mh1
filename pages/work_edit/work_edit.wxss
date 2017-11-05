@@ -63,7 +63,6 @@
   border-bottom: 1px solid #eee;
 }
 .bm_d_e{
-  color: #666;
   width: 100%;
   font-size: 30rpx;
   padding: 30rpx 0;
@@ -117,6 +116,13 @@
   color: #333;
 }
 
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+
 .mask{
   position: fixed;
   display: none;
@@ -129,8 +135,7 @@
 }
 
 .op{
-  position: absolute;
-  
+  position: fixed;
   z-index: 1001;
   top: 30%;
   width: 60%;
