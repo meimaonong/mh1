@@ -1,24 +1,48 @@
 {
   "pages":[
+    
+    "pages/category/category",
+    "pages/category_list/category_list",
+    "pages/home/home",
     "pages/work_edit/work_edit",
     "pages/adress_edit/adress_edit",
-    "pages/home/home",
+    
     "pages/index/index",
     "pages/adress/adress",
     "pages/album_d/album_d",
     "pages/album/album",
     "pages/my/my",
-    "pages/category_list/category_list",
+    
     "pages/detail/detail",
-    
-    "pages/category/category",
-    
+
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "iconPath": "public/img/icon.png",
+        "selectedIconPath": "public/img/icon.png",
+        "pagePath": "pages/home/home",
+        "text": "分类1"
+      },
+      {
+        "selectedIconPath": "public/img/icon.png",
+        "iconPath": "public/img/icon.png",
+        "pagePath": "pages/category/category",
+        "text": "分类2"
+      },
+      {
+        "selectedIconPath": "public/img/icon.png",
+        "iconPath": "public/img/icon.png",
+        "pagePath": "pages/my/my",
+        "text": "分类3"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "5城交易",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle":"black"
   }
 }

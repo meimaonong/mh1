@@ -1,4 +1,4 @@
-const params = require('utils/params.js')
+const params = require('utils/params')
 
 //app.js
 App({

@@ -1,41 +1,46 @@
 <!--pages/category/category.wxml-->
 <view class="container">
   <view class="w">
-    <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>甲苯</text>
+    <!-- <navigator url="/pages/logs/logs">
+    <image mode="aspectFill"  src="http://www.meimaonong.com/i/1.jpg"/>
+    <text>国画</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>异构</text>
+    <image mode="aspectFill"  src="http://www.meimaonong.com/i/2.jpg"/>
+    <text>水彩画</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>醇类</text>
+    <image mode="aspectFill" src="http://img3.baozhenart.com/images/201604/goods_img/600x550/w/26394_P_1460962101084.jpg"/>
+    <text>山水</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>酮类</text>
+    <image mode="aspectFill" src="http://img3.baozhenart.com/images/201707/goods_img/600x550/w/61453_G_1499389617774413431.jpg"/>
+    <text>素描</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>气体</text>
+    <image mode="aspectFill" src="http://img4.baozhenart.com/images/201610/goods_img/600x550/w/35015_G_1477026787912699669.jpg"/>
+    <text>人物</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
+    <image mode="aspectFill" src="http://img1.baozhenart.com/images/201606/goods_img/600x550/w/32548_G_1466060688032104488.jpg"/>
+    <text>静物</text>
+    </navigator>
+    <navigator url="/pages/logs/logs">
+    <image mode="aspectFill" src="http://img2.baozhenart.com/images/201701/goods_img/600x550/w/50991_G_1484730822328584168.jpg"/>
+    <text>抽象</text>
+    </navigator>
+    <navigator url="/pages/logs/logs">
+    <image mode="aspectFill" src="http://img2.baozhenart.com/images/201611/goods_img/600x550/w/47692_G_1480413529361815510.jpg"/>
+    <text>写实</text>
+    </navigator>
+    <navigator url="/pages/logs/logs">
+    <image mode="aspectFill" src="http://img2.baozhenart.com/images/201508/goods_img/600x550/w/10349_P_1440671568312.JPG"/>
     <text>其他</text>
-    </navigator>
-    <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>酮类</text>
-    </navigator>
-    <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>气体</text>
-    </navigator>
-    <navigator url="/pages/logs/logs">
-    <image src="http://www.meimaonong.com/type2.png"/>
-    <text>其他</text>
-    </navigator>
+    </navigator> -->
+
+      <navigator wx:for="{{list}}" wx:for-item="item" wx:key="{{item.category_id}}" url="/pages/category_list/category_list?category_id={{item.category_id}}&&category_name={{item.category_name}}">
+    <image mode="aspectFill" src="{{item.category_img}}"/>
+    <text>{{item.category_name}}</text>
+    </navigator> 
   </view>
 </view>

@@ -23,6 +23,9 @@ page{
   width: 100%;
   overflow: hidden;
 }
+.ct_img{
+  width: 345rpx;
+}
 
 .ct_n {
   text-align: left;
