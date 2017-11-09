@@ -1,13 +1,13 @@
 {
   "pages":[
-    
+    "pages/index/index",
     "pages/category/category",
     "pages/category_list/category_list",
     "pages/home/home",
     "pages/work_edit/work_edit",
     "pages/adress_edit/adress_edit",
     
-    "pages/index/index",
+    
     "pages/adress/adress",
     "pages/album_d/album_d",
     "pages/album/album",
@@ -18,24 +18,25 @@
     "pages/logs/logs"
   ],
   "tabBar": {
+    "backgroundColor": "#fff",
     "list": [
       {
-        "iconPath": "public/img/icon.png",
-        "selectedIconPath": "public/img/icon.png",
+        "iconPath": "public/img/tab/11.png",
+        "selectedIconPath": "public/img/tab/1s.png",
         "pagePath": "pages/home/home",
-        "text": "分类1"
+        "text": "首页"
       },
       {
-        "selectedIconPath": "public/img/icon.png",
-        "iconPath": "public/img/icon.png",
+        "iconPath": "public/img/tab/2.png",
+        "selectedIconPath": "public/img/tab/2s.png",
         "pagePath": "pages/category/category",
         "text": "分类2"
       },
       {
-        "selectedIconPath": "public/img/icon.png",
-        "iconPath": "public/img/icon.png",
+        "iconPath": "public/img/tab/3.png",
+        "selectedIconPath": "public/img/tab/3s.png",
         "pagePath": "pages/my/my",
-        "text": "分类3"
+        "text": "我的"
       }
     ]
   },
