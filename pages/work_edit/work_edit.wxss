@@ -8,23 +8,7 @@
   background: #fff;
   margin-bottom: 30rpx;
 }
-.bt{
-  color: #333;
-  width: 100%;
-  font-size: 32rpx;
-  font-weight: bold;
-  padding: 30rpx 0;
-  border-bottom: 1px solid #eee;
-}
-.bc{
-  color: #666;
-  width: 100%;
-  line-height: 45rpx;
-  min-height: 45rpx;
-  font-size: 30rpx;
-  padding: 30rpx 0;
-  border-bottom: 1rpx solid #eee;
-}
+
 .bm image{
   width: 100%;
 }

@@ -2,52 +2,16 @@
 <view class="container">
 
 <view class="e_w">
-<input placeholder="请输入标题..." class="bt"></input>
-<textarea auto-height class="bc" placeholder="请输入描述..." />
-<view class="bc {{isMask ? 'show': 'hide'}}">
 
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
 </view>
 
-<view class="bm">
-<image src="http://www.meimaonong.com/type2.png"/>
-
-<view class="{{isMask ? 'hide':'show'}}">
-<input placeholder="请输入标题..." class="bm_t_e" value="守望田野-局部"></input>
-<textarea auto-height class="bm_d_e {{isMask ? 'hide' : 'show'}}" placeholder="请输入描述..." value="是对封建势力的加夫里什地方，是德弗里斯大家费拉达斯减肥了乐山大佛觉得舒服。受到粉丝的饭，受到粉丝的饭。" />
-</view>
-
-<view class="{{isMask ? 'show':'hide'}}">
-<view class="bm_t">守望田野-局部</view>
-<view class="bm_d">是对封建势力的加夫里什地方，是德弗里斯大家费拉达斯减肥了乐山大佛觉得舒服。受到粉丝的饭，受到粉丝的饭。</view>
-</view>
-
-<view class="item_op">
-<button type="default" class="l_btn">保存</button>
-<button type="default" class="l_btn">取消</button>
-</view>
-
-</view>
-
-<view class="bm">
-<image src="http://www.meimaonong.com/type2.png"/>
-
-<view class="{{isMask ? 'hide':'show'}}">
-<input placeholder="请输入标题..." class="bm_t_e" value="守望田野-局部"></input>
-<textarea auto-height class="bm_d_e {{isMask ? 'hide' : 'show'}}" placeholder="请输入描述..." value="是对封建势力的加夫里什地方，是德弗里斯大家费拉达斯减肥了乐山大佛觉得舒服。受到粉丝的饭，受到粉丝的饭。" />
-</view>
-
-<view class="{{isMask ? 'show':'hide'}}">
-<view class="bm_t">守望田野-局部</view>
-<view class="bm_d">是对封建势力的加夫里什地方，是德弗里斯大家费拉达斯减肥了乐山大佛觉得舒服。受到粉丝的饭，受到粉丝的饭。</view>
-</view>
-
-<view class="item_op">
-<button type="default" class="l_btn">保存</button>
-<button type="default" class="l_btn">取消</button>
-</view>
-</view>
-
-<view class="ubtn">上传图片</view>
 </view>
 
 <view class="p3">
