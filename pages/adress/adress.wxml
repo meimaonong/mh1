@@ -8,11 +8,11 @@
 <view class="b">
 <view class="b_t">周立新</view>
 <view class="b_p">
-<image src="http://www.meimaonong.com/p1.png" class="b_p_i"/>
+<image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
 <view class="b_p_d">15188883323</view>
 </view>
 <view class="b_a">
-<image src="http://www.meimaonong.com/p2.png" class="b_p_i"/>
+<image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
 <view class="b_p_d">江苏省南京市鼓楼区中央路238号</view>
 </view>
 <view class="op" style="display:none;">
@@ -24,11 +24,11 @@
 <view class="b">
 <view class="b_t">周立新</view>
 <view class="b_p">
-<image src="http://www.meimaonong.com/p1.png" class="b_p_i"/>
+<image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
 <view class="b_p_d">15188883323</view>
 </view>
 <view class="b_a">
-<image src="http://www.meimaonong.com/p2.png" class="b_p_i"/>
+<image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
 <view class="b_p_d">江苏省南京市鼓楼区中央路238号江苏省南京市鼓楼区中央路238号</view>
 </view>
 <view class="op">

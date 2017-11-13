@@ -4,7 +4,7 @@
 
 <!-- <navigator url="/pages/detail/detail" class="nv">
     <view class="ct_img_w">
-    <image src="http://www.meimaonong.com/type2.png" class="ct_img" style='height:300rpx;'/>
+    <image src="http://svn.meimaonong.com/type2.png" class="ct_img" style='height:300rpx;'/>
     </view>
     <view class="ct_n">芳烃名称芳烃名称芳烃名称芳烃名称芳烃名称</view>
     <view class='ct_p'>￥5430</view>
@@ -24,7 +24,7 @@
 
 <!-- <navigator url="/pages/detail/detail" class="nv">
     <view class="ct_img_w">
-    <image src="http://www.meimaonong.com/type2.png" class="ct_img" style='height:400rpx;'/>
+    <image src="http://svn.meimaonong.com/type2.png" class="ct_img" style='height:400rpx;'/>
     </view>
     <view class="ct_n">芳烃名称芳烃名称芳烃名称芳烃名称芳烃名称</view>
     <view class='ct_p'>￥5430</view>

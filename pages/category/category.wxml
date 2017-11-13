@@ -2,11 +2,11 @@
 <view class="container">
   <view class="w">
     <!-- <navigator url="/pages/logs/logs">
-    <image mode="aspectFill"  src="http://www.meimaonong.com/i/1.jpg"/>
+    <image mode="aspectFill"  src="http://svn.meimaonong.com/i/1.jpg"/>
     <text>国画</text>
     </navigator>
     <navigator url="/pages/logs/logs">
-    <image mode="aspectFill"  src="http://www.meimaonong.com/i/2.jpg"/>
+    <image mode="aspectFill"  src="http://svn.meimaonong.com/i/2.jpg"/>
     <text>水彩画</text>
     </navigator>
     <navigator url="/pages/logs/logs">

@@ -27,12 +27,12 @@
 <view class="mc">
 <text>所属专辑</text>
 <text class="choose">西北</text>
-<image src="http://www.meimaonong.com/arrow.png"/>
+<image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
 <view class="mc">
 <text>所属分类</text>
 <text class="choose">国画</text>
-<image src="http://www.meimaonong.com/arrow.png"/>
+<image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
 </view>
 

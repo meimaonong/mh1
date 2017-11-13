@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/category/category",
     "pages/work_edit/work_edit",
     "pages/index/index",
-    "pages/category/category",
+    
     "pages/category_list/category_list",
     "pages/home/home",
     
