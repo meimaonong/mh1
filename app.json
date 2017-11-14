@@ -1,11 +1,12 @@
 {
   "pages":[
+    "pages/home/home",
     "pages/category/category",
     "pages/work_edit/work_edit",
     "pages/index/index",
     
     "pages/category_list/category_list",
-    "pages/home/home",
+    
     
     "pages/adress_edit/adress_edit",
     "pages/adress/adress",
@@ -18,23 +19,24 @@
     "pages/logs/logs"
   ],
   "tabBar": {
+    "selectedColor": "#333",
     "backgroundColor": "#fff",
     "list": [
       {
-        "iconPath": "public/img/tab/11.png",
-        "selectedIconPath": "public/img/tab/1s.png",
+        "iconPath": "public/img/tab/icon-home-n.png",
+        "selectedIconPath": "public/img/tab/icon-home-s.png",
         "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
-        "iconPath": "public/img/tab/2.png",
-        "selectedIconPath": "public/img/tab/2s.png",
+        "iconPath": "public/img/tab/icon-find-n.png",
+        "selectedIconPath": "public/img/tab/icon-find-s.png",
         "pagePath": "pages/category/category",
-        "text": "分类2"
+        "text": "寻画"
       },
       {
-        "iconPath": "public/img/tab/3.png",
-        "selectedIconPath": "public/img/tab/3s.png",
+        "iconPath": "public/img/tab/icon-person-n.png",
+        "selectedIconPath": "public/img/tab/icon-person-s.png",
         "pagePath": "pages/my/my",
         "text": "我的"
       }
