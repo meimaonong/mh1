@@ -4,8 +4,12 @@
   width: 750rpx;
   height: 500rpx;
 }
+.h navigator{
+  height: 100%;
+}
 .slide-image {
   width: 100%;
+  height: 100%;
 }
 
 .ct {
@@ -13,6 +17,9 @@
   line-height: 100rpx;
   margin-top: 30rpx;
   background-color: #fff;
+}
+.ct:last-child{
+  margin-bottom: 30rpx;
 }
 
 .ct_b {
@@ -28,6 +35,10 @@
   width: 100%;
   height: 258rpx;
   overflow: hidden;
+}
+.ct_img_w image{
+  width: 100%;
+  height: 100%;
 }
 
 .ct_n {

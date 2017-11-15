@@ -8,6 +8,7 @@ App({
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
 
+
     // 获取系统信息
     wx.getSystemInfo({
       success: function (res) {
@@ -16,7 +17,7 @@ App({
     })
 
     const obj = this
-
+    console.log(params.api + '/v1/user/wx-login')
     // 登录
     wx.login({
       success: res => {

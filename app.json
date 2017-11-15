@@ -44,8 +44,8 @@
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "寻画记",
+    "navigationBarTextStyle":"light"
   }
 }
