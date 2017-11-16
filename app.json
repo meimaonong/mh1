@@ -1,18 +1,17 @@
 {
   "pages":[
+    "pages/my/my",
     "pages/home/home",
-    "pages/category/category",
     "pages/work_edit/work_edit",
+    
+    "pages/category/category",
     "pages/index/index",
-    
     "pages/category_list/category_list",
-    
-    
     "pages/adress_edit/adress_edit",
     "pages/adress/adress",
     "pages/album_d/album_d",
     "pages/album/album",
-    "pages/my/my",
+    
     
     "pages/detail/detail",
 
@@ -32,7 +31,7 @@
         "iconPath": "public/img/tab/icon-find-n.png",
         "selectedIconPath": "public/img/tab/icon-find-s.png",
         "pagePath": "pages/category/category",
-        "text": "寻画"
+        "text": "测试"
       },
       {
         "iconPath": "public/img/tab/icon-person-n.png",
@@ -45,7 +44,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#333",
-    "navigationBarTitleText": "寻画记",
+    "navigationBarTitleText": "测试",
     "navigationBarTextStyle":"light"
   }
 }

@@ -2,17 +2,9 @@
 
 <view id="l" class="w">
 
-<!-- <navigator url="/pages/detail/detail" class="nv">
-    <view class="ct_img_w">
-    <image src="http://svn.meimaonong.com/type2.png" class="ct_img" style='height:300rpx;'/>
-    </view>
-    <view class="ct_n">芳烃名称芳烃名称芳烃名称芳烃名称芳烃名称</view>
-    <view class='ct_p'>￥5430</view>
-</navigator> -->
-
 <navigator url="/pages/detail/detail?work_id={{item.work_id}}"  wx:for="{{left}}" wx:for-item="item" wx:key="{{item.work_id}}">
     <view class="ct_img_w">
-    <image src="{{item.work_img}}" class="ct_img" style='height:{{item.c_h}}rpx;'/>
+    <image src="{{item.work_img}}" class="ct_img" style='{{item.c_h}}'/>
     </view>
     <view class="ct_n">{{item.work_title}}</view>
     <view class='ct_p'>￥{{item.work_price}}</view>
@@ -22,17 +14,9 @@
 </view>
 <view id="r" class="w">
 
-<!-- <navigator url="/pages/detail/detail" class="nv">
-    <view class="ct_img_w">
-    <image src="http://svn.meimaonong.com/type2.png" class="ct_img" style='height:400rpx;'/>
-    </view>
-    <view class="ct_n">芳烃名称芳烃名称芳烃名称芳烃名称芳烃名称</view>
-    <view class='ct_p'>￥5430</view>
-</navigator> -->
-
 <navigator url="/pages/detail/detail?work_id={{item.work_id}}"  wx:for="{{right}}" wx:for-item="item" wx:key="{{item.work_id}}">
     <view class="ct_img_w">
-    <image src="{{item.work_img}}" class="ct_img" style='height:{{item.c_h}}rpx;'/>
+    <image src="{{item.work_img}}" class="ct_img" style="{{item.c_h}}"/>
     </view>
     <view class="ct_n">{{item.work_title}}</view>
     <view class='ct_p'>￥{{item.work_price}}</view>
@@ -41,4 +25,9 @@
 </view>
 
 </view>
-<view class="no">我们是有底线的</view>
+
+<block wx:if="{{left.length>0}}">
+<view class="tip" hidden="{{hasMore ? false : true}}">下拉加载更多</view>
+<view class="tip" hidden="{{isLoading ? false : true}}">加载中...</view>
+<view class="tip" hidden="{{hasMore ? true : false}}">我们是有底线的</view>
+</block>

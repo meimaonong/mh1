@@ -2,6 +2,9 @@
 page{
   background-color: #fff;
 }
+.hide{
+  display: none;
+}
 .container{
   border-top: 1rpx solid #eee;
   padding: 20rpx 10rpx 60rpx 10rpx;
@@ -15,6 +18,9 @@ page{
   padding:10rpx;
   overflow: hidden;
 }
+.w navigator{
+  padding-bottom: 20rpx;
+}
 .nv {
   width: 100%;
   padding-bottom: 15rpx;
@@ -25,6 +31,7 @@ page{
 }
 .ct_img{
   width: 345rpx;
+  vertical-align: top;
 }
 
 .ct_n {
@@ -43,7 +50,7 @@ page{
   line-height: 40rpx;
 }
 
-.no{
+.tip{
   font-size: 30rpx;
   text-align: center;
   color: #aaa;

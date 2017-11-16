@@ -12,12 +12,12 @@ App({
     // 获取系统信息
     wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
+        //console.log(res)
       }
     })
 
     const obj = this
-    console.log(params.api + '/v1/user/wx-login')
+    console.log(params.api)
     // 登录
     wx.login({
       success: res => {

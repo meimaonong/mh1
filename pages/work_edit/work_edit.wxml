@@ -3,48 +3,37 @@
 
 <view class="e_w">
 
-<view class="section">
-  <view class="section__title">普通选择器</view>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      当前选择：{{array[index]}}
-    </view>
-  </picker>
-</view>
 
-<view class="section">
-  <view class="section__title">省市区选择器</view>
-  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
-    <view class="picker">
-      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
-    </view>
-  </picker>
-</view>
+
+
+
+
+
+
+
 
 </view>
 
 <view class="p3">
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{prang}}" range-key="category_name">
 <view class="mc">
-<text>所属专辑</text>
-<text class="choose">西北</text>
+<text>所属测试</text>
+<text class="choose">{{result.category.category_name}}</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
+</picker>
+<picker bindchange="bindPickerChange2" value="{{index}}" range="{{prang2}}" range-key="album_title">
 <view class="mc">
-<text>所属分类</text>
-<text class="choose">国画</text>
+<text>所属测试</text>
+<text class="choose">{{result.album.album_title}}</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
+</picker>
 </view>
 
-<view class="save"> 保存 </view>
-<view class="back"> 返回 </view>
-
-<view class="mask" catchtap="tap">
-  <view class="op">
-    <view class="op_item">下移</view>
-    <view class="op_item">编辑描述</view>
-    <view class="op_item">删除</view>
-  </view>
+<view class='op_bto'>
+<view class="back"> 测试2 </view>
+<view class="save"> 测试1 </view>
 </view>
 
 </view>
