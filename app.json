@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/album/album",
     "pages/my/my",
     "pages/home/home",
     "pages/work_edit/work_edit",
@@ -8,9 +9,9 @@
     "pages/index/index",
     "pages/category_list/category_list",
     "pages/adress_edit/adress_edit",
-    "pages/adress/adress",
+    "pages/address/address",
     "pages/album_d/album_d",
-    "pages/album/album",
+    
     
     
     "pages/detail/detail",

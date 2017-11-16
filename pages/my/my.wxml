@@ -16,7 +16,7 @@
 <image src="http://svn.meimaonong.com/m1.png"/>
 <text>待审作品<block wx:if="{{wait_num}}">({{wait_num}})</block></text>
 </navigator>
-<navigator url="/pages/category/category" class="n2">
+<navigator url="/pages/album/album" class="n2">
 <image src="http://svn.meimaonong.com/m2.png"/>
 <text>我的专辑<block wx:if="{{album_num}}">({{album_num}})</block></text>
 </navigator>
@@ -39,8 +39,8 @@
 <text>已购买作品<block wx:if="{{buy_num}}">({{buy_num}})</block></text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </navigator>
-<navigator url="/pages/category/category">
-<text>收获地址管理</text>
+<navigator url="/pages/address/address">
+<text>收货地址管理</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </navigator>
 <navigator url="/pages/category/category">

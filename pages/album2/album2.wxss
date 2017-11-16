@@ -1,0 +1,2 @@
+/* pages/album/album.wxss */
+@import "../../wxss/list.wxss"

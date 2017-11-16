@@ -1,0 +1,46 @@
+<!--pages/album/album.wxml-->
+<view class="container">
+
+<view class="l_h">
+<view class="l_txt">已出售作品</view>
+<view class="l_des">共 <text>2</text> 幅</view>
+</view>
+
+<view class="l_box">
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d">学习鉴赏大师级国画精选</view>
+<view class="l_b">共计<text> 52 </text>幅作品</view>
+</view>
+</navigator>
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_s_d">出售价格</view>
+<view class="l_s_b">¥3,600</view>
+</view>
+</navigator>
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d2">原因：展示图片质量太差</view>
+<view class="l_op">
+<button type="default" class="l_btn">去修改</button>
+</view>
+</view>
+</navigator>
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d">学习鉴赏大师级国画精选</view>
+<view class="l_b">共计<text> 52 </text>幅作品</view>
+</view>
+</navigator>
+</view>
+
+</view>

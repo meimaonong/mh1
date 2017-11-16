@@ -1,5 +1,6 @@
 <!--pages/adress/adress.wxml-->
 <view class="container">
+
 <view class="b_h">
 <text class="l_edit">编辑</text>
 <text class="l_cancel">取消</text>
