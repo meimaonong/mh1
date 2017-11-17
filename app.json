@@ -11,12 +11,7 @@
     "pages/category_list/category_list",
     "pages/adress_edit/adress_edit",
     "pages/address/address",
-    
-    
-    
-    
     "pages/detail/detail",
-
     "pages/logs/logs"
   ],
   "tabBar": {
