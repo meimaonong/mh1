@@ -1,0 +1,34 @@
+
+<view class="container" wx:if="{{work}}">
+<view class="w">
+  <view class="t">{{work.work_title}}</view>
+  <!-- <view class="d">芳烃产品描述芳烃产品描述，芳烃产品描述芳烃产品描述芳烃产品描述。芳烃产品描述芳烃产品描述芳烃产品描述芳烃产品描述，芳烃产品描述。</view> -->
+  <view class="item" wx:for="{{work.workItems}}" wx:key="item.work_item_id">
+    <image lazy-load='true' src="{{item.work_item_img}}" style="{{item.style}}"/>
+    <view class="i_d">
+    {{item.work_item_des}}
+    </view>
+  </view>
+
+</view>
+
+<view class='fl'>
+
+</view>
+
+<view class="op">
+<view class="op_item2">
+<text>状态：</text>未提审
+</view>
+<view class="op_item" data-id="{{work.work_id}}">
+<image src='/public/img/icon/edit.png'/>
+<text>提审</text>
+</view>
+<view class="op_item" data-id="{{work.work_id}}">
+<image src='/public/img/icon/share.png'/>
+<text>分享</text>
+</view>
+
+</view>
+
+</view>

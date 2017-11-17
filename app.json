@@ -1,16 +1,17 @@
 {
   "pages":[
+    "pages/work_edit/work_edit",
+    "pages/album_d/album_d",
     "pages/album/album",
+    "pages/work_p/work_p",
     "pages/my/my",
     "pages/home/home",
-    "pages/work_edit/work_edit",
-    
     "pages/category/category",
     "pages/index/index",
     "pages/category_list/category_list",
     "pages/adress_edit/adress_edit",
     "pages/address/address",
-    "pages/album_d/album_d",
+    
     
     
     
