@@ -20,7 +20,7 @@
 
 <view wx:for="{{work.workItems}}" wx:key="item.work_item_img" class='op_box_w'>
 <view class='op_box'>
-<image mode='aspectFill' data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.img_url }}' bindtap='changeimg'></image>
+<image mode='aspectFill' data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.work_item_img }}' bindtap='changeimg'></image>
 <view class='txt' bindtap='editTxt' data-index="{{ index }}" data-txt="{{ item.txt }}">{{ item.txt }}</view>
 <view class='op'>
 <view class="top" bindtap='m_up' data-index="{{ index }}" wx:if="{{ index!==0 }}">
@@ -35,8 +35,8 @@
 </view>
 
 <view class='add_w'>
-<view class='add_btn {{s_index==index ? "hide" : ""}}' data-index="{{ index }}" bindtap='addOp'>+</view>
-<view class='type_w {{s_index==index ? "" : "hide"}}'>
+<view class='add_btn' hidden='{{s_index==index ? true : false}}' data-index="{{ index }}" bindtap='addOp'>+</view>
+<view class='type_w' hidden='{{s_index==index ?  false : true }}'>
 <view class='type1' data-index="{{ index }}" catchtap='addTxt'>文字</view>
 <view class='type2' data-index="{{ index }}" catchtap='addPic'>图片</view>
 </view>

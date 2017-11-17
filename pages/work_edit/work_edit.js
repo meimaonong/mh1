@@ -42,29 +42,6 @@ Page({
 
 
     s_index: -1,
-    /*at: {
-      title: '测试数据2',
-      cover_img: 'http://svn.meimaonong.com/type1.png',
-      content: [
-        {
-          id: 1,
-          type: 1,
-          img_url: 'http://svn.meimaonong.com/type1.png',
-          txt: '测试测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据'
-        },
-        {
-          id: 2,
-          type: 2,
-          txt: '测试文本数据'
-        },
-        {
-          id: 3,
-          type: 1,
-          img_url: 'http://svn.meimaonong.com/type1.png',
-          txt: '测试测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据'
-        },
-      ]
-    },*/
 
     prang: [
       
@@ -105,7 +82,7 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: 'https://www.meimaonong.com/v1/file/image-upload', //仅为示例，非真实的接口地址
+            url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[index],
             name: 'file',
             success: function (res) {
@@ -113,13 +90,16 @@ Page({
               newItem[index] = {
                 work_item_title: "",
                 num: index,
-                work_item_img: 'https://www.meimaonong.com/' + r.data.fileUrl,
+                work_item_img: params.api + '/' + r.data.fileUrl,
                 w: r.data.w,
                 h: r.data.h,
                 ratio: r.data.ratio,
               }
               if (index === 0) {
-                that.data.work.cover_img = 'https://www.meimaonong.com/' + r.data.fileUrl
+                that.data.work.cover_img = params.api + '/' + r.data.fileUrl
+                that.data.work.w = r.data.w
+                that.data.work.h = r.data.h
+                that.data.work.ratio = r.data.ratio
               }
               num++
               if (num == tempFilePaths.length) {
@@ -129,7 +109,6 @@ Page({
                 })
                 wx.hideLoading()
               }
-
 
             }
           })
@@ -144,12 +123,11 @@ Page({
     wx.showModal({
       title: '确定删除此项？',
       content: '',
-      confirmColor: '#2067f6',
       success: function (res) {
         if (res.confirm) {
-          that.data.at.content.splice(index, 1)
+          that.data.work.workItems.splice(index, 1)
           that.setData({
-            at: that.data.at
+            work: that.data.work
           })
         } else if (res.cancel) {
           //console.log('用户点击取消')
@@ -160,8 +138,8 @@ Page({
   changecover: function (e) {
     const img = e.currentTarget.dataset.cover
     var tarr = []
-    this.data.at.content.map(function (item) {
-      item.type == 1 ? tarr.push(item.img_url) : ''
+    that.data.work.workItems.map(function (item) {
+      item.type == 1 ? tarr.push(item.work_item_img) : ''
     })
     var selIndex = tarr.indexOf(img)
     if (selIndex == -1) {
@@ -202,30 +180,30 @@ Page({
   addTxt: function (e) {
     var that = this
     const index = e.currentTarget.dataset.index
-    that.data.at.content.splice(index + 1, 0, { type: 2, img_url: 'http://svn.meimaonong.com/type1.png', txt: 'txt2' })
+    that.data.work.workItems.splice(index + 1, 0, { type: 2, img_url: 'http://svn.meimaonong.com/type1.png', txt: 'txt2' })
     that.setData({
-      at: that.data.at,
+      work: that.data.work,
       s_index: -1
     })
   },
   m_up: function (e) {
     var that = this
     const index = e.currentTarget.dataset.index
-    var tmp = that.data.at.content[index - 1]
-    that.data.at.content[index - 1] = that.data.at.content[index]
-    that.data.at.content[index] = tmp
+    var tmp = that.data.work.workItems[index - 1]
+    that.data.work.workItems[index - 1] = that.data.work.workItems[index]
+    that.data.work.workItems[index] = tmp
     that.setData({
-      at: that.data.at
+      work: that.data.work
     })
   },
   m_down: function (e) {
     var that = this
     const index = e.currentTarget.dataset.index
-    var tmp = that.data.at.content[index + 1]
-    that.data.at.content[index + 1] = that.data.at.content[index]
-    that.data.at.content[index] = tmp
+    var tmp = that.data.work.workItems[index + 1]
+    that.data.work.workItems[index + 1] = that.data.work.workItems[index]
+    that.data.work.workItems[index] = tmp
     that.setData({
-      at: that.data.at
+      work: that.data.work
     })
   },
   addPic: function (e) {
@@ -252,17 +230,17 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: 'https://www.meimaonong.com/v1/file/image-upload', //仅为示例，非真实的接口地址
+            url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
             filePath: tempFilePaths[index],
             name: 'file',
             success: function (res) {
               const r = JSON.parse(res.data)
-              newItem[index] = { type: 1, img_url: 'https://www.meimaonong.com/' + r.data.fileUrl, txt: 'txt1' }
+              newItem[index] = { type: 1, img_url: params.api + '/' + r.data.fileUrl, txt: 'txt1' }
               num++
               if (num == tempFilePaths.length) {
-                that.data.at.content.splice(mindex + 1, 0, ...newItem)
+                that.data.work.workItems.splice(mindex + 1, 0, ...newItem)
                 that.setData({
-                  at: that.data.at,
+                  work: that.data.work,
                   s_index: -1
                 })
                 wx.hideLoading()

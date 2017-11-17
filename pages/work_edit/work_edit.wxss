@@ -1,11 +1,8 @@
 /* pages/work_edit/work_edit.wxss */
 .container{
-  padding-bottom: 50rpx;
+  padding-bottom: 150rpx;
 }
 
-.hide{
-  display: none;
-}
 
 .e_w{
   border-top: 1rpx solid #eee;
