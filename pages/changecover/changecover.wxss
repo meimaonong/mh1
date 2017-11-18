@@ -15,7 +15,7 @@
   color: #fff;
   font-size: 100rpx;
   text-align: center;
-  line-height: 130rpx;
+  line-height: 150rpx;
   background: #4dabfb;
 }
 .i image {

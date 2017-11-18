@@ -54,9 +54,7 @@ Page({
           }
 
         })
-        // page++
-        // pages = list.pages
-        // openTip = false
+
         that.setData({
           page: that.data.page + 1,
           pages: list.pages,
@@ -85,7 +83,7 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    //console.log('bottom', page, pages)
+
     if (that.data.page <= that.data.pages) {
       that.getList()
     } else if (that.data.page >= that.data.pages) {

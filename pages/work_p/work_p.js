@@ -30,7 +30,6 @@ Page({
   },
   onLoad: function (options) {
     var that = this
-    console.log(options)
     var work_id = options.work_id ? options.work_id : 1
     that.getWork(work_id)
 

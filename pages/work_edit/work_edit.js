@@ -4,56 +4,89 @@ const params = require('../../utils/params')
 Page({
 
   data: {
-
-      work: null,
-      /*
-      work: {
-        work_id: '',
-        work_title: '',
-        work_img: '',
-        w: '',
-        h: '',
-        ratio: '',
-        work_price: "",
-        category_id: '',
-        album_id: '',
-        workItems: [
-          {
-            work_item_id: "",
-            work_id: "",
-            work_item_title: "",
-            work_item_des: "测试内容测试内容",
-            num: 0,
-            work_item_img: '',
-            w: "",
-            h: "",
-            ratio: "",
-          }
-        ]
-      },*/
-      category: {
-        category_id: -1,
-        category_name: '',
-      },
-      album: {
-        album_id: -1,
-        album_title: '',
-      },
-
-
+    work: null,
+    category: {
+      category_id: -1,
+      category_name: '',
+    },
+    
+    album: {
+      album_id: -1,
+      album_title: '',
+    },
     s_index: -1,
+    prang: [],
+    prang2: [],
 
-    prang: [
-      
-    ],
-    prang2: [
-      
-    ],
+    work_price: '',
+
+    tip: false,
+    tip_txt: '',
+    time: null
   },
-  hideOp: function(e) {
+  valid: function() {
     var that = this
-    that.setData({
-      s_index: -1
+
+    if (!that.data.work.work_title) {
+      wx.showToast({
+        title: '请输入标题',
+        image: '/public/img/icon/wrong.png',
+        duration: 2000
+      })
+      return false
+    }
+
+    var work_price = that.data.work_price
+  
+    if (!work_price || work_price%1 != 0) {
+      wx.showToast({
+        title: '请输入正确价格',
+        image: '/public/img/icon/wrong.png',
+        duration: 2000
+      })
+      return false
+    }
+
+    if (that.data.album.album_id <= 0) {
+      wx.showToast({
+        title: '请选择专辑',
+        image: '/public/img/icon/wrong.png',
+        duration: 2000
+      })
+      return false
+    }
+
+    if (that.data.category.category_id <= 0) {
+      wx.showToast({
+        title: '请选择分类',
+        image: '/public/img/icon/wrong.png',
+        duration: 2000
+      })
+      return false
+    }
+
+  },
+  save: function() {
+    var that = this
+
+    if (that.valid()) {
+      wx.redirectTo({
+        url: '/pages/work_p/work_p',
+      })
+    }
+  },
+  pre: function() {
+
+  },
+  priceinput: function(e) {
+    var work_price = e.detail.value
+    this.setData({
+      work_price
+    })
+  },
+  zj_add: function(e) {
+    wx.navigateTo({
+      url: '/pages/album_edit/album_edit',
     })
   },
   newPic: function(e) {
@@ -96,6 +129,7 @@ Page({
               newItem[index] = {
                 work_item_title: "",
                 num: index,
+                work_item_des: '',
                 work_item_img: params.api + '/' + r.data.fileUrl,
                 w: r.data.imageWidth,
                 h: r.data.imageHeight,
@@ -125,6 +159,16 @@ Page({
   },
   delItem: function (e) {
     var that = this
+
+    if (that.data.work.workItems.length == 1) {
+      wx.showToast({
+        title: '至少要保留一项',
+        image: '/public/img/icon/wrong.png',
+        duration: 2000
+      })
+      return
+    }
+
     const index = e.currentTarget.dataset.index
     wx.showModal({
       title: '确定删除此项？',
@@ -177,8 +221,7 @@ Page({
   editTit: function (e) {
     const txt = e.currentTarget.dataset.txt
     wx.navigateTo({
-      //url: '/pages/process/process?type=1&txt=' + txt
-      url: '/pages/go/go?id=123'
+      url: '/pages/process/process?type=1&txt=' + txt
     })
   },
   addOp: function (e) {
@@ -299,12 +342,6 @@ Page({
       }
     })
   },
-  onLoad: function (options) {
-    var that = this
-    that.getCategorys()
-    that.getAlbums()
-  },
-
   bindPickerChange: function (e) {
     var that = this
     that.data.category = that.data.prang[e.detail.value]
@@ -321,5 +358,9 @@ Page({
       album: that.data.album
     })
   },
-  
+  onLoad: function (options) {
+    var that = this
+    that.getCategorys()
+    that.getAlbums()
+  }
 })

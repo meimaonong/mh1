@@ -1,0 +1,24 @@
+<!--pages/album/album.wxml-->
+<view class="container" wx:if="{{list}}">
+
+<view class="l_h">
+<view class="l_txt">已售作品</view>
+<view class="l_des">共 <text>{{list.count}}</text> 幅</view>
+</view>
+
+<view class="l_box">
+
+<navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w" wx:for="{{list.work_list}}" wx:key="item.work_id">
+<image src="{{item.work_img}}" class="l_i"/>
+<view class="l_r">
+<view class="l_t">{{item.work_title}}</view>
+<view class="l_s_d">出售价格</view>
+<view class="l_s_b">¥{{item.work_price}}</view>
+</view>
+</navigator>
+
+<view class='no' wx-if="{{!list.count}}">暂无已售作品</view>
+
+</view>
+
+</view>

@@ -81,3 +81,10 @@
 .l_b text{
   color: #333;
 }
+
+.no {
+  text-align: center;
+  padding: 100rpx;
+  font-size: 35rpx;
+  color: #aaa;
+}

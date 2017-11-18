@@ -10,7 +10,7 @@ Page({
       album_des: '',
     }
   },
-  getAlbum: function(album_id){
+  getAlbum: function (album_id) {
     var that = this
     wx.request({
       url: params.api + '/v1/album/get-album',
@@ -29,7 +29,7 @@ Page({
       }
     })
   },
-  formSubmit: function(e) {
+  formSubmit: function (e) {
     var that = this
     var album = Object.assign(that.data.album, e.detail.value)
 
@@ -53,11 +53,11 @@ Page({
       }
     })
   },
-  back: function() {
+  back: function () {
     wx.navigateBack()
   },
   onLoad: function (options) {
-    
+
     var that = this
     if (options.album_id) {
       that.getAlbum(options.album_id)

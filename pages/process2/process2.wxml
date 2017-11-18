@@ -1,0 +1,7 @@
+<view class='container'>
+<image mode='aspectFill' src='{{img}}'></image>
+<view class='op_w'>
+<view class='change' bindtap='chooseImg'>更换</view>
+<view class='del' bindtap='del'>删除</view>
+</view>
+</view>

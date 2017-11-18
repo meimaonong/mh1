@@ -1,0 +1,39 @@
+<!--pages/album/album.wxml-->
+<view class="container">
+
+<view class="l_h">
+<view class="l_txt">我的消息</view>
+</view>
+
+<view class="l_box">
+
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d2">原因：展示图片质量太差</view>
+<view class="l_op">
+<button type="default" class="l_btn">去修改</button>
+</view>
+</view>
+</navigator>
+
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d2">作品已被购买，发货后请到<text style='color:#f00;'> “已出售作品” </text>添加快递信息</view>
+</view>
+</navigator>
+
+<navigator url="/pages/category/category" class="l_w">
+<image src="http://svn.meimaonong.com/type2.png" class="l_i"/>
+<view class="l_r">
+<view class="l_t">传统国画精粹</view>
+<view class="l_d2">快递信息已添加，请到 <text style='color:#f00;'>“已购买作品” </text>查看快递信息</view>
+</view>
+</navigator>
+
+</view>
+
+</view>

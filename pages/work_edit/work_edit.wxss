@@ -59,16 +59,20 @@
 
 .close_w{
   position: absolute;
-  left: 22rpx;
-  top: 3rpx;
+  left: 24rpx;
+  top: 8rpx;
   border-radius: 50%;
-  width: 35rpx;
-  height: 35rpx;
+  width: 32rpx;
+  height: 32rpx;
   background: #aaa;
+  box-shadow: none;
 }
-.close_w icon{
+icon.clear{
   width: 35rpx;
   height: 35rpx;
+  position: absolute;
+  left: 22rpx;
+  top: 5rpx;
   vertical-align: top;
 }
 .op_box image{
@@ -155,10 +159,10 @@
 .add_btn{
   width: 50rpx;
   height: 50rpx;
+  line-height: 45rpx;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto;
-  line-height: 100%;
   text-align: center;
   background: #ccc;
   color: #fff;
@@ -236,7 +240,7 @@
   width: 100%;
   overflow: hidden;
 }
-.save, .back{
+.save, .pre{
   float: left;
   width: 50%;
   line-height: 100rpx;
@@ -246,7 +250,7 @@
   background-color: #333;
   color: #fff;
 }
-.back {
+.pre {
   background-color: #fff;
   color: #333;
 }
@@ -291,5 +295,18 @@
   right: 50rpx;
 }
 
-
+.tip{
+  position: fixed;
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  top: 300rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
 

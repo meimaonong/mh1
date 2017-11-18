@@ -1,13 +1,13 @@
 <!--pages/work_edit/work_edit.wxml-->
 
-<block class='new' wx:if="{{!false}}">
+<block class='new' wx:if="{{!work}}">
 <view class='add_new' bindtap='newPic'>
 <view>+</view>
 <text>添加图片</text>
 </view>
 </block>
 
-<view class="container" wx:if="{{true}}" bindtap='hideOp'>
+<view class="container" wx:if="{{work}}">
 
 <view class="e_w">
 
@@ -21,7 +21,7 @@
 <view wx:for="{{work.workItems}}" wx:key="item.work_item_img" class='op_box_w'>
 <view class='op_box'>
 <image mode='aspectFill' data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.work_item_img }}' bindtap='changeimg'></image>
-<view class='txt' bindtap='editTxt' data-index="{{ index }}" data-txt="{{ item.txt }}">{{ item.txt }}</view>
+<view class='txt' bindtap='editTxt' data-index="{{ index }}" data-txt="{{ item.work_item_des }}" style="{{ item.work_item_des ? '' : 'color:#ccc;' }}">{{ item.work_item_des ? item.work_item_des : '可输入文字' }}</view>
 <view class='op'>
 <view class="top" bindtap='m_up' data-index="{{ index }}" wx:if="{{ index!==0 }}">
 <view class="top-arrow1"></view>
@@ -42,7 +42,8 @@
 </view>
 </view>
 
-<view class='close_w' data-index="{{ index }}" catchtap='delItem'><icon type="clear" size="15" color='rgb(255,255,255)'/></view>
+<view class='close_w' data-index="{{ index }}"></view>
+<icon class='clear' type="clear" catchtap='delItem' size="18" color='rgb(255,255,255)'/>
 
 </view>
 
@@ -52,7 +53,7 @@
 <view class='p3'>
 <view class="mc mcfirst">
 <text>作品价格</text>
-<input placeholder="请输入价格" placeholder-style="color:#ccc;"></input>
+<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;"></input>
 </view>
 </view>
 
@@ -71,14 +72,16 @@
 <text class="choose" wx:if="{{album.album_title}}">{{album.album_title}}</text>
 <text class="choose" wx:if="{{!album.album_title}}" style="color:#ccc;">请选择专辑</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
-<view class='zj_add'>+</view>
+<view class='zj_add' catchtap='zj_add'>+</view>
 </view>
 </picker>
 </view>
 
 <view class='op_bto'>
-<view class="back"> 预览 </view>
-<view class="save"> 完成 </view>
+<view class="pre" catchtap='pre'> 预览 </view>
+<view class="save" catchtap='save'> 完成 </view>
 </view>
 
 </view>
+
+<view class='tip' hidden='{{tip ? false : true}}'>{{tip_txt}}</view>

@@ -1,22 +1,23 @@
 <!--pages/adress_edit/adress_edit.wxml-->
 <view class="container">
+<form bindsubmit="formSubmit">
+
 <view class="w">
 
 <view class="b">
 <label>专辑名称：</label>
-<input></input>
+<input value='{{album.album_title}}' name="album_title"></input>
 </view>
 <view class="b">
 <label>专辑描述：</label>
-<textarea auto-height />
+<textarea auto-height value='{{album.album_des}}' name="album_des" />
 </view>
 
 </view>
 
- <view class="save"> 保存 </view>
-<view class="back"> 返回 </view> 
+ <button class="save" formType="submit"> 保存 </button>
+<button class="back" bindtap='back'> 返回 </button> 
 
-
-
+</form>
 
 </view>

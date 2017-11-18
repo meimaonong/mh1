@@ -1,0 +1,3 @@
+<view class='container'>
+<textarea bindconfirm='confirm' value='{{val}}' focus="true" />
+</view>

@@ -27,7 +27,7 @@
 </view>
 
 <block wx:if="{{left.length>0}}">
-<view class="tip" hidden="{{hasMore ? false : true}}">下拉加载更多</view>
+<view class="tip" hidden="{{hasMore&&!isLoading ? false : true}}">下拉加载更多</view>
 <view class="tip" hidden="{{isLoading ? false : true}}">加载中...</view>
 <view class="tip" hidden="{{hasMore ? true : false}}">我们是有底线的</view>
 </block>
