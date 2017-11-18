@@ -1,0 +1,22 @@
+<!--pages/adress_edit/adress_edit.wxml-->
+<view class="container">
+<view class="w">
+
+<view class="b">
+<label>专辑名称：</label>
+<input></input>
+</view>
+<view class="b">
+<label>专辑描述：</label>
+<textarea auto-height />
+</view>
+
+</view>
+
+ <view class="save"> 保存 </view>
+<view class="back"> 返回 </view> 
+
+
+
+
+</view>

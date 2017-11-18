@@ -50,6 +50,12 @@ Page({
       
     ],
   },
+  hideOp: function(e) {
+    var that = this
+    that.setData({
+      s_index: -1
+    })
+  },
   newPic: function(e) {
     var that = this
 
@@ -91,12 +97,12 @@ Page({
                 work_item_title: "",
                 num: index,
                 work_item_img: params.api + '/' + r.data.fileUrl,
-                w: r.data.w,
-                h: r.data.h,
+                w: r.data.imageWidth,
+                h: r.data.imageHeight,
                 ratio: r.data.ratio,
               }
               if (index === 0) {
-                that.data.work.cover_img = params.api + '/' + r.data.fileUrl
+                that.data.work.work_img = params.api + '/' + r.data.fileUrl
                 that.data.work.w = r.data.w
                 that.data.work.h = r.data.h
                 that.data.work.ratio = r.data.ratio
@@ -136,18 +142,22 @@ Page({
     })
   },
   changecover: function (e) {
-    const img = e.currentTarget.dataset.cover
+    var that = this
+    var img = e.currentTarget.dataset.cover
     var tarr = []
+    var wh = []
+
     that.data.work.workItems.map(function (item) {
-      item.type == 1 ? tarr.push(item.work_item_img) : ''
+      tarr.push(item.work_item_img)
     })
+    //console.log(that.data.work.workItems)
     var selIndex = tarr.indexOf(img)
     if (selIndex == -1) {
       tarr.unshift(img)
       selIndex = 0
     }
     wx.navigateTo({
-      url: '/pages/process3/process3?selIndex=' + selIndex + '&imgs=' + JSON.stringify(tarr)
+      url: '/pages/changecover/changecover?selIndex=' + selIndex + '&imgs=' + JSON.stringify(tarr)
     })
   },
   changeimg: function (e) {
@@ -172,20 +182,12 @@ Page({
     })
   },
   addOp: function (e) {
-    const index = e.currentTarget.dataset.index
+    var index = e.currentTarget.dataset.index
     this.setData({
       s_index: index
     })
   },
-  addTxt: function (e) {
-    var that = this
-    const index = e.currentTarget.dataset.index
-    that.data.work.workItems.splice(index + 1, 0, { type: 2, img_url: 'http://svn.meimaonong.com/type1.png', txt: 'txt2' })
-    that.setData({
-      work: that.data.work,
-      s_index: -1
-    })
-  },
+  
   m_up: function (e) {
     var that = this
     const index = e.currentTarget.dataset.index
@@ -198,7 +200,7 @@ Page({
   },
   m_down: function (e) {
     var that = this
-    const index = e.currentTarget.dataset.index
+    var index = e.currentTarget.dataset.index
     var tmp = that.data.work.workItems[index + 1]
     that.data.work.workItems[index + 1] = that.data.work.workItems[index]
     that.data.work.workItems[index] = tmp
@@ -209,7 +211,7 @@ Page({
   addPic: function (e) {
 
     var that = this
-    const mindex = e.currentTarget.dataset.index
+    var mindex = e.currentTarget.dataset.index
 
     wx.chooseImage({
       count: 9,
@@ -235,7 +237,14 @@ Page({
             name: 'file',
             success: function (res) {
               const r = JSON.parse(res.data)
-              newItem[index] = { type: 1, img_url: params.api + '/' + r.data.fileUrl, txt: 'txt1' }
+              newItem[index] = {
+                work_item_title: "",
+                num: index,
+                work_item_img: params.api + '/' + r.data.fileUrl,
+                w: r.data.w,
+                h: r.data.h,
+                ratio: r.data.ratio,
+              }
               num++
               if (num == tempFilePaths.length) {
                 that.data.work.workItems.splice(mindex + 1, 0, ...newItem)
@@ -298,16 +307,18 @@ Page({
 
   bindPickerChange: function (e) {
     var that = this
-    that.data.result.category = that.data.prang[e.detail.value]
+    that.data.category = that.data.prang[e.detail.value]
+    console.log(e.detail.value)
     this.setData({
-      result: that.data.result
+      category: that.data.category
     })
   },
   bindPickerChange2: function (e) {
     var that = this
-    that.data.result.album = that.data.prang2[e.detail.value]
+    that.data.album = that.data.prang2[e.detail.value]
+    console.log(e.detail.value)
     this.setData({
-      result: that.data.result
+      album: that.data.album
     })
   },
   

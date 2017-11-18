@@ -199,9 +199,22 @@
   border-bottom: 1rpx solid #efefef;
   line-height: 100rpx;
 }
+.p3 .mc.mcfirst{
+  border-bottom: none;
+  display: flex;
+}
+.p3 .mc input{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+}
 .choose{
   margin-left: 50rpx;
   color: #353535;
+  font-size: 32rpx;
 }
 .p3 picker:last-child .mc{
   border-bottom: none;
@@ -216,6 +229,7 @@
 
 .op_bto {
   position: fixed;
+  z-index: 10;
   border-top: 1rpx solid #eee;
   left: 0;
   bottom: 0;
@@ -262,6 +276,19 @@
   left: 0;
   top: 250rpx;
   color: #999;
+}
+
+.zj_add{
+  background: #ccc;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 70rpx;
+  line-height: 70rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 18rpx;
+  right: 50rpx;
 }
 
 

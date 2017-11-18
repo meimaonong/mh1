@@ -1,20 +1,20 @@
 <!--pages/work_edit/work_edit.wxml-->
 
-<block class='new' wx:if="{{!work}}">
+<block class='new' wx:if="{{!false}}">
 <view class='add_new' bindtap='newPic'>
 <view>+</view>
 <text>添加图片</text>
 </view>
 </block>
 
-<view class="container" wx:if="{{work}}">
+<view class="container" wx:if="{{true}}" bindtap='hideOp'>
 
 <view class="e_w">
 
 <view class='head' data-txt="{{ work.work_title }}" bindtap='editTit'>
-<image mode='aspectFill' src='{{ work.cover_img }}'></image>
+<image mode='aspectFill' src='{{ work.work_img }}'></image>
 <view class='tit'>{{ work.work_title ? work.work_title : '点击修改标题' }}</view>
-<view class='cbtn' data-cover="{{ work.cover_img }}" catchtap='changecover'>测试按钮</view>
+<view class='cbtn' data-cover="{{ work.work_img }}" catchtap='changecover'>修改封面</view>
 </view>
 
 
@@ -35,7 +35,7 @@
 </view>
 
 <view class='add_w'>
-<view class='add_btn' hidden='{{s_index==index ? true : false}}' data-index="{{ index }}" bindtap='addOp'>+</view>
+<view class='add_btn' hidden='{{s_index==index ? true : false}}' data-index="{{ index }}" catchtap='addPic'>+</view>
 <view class='type_w' hidden='{{s_index==index ?  false : true }}'>
 <view class='type1' data-index="{{ index }}" catchtap='addTxt'>文字</view>
 <view class='type2' data-index="{{ index }}" catchtap='addPic'>图片</view>
@@ -49,26 +49,36 @@
 
 </view>
 
+<view class='p3'>
+<view class="mc mcfirst">
+<text>作品价格</text>
+<input placeholder="请输入价格" placeholder-style="color:#ccc;"></input>
+</view>
+</view>
+
 <view class="p3">
 <picker bindchange="bindPickerChange" value="{{index}}" range="{{prang}}" range-key="category_name">
 <view class="mc">
-<text>所属测试</text>
-<text class="choose">{{result.category.category_name}}</text>
+<text>所属分类</text>
+<text class="choose" wx:if="{{category.category_name}}">{{category.category_name}}</text>
+<text class="choose" wx:if="{{!category.category_name}}" style="color:#ccc;">请选择分类</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
 </picker>
 <picker bindchange="bindPickerChange2" value="{{index}}" range="{{prang2}}" range-key="album_title">
 <view class="mc">
-<text>所属测试</text>
-<text class="choose">{{result.album.album_title}}</text>
+<text>所属专辑</text>
+<text class="choose" wx:if="{{album.album_title}}">{{album.album_title}}</text>
+<text class="choose" wx:if="{{!album.album_title}}" style="color:#ccc;">请选择专辑</text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
+<view class='zj_add'>+</view>
 </view>
 </picker>
 </view>
 
 <view class='op_bto'>
-<view class="back"> 测试2 </view>
-<view class="save"> 测试1 </view>
+<view class="back"> 预览 </view>
+<view class="save"> 完成 </view>
 </view>
 
 </view>

@@ -1,0 +1,11 @@
+<!--pages/process3/process3.wxml-->
+<view class='container'>
+<view class='op' bindtap="chooseImg">+</view>
+<view class='i' wx:for="{{ imgs }}" wx:key="index" data-index="{{ index }}" bindtap='sel'>
+<image mode='aspectFill' src='{{ item }}'></image>
+<view class='icon_w' wx:if="{{ selIndex == index }}">
+<icon type="success_no_circle" size="10" color='rgb(255,255,255)'/>
+</view>
+
+</view>
+</view>

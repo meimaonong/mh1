@@ -1,6 +1,5 @@
 
 const params = require('../../utils/params')
-//let page = 1, pages = 1, openTip = false, lh = 0, rh = 0, category_id = 0
 
 Page({
   data: {
