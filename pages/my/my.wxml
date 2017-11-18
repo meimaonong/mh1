@@ -3,8 +3,8 @@
 
 <view class="p1">
 <image src="http://svn.meimaonong.com/mybg.jpg" class="bg"/>
-<image src="http://svn.meimaonong.com/t/header.png" class="h"/>
-<view class="n">名画记</view>
+<image src="{{userInfo.avatarUrl}}" class="h"/>
+<view class="n">{{userInfo.nickName}}</view>
 <navigator url="/pages/work_edit/work_edit" class="btn_w">
 <button type="default" class="btn" hover-class="other-button-hover">
 <text>+</text> 发布作品 </button>

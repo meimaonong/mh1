@@ -1,5 +1,6 @@
 // pages/process/process.js
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
 
@@ -24,6 +25,9 @@ Page({
 
         wx.uploadFile({
           url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
+          header: {
+            'access-token': app.globalData.sessionId
+          },
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {

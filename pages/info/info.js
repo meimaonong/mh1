@@ -1,5 +1,6 @@
 // pages/adress_edit/adress_edit.js
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
 
@@ -15,11 +16,11 @@ Page({
     wx.request({
       url: params.api + '/v1/album/get-album',
       data: {
-        album_id,
-        user_id: 1
+        album_id
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       method: 'post',
       success: function (res) {
@@ -36,11 +37,11 @@ Page({
     wx.request({
       url: params.api + '/v1/album/save-album',
       data: {
-        ...album,
-        user_id: 1
+        ...album
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       method: 'post',
       success: function (res) {

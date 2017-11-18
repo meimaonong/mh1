@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
   data: {
@@ -12,7 +13,8 @@ Page({
       url: params.api + '/v1/work/get-work',
       method: 'post',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       data: {
         work_id: work_id

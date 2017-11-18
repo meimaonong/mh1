@@ -1,13 +1,12 @@
 // pages/album_d/album_d.js
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     list: null,
     isEdit: false,
+    album_title: ''
   },
   toggle: function() {
     var that = this
@@ -28,10 +27,10 @@ Page({
           wx.request({
             url: params.api + '/v1/work/del-work',
             header: {
-              'content-type': 'application/x-www-form-urlencoded'
+              'content-type': 'application/x-www-form-urlencoded',
+              'access-token': app.globalData.sessionId
             },
             data: {
-              user_id: 1,
               work_id: work_id
             },
             method: 'post',
@@ -53,6 +52,7 @@ Page({
   edit: function (e) {
     var that = this
     var work_id = e.currentTarget.dataset.id
+    that.setData({ isEdit: false})
     wx.navigateTo({
       url: '/pages/work_edit/work_edit?work_id=' + work_id,
     })
@@ -63,10 +63,10 @@ Page({
     wx.request({
       url: params.api + '/v1/work/get-worklist-by-album',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       data: {
-        user_id: 1,
         album_id: album_id
       },
       method: 'post',
@@ -83,8 +83,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    var album_id = options.album_id ? options.album_id : 1
-    that.getWorks(album_id)
+    that.setData({
+      album_title: options.album_title
+    })
+    that.getWorks(options.album_id)
   },
 
  

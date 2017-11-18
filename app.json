@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/my/my",
     "pages/home/home",
+    "pages/my/my",
+    
     "pages/info/info",
     "pages/message/message",
     "pages/work_edit/work_edit",
@@ -16,8 +17,7 @@
     "pages/album_d/album_d",
     "pages/album/album",
     "pages/work_p/work_p",
-    
-    
+    "pages/work_p2/work_p2",
     "pages/category/category",
     "pages/index/index",
     "pages/category_list/category_list",

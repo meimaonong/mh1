@@ -6,8 +6,10 @@ page{
 .head{
   display: flex;
   position: fixed;
+  background: #fff;
   left: 0;
   top: 0;
+  z-index: 10;
   width: 100%;
   border-bottom: 1rpx solid #eee;
   box-sizing: border-box;

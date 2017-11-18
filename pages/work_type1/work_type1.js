@@ -1,4 +1,6 @@
 const params = require('../../utils/params')
+const app = getApp()
+
 Page({
   data: {
     list: null
@@ -9,7 +11,8 @@ Page({
     wx.request({
       url: params.api + '/v1/work/get-wait-works',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       data: {
         user_id: 1

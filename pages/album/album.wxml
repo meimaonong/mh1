@@ -2,7 +2,7 @@
 <view class="container">
 
 <view class="l_box" wx:if="{{albums}}">
-<navigator url="/pages/album_d/album_d?album_id={{item.album_id}}" class="l_w" wx:for="{{albums}}" wx:key="item.album_id">
+<navigator url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w" wx:for="{{albums}}" wx:key="item.album_id">
 <image src="{{item.cover}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>

@@ -2,7 +2,7 @@
 <view class="container">
 
 <view class='head'>
-<view class='t'>标题标题标题</view>
+<view class='t'>{{album_title}}</view>
 <view class='e' hidden='{{isEdit ? true : false}}' bindtap='toggle'>编辑</view>
 <view class='e' hidden='{{isEdit ? false : true}}' bindtap='toggle'>取消</view>
 </view>

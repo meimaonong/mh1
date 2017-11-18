@@ -1,10 +1,12 @@
 // pages/work_edit/work_edit.js
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
 
   data: {
     work: null,
+    isEdit: true,
     category: {
       category_id: -1,
       category_name: '',
@@ -22,7 +24,10 @@ Page({
 
     tip: false,
     tip_txt: '',
-    time: null
+    time: null,
+
+    index1: 0,
+    index2: 0,
   },
   valid: function() {
     var that = this
@@ -70,13 +75,21 @@ Page({
     var that = this
 
     if (that.valid()) {
-      wx.redirectTo({
-        url: '/pages/work_p/work_p',
+      // wx.redirectTo({
+      //   url: '/pages/work_p/work_p',
+      // })
+      wx.showLoading({
+        title: '保存中',
       })
+
+      
     }
   },
   pre: function() {
-
+    var that = this
+    wx.navigateTo({
+      url: '/pages/work_p2/work_p2?work=' + JSON.stringify(that.data.work),
+    })
   },
   priceinput: function(e) {
     var work_price = e.detail.value
@@ -121,7 +134,10 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
+            url: params.api + '/v1/file/image-upload',
+            header: {
+              'access-token': app.globalData.sessionId
+            },
             filePath: tempFilePaths[index],
             name: 'file',
             success: function (res) {
@@ -275,13 +291,17 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
+            url: params.api + '/v1/file/image-upload',
+            header: {
+              'access-token': app.globalData.sessionId
+            },
             filePath: tempFilePaths[index],
             name: 'file',
             success: function (res) {
               const r = JSON.parse(res.data)
               newItem[index] = {
                 work_item_title: "",
+                work_item_des: "",
                 num: index,
                 work_item_img: params.api + '/' + r.data.fileUrl,
                 w: r.data.w,
@@ -312,7 +332,8 @@ Page({
     wx.request({
       url: params.api + '/v1/category/get-categorylist',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       method: 'post',
       success: function (res) {
@@ -328,10 +349,8 @@ Page({
     wx.request({
       url: params.api + '/v1/album/get-albums',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        user_id: 1
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       method: 'post',
       success: function (res) {
@@ -342,10 +361,39 @@ Page({
       }
     })
   },
+  getWork: function(work_id){
+    var that = this
+
+    wx.request({
+      url: params.api + '/v1/work/get-work',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
+      },
+      data: {
+        work_id
+      },
+      method: 'post',
+      success: function (res) {
+        that.setData({
+          work: res.data.data,
+          category: {
+            category_id: res.data.data.category_id,
+            category_name: res.data.data.category_name
+          },
+          album: {
+            album_id: res.data.data.album_id,
+            album_title: res.data.data.album_title
+          },
+        })
+
+      }
+    })
+  },
   bindPickerChange: function (e) {
     var that = this
     that.data.category = that.data.prang[e.detail.value]
-    console.log(e.detail.value)
+    
     this.setData({
       category: that.data.category
     })
@@ -360,6 +408,15 @@ Page({
   },
   onLoad: function (options) {
     var that = this
+
+    if (options.work_id) {
+      that.getWork(options.work_id)
+    } else {
+      that.setData({
+        isEdit: false
+      })
+    }
+    
     that.getCategorys()
     that.getAlbums()
   }

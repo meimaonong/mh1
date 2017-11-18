@@ -1,17 +1,18 @@
 // pages/my/my.js
 const params = require('../../utils/params')
+const app = getApp()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     wait_num: 0,
     sell_num: 0,
     buy_num: 0,
     msg_num: 0,
     album_num: 0,
+    userInfo: {
+      avatarUrl: '',
+      nickName: '',
+    }
   },
   getNum: function() {
     var that = this
@@ -19,10 +20,8 @@ Page({
       url: params.api + '/v1/data/get-my-data',
       method: 'post',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        user_id: 1
+        'content-type': 'application/x-www-form-urlencoded',
+        'access-token': app.globalData.sessionId
       },
       success: function (res) {
         var r = res.data.data
@@ -37,12 +36,25 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
     var that = this
     that.getNum()
+
+    if (app.globalData.userInfo) {
+      that.setData({
+        userInfo: app.globalData.userInfo
+      })
+    } else {
+      that.setData({
+        userInfo: {
+          avatarUrl: 'http://svn.meimaonong.com/t/header.png',
+          nickName: '未获取昵称',
+        }
+      })
+    }
+    
+    console.log(app.globalData.userInfo)
   },
 
 })

@@ -32,6 +32,7 @@
 .l_i{
   width: 155rpx;
   height: 155rpx;
+  background: #eee;
 }
 .l_r{
   flex: 1;
