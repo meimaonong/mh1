@@ -3,13 +3,10 @@ const params = require('../../utils/params')
 const app = getApp()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     index: -1,
     img: '',
+    height: '',
   },
   del: function (e) {
     var that = this
@@ -24,7 +21,7 @@ Page({
           var work = prevPage.data.work
           work.workItems.splice(that.data.index, 1)
           prevPage.setData({
-            work: work
+            work
           })
           wx.navigateBack()
         } else if (res.cancel) {
@@ -60,7 +57,14 @@ Page({
             var img_url = params.api + '/' + r.data.fileUrl
 
             work['workItems'][that.data.index]['work_item_img'] = img_url
+            work['workItems'][that.data.index]['w'] = r.data.imageWidth
+            work['workItems'][that.data.index]['h'] = r.data.imageHeight
+            work['workItems'][that.data.index]['ratio'] = r.data.ratio
+
+            var height = 'height:' + parseInt(750 / parseFloat(ratio)) + 'rpx'
+
             that.setData({
+              height,
               img: img_url
             })
             prevPage.setData({
@@ -73,15 +77,17 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   onLoad: function (options) {
 
     var that = this
+    console.log(options)
+    var ratio = options.ratio
+    var height = 'height:' + parseInt(750 / parseFloat(ratio)) + 'rpx'
     that.setData({
-      index: that.options.index,
-      img: that.options.img,
+      index: options.index,
+      img: options.img,
+      height: height
     })
 
   }

@@ -20,7 +20,7 @@
 
 <view wx:for="{{work.workItems}}" wx:key="item.work_item_img" class='op_box_w'>
 <view class='op_box'>
-<image mode='aspectFill' data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.work_item_img }}' bindtap='changeimg'></image>
+<image mode='aspectFill' data-ratio="{{item.ratio}}" data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.work_item_img }}' bindtap='changeimg'></image>
 <view class='txt' bindtap='editTxt' data-index="{{ index }}" data-txt="{{ item.work_item_des }}" style="{{ item.work_item_des ? '' : 'color:#ccc;' }}">{{ item.work_item_des ? item.work_item_des : '可输入文字' }}</view>
 <view class='op'>
 <view class="top" bindtap='m_up' data-index="{{ index }}" wx:if="{{ index!==0 }}">

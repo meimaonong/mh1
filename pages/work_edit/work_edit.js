@@ -70,19 +70,46 @@ Page({
       return false
     }
 
+    return true
+
   },
   save: function() {
     var that = this
 
     if (that.valid()) {
-      // wx.redirectTo({
-      //   url: '/pages/work_p/work_p',
-      // })
+      
       wx.showLoading({
         title: '保存中',
       })
 
+
+      that.data.work.work_price = that.data.work_price
+      that.data.work.category_id = that.data.category.category_id
+      that.data.work.album_id = that.data.album.album_id
       
+      
+      wx.request({
+        url: params.api + '/v1/work/save-work',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'access-token': app.globalData.sessionId
+        },
+        data: {
+          work: JSON.stringify(that.data.work)
+        },
+        method: 'post',
+        success: function (res) {
+          wx.hideLoading()
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.redirectTo({
+            url: '/pages/work_p/work_p?work_id='+res.data.data,
+          })
+        }
+      })
     }
   },
   pre: function() {
@@ -210,7 +237,7 @@ Page({
     that.data.work.workItems.map(function (item) {
       tarr.push(item.work_item_img)
     })
-    //console.log(that.data.work.workItems)
+
     var selIndex = tarr.indexOf(img)
     if (selIndex == -1) {
       tarr.unshift(img)
@@ -223,8 +250,9 @@ Page({
   changeimg: function (e) {
     const img = e.currentTarget.dataset.img
     const index = e.currentTarget.dataset.index
+    const ratio = e.currentTarget.dataset.ratio
     wx.navigateTo({
-      url: '/pages/process2/process2?index=' + index + '&img=' + img
+      url: '/pages/process2/process2?index=' + index + '&img=' + img + '&ratio=' + ratio
     })
   },
   editTxt: function (e) {
@@ -304,8 +332,8 @@ Page({
                 work_item_des: "",
                 num: index,
                 work_item_img: params.api + '/' + r.data.fileUrl,
-                w: r.data.w,
-                h: r.data.h,
+                w: r.data.imageWidth,
+                h: r.data.imageHeight,
                 ratio: r.data.ratio,
               }
               num++
@@ -377,6 +405,7 @@ Page({
       success: function (res) {
         that.setData({
           work: res.data.data,
+          work_price: res.data.data.work_price,
           category: {
             category_id: res.data.data.category_id,
             category_name: res.data.data.category_name
