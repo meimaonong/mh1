@@ -25,6 +25,8 @@ Page({
   },
   onLoad: function (options) {
     var that = this
-    that.getList()
+    setTimeout(function () {
+      that.getList()
+    }, 2000)
   }
 })
