@@ -1,0 +1,28 @@
+<!--pages/adress_edit/adress_edit.wxml-->
+<view class="container">
+
+<form bindsubmit="formSubmit">
+
+<view class="w">
+
+<view class="b">
+<label>收货人：</label>
+<input value='{{address.receiver}}' name="receiver"></input>
+</view>
+<view class="b">
+<label>手机号：</label>
+<input value='{{address.receiver_tel}}' name="receiver_tel"></input>
+</view>
+<view class="b">
+<label>邮寄地址：</label>
+<textarea auto-height value='{{address.address_detail}}' name="address_detail" />
+</view>
+
+</view>
+
+ <button class="save" formType="submit"> 保存 </button>
+<button class="back" bindtap='back'> 返回 </button> 
+
+</form>
+
+</view>

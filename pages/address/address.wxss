@@ -1,22 +1,22 @@
 /* pages/adress/adress.wxss */
+.container{
+  padding-bottom: 100rpx;
+}
 .b_h{
   height: 94rpx;
   line-height: 94rpx;
   background: #fff;
+  padding: 0 50rpx;
   border-top: 1rpx solid #efefef;
   border-bottom: 1rpx solid #efefef;
   overflow: hidden;
 }
-.b_h text{
-  display: block;
-  padding: 0 50rpx;
-  color: #576b95;
-  font-size: 30rpx;
+.e{
+  color: #1086dd;
   float: right;
+  font-size: 30rpx;
 }
-.b_h text.l_cancel{
-  display: none;
-}
+
 .b{
   background: #fff;
   margin-bottom: 30rpx;
@@ -45,16 +45,34 @@
   flex: 1;
   padding-left: 20rpx;
 }
-.op{
-  overflow: hidden;
-  padding: 20rpx 0 0 28rpx;
+.i_op{
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  height: 70rpx;
+  margin-top: 30rpx;
+  text-align: center;
 }
-.l_btn{
-  float: left;
-  color: #353535;
-  width:200rpx;
-  margin:0 60rpx 0 0;
-  line-height: 55rpx;
-  height: 55rpx;
-  font-size: 28rpx;
+.del,.edit{
+  flex: 1;
+  line-height: 68rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #333;
+  font-size: 30rpx;
+}
+.del{background: #fff;}
+.edit{background: #333;color: #fff;}
+
+.add_address{
+  background: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
 }

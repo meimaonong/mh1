@@ -1,41 +1,28 @@
 <!--pages/adress/adress.wxml-->
-<view class="container">
+<view class="container" wx:if="{{list}}">
 
 <view class="b_h">
-<text class="l_edit">编辑</text>
-<text class="l_cancel">取消</text>
+<view class='e' hidden='{{isEdit ? true : false}}' bindtap='toggle'>编辑</view>
+<view class='e' hidden='{{isEdit ? false : true}}' bindtap='toggle'>取消</view>
 </view>
 
-<view class="b">
-<view class="b_t">周立新</view>
+<view class="b" wx:for="{{list}}" wx:key="item.address_id">
+<view class="b_t">{{item.receiver}}</view>
 <view class="b_p">
 <image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
-<view class="b_p_d">15188883323</view>
+<view class="b_p_d">{{item.receiver_tel}}</view>
 </view>
 <view class="b_a">
 <image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
-<view class="b_p_d">江苏省南京市鼓楼区中央路238号</view>
+<view class="b_p_d">{{item.address_detail}}</view>
 </view>
-<view class="op" style="display:none;">
-<button type="default" class="l_btn">删除</button>
-<button type="default" class="l_btn">编辑</button>
-</view>
-</view>
-
-<view class="b">
-<view class="b_t">周立新</view>
-<view class="b_p">
-<image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
-<view class="b_p_d">15188883323</view>
-</view>
-<view class="b_a">
-<image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
-<view class="b_p_d">江苏省南京市鼓楼区中央路238号江苏省南京市鼓楼区中央路238号</view>
-</view>
-<view class="op">
-<button type="default" class="l_btn">删除</button>
-<button type="default" class="l_btn">编辑</button>
+<view class='i_op' hidden='{{isEdit ? false : true}}'>
+<view class='del' data-id="{{item.address_id}}" data-index="{{index}}" catchtap='del'>删除</view>
+<view class='edit' data-id="{{item.address_id}}" data-index="{{index}}" catchtap='edit'>修改</view>
 </view>
 </view>
 
+
 </view>
+
+<navigator class='add_address' url='/pages/address_edit/address_edit'>添加</navigator>

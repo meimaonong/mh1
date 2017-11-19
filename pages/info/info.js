@@ -5,19 +5,15 @@ const app = getApp()
 Page({
 
   data: {
-    album: {
-      album_id: '',
-      album_title: '',
-      album_des: '',
-    }
+    user: {
+      
+    },
+    isEdit: false
   },
-  getAlbum: function (album_id) {
+  getUser: function () {
     var that = this
     wx.request({
-      url: params.api + '/v1/album/get-album',
-      data: {
-        album_id
-      },
+      url: params.api + '/v1/user/get-user',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId
@@ -25,19 +21,31 @@ Page({
       method: 'post',
       success: function (res) {
         that.setData({
-          album: res.data.data
+          user: res.data.data
         })
       }
     })
   },
+  edit: function(e){
+    var that = this
+    that.setData({
+      isEdit: true
+    })
+  },
+  cancel: function (e) {
+    var that = this
+    that.setData({
+      isEdit: false
+    })
+  },
   formSubmit: function (e) {
     var that = this
-    var album = Object.assign(that.data.album, e.detail.value)
+    var user = Object.assign(that.data.user, e.detail.value)
 
     wx.request({
-      url: params.api + '/v1/album/save-album',
+      url: params.api + '/v1/user/save-user',
       data: {
-        ...album
+        ...user
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -46,23 +54,21 @@ Page({
       method: 'post',
       success: function (res) {
         wx.showToast({
-          title: '成功',
+          title: '保存成功',
+          mask: true,
           icon: 'success',
           duration: 2000
         })
-        wx.navigateBack()
+        setTimeout(function(){
+          wx.navigateBack()
+        }, 2000)
       }
     })
-  },
-  back: function () {
-    wx.navigateBack()
   },
   onLoad: function (options) {
 
     var that = this
-    if (options.album_id) {
-      that.getAlbum(options.album_id)
-    }
+    that.getUser()
 
   }
 
