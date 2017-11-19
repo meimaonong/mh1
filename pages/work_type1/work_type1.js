@@ -14,9 +14,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId
       },
-      data: {
-        user_id: 1
-      },
       method: 'post',
       success: function (res) {
         var r = res.data.data

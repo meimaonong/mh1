@@ -134,7 +134,7 @@ Page({
 
     that.data.work = {
       work_id: '',
-      work_title: '',
+      work_title: '测试标题',
       work_img: '',
       w: '',
       h: '',
@@ -180,8 +180,8 @@ Page({
               }
               if (index === 0) {
                 that.data.work.work_img = params.api + '/' + r.data.fileUrl
-                that.data.work.w = r.data.w
-                that.data.work.h = r.data.h
+                that.data.work.w = r.data.imageWidth
+                that.data.work.h = r.data.imageHeight
                 that.data.work.ratio = r.data.ratio
               }
               num++

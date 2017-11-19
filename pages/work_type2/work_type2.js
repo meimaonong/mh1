@@ -35,8 +35,6 @@ Page({
   },
   onLoad: function (options) {
     var that = this
-    setTimeout(function(){
-      that.getList()
-    },2000)
+    that.getList()
   }
 })
