@@ -1,8 +1,15 @@
 <!--pages/album/album.wxml-->
 <view class="container">
-
+<view class="l_h" wx:if="{{albums}}">
+<view class="l_txt">我的专辑({{albums.length}})</view>
+<view class='e' hidden='{{isEdit ? true : false}}' bindtap='toggle'>编辑</view>
+<view class='e' hidden='{{isEdit ? false : true}}' bindtap='toggle'>取消</view>
+</view>
 <view class="l_box" wx:if="{{albums}}">
-<navigator url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w" wx:for="{{albums}}" wx:key="item.album_id">
+
+<view class='nw'  wx:for="{{albums}}" wx:key="item.album_id">
+
+<navigator url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w">
 <image src="{{item.cover}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>
@@ -10,6 +17,14 @@
 <view class="l_b">共计<text> {{item.num}} </text>幅作品</view>
 </view>
 </navigator>
+<view class='i_op' hidden='{{isEdit ? false : true}}'>
+<view class='del' data-id="{{item.album_id}}" data-num="{{item.num}}" data-index="{{index}}" catchtap='del'>删除</view>
+<view class='edit' data-id="{{item.album_id}}" data-index="{{index}}" catchtap='edit'>修改</view>
+</view>
 </view>
 
 </view>
+
+</view>
+
+<navigator class='add_album' url='/pages/album_edit/album_edit'>添加</navigator>

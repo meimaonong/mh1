@@ -18,6 +18,8 @@
 </view>
 </navigator>
 
-
 </view>
+
+<view class='no' wx:if="{{!list}}">暂无作品</view>
+
 </view>

@@ -3,6 +3,12 @@ page{
   background: #fff;
   padding-top: 110rpx;
 }
+.no {
+  text-align: center;
+  padding: 100rpx;
+  font-size: 35rpx;
+  color: #aaa;
+}
 .head{
   display: flex;
   position: fixed;

@@ -50,7 +50,23 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        var pages = getCurrentPages();
+        var prevPage = pages[pages.length - 2];  //上一个页面
+        var albums = prevPage.data.albums
+        if (album['album_id']) {
+          albums.map(function(item){
+            if (item.album_id == album['album_id']) {
+              item = Object.assign(item, res.data.data)
+            }
+          })
+        } else {
+          albums.push({...res.data.data,num:0})
+        }
+        prevPage.setData({
+          albums
+        })
         wx.navigateBack()
+
       }
     })
   },

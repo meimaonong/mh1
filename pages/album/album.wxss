@@ -1,2 +1,46 @@
 /* pages/album/album.wxss */
-@import "../../wxss/list.wxss"
+@import "../../wxss/list.wxss";
+.container{
+  padding-bottom: 100rpx;
+}
+.e{
+  color: #1086dd;
+  font-size: 30rpx;
+}
+.nw{
+  background: #fff;
+  margin-bottom: 50rpx;
+}
+
+.i_op{
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  height: 120rpx;
+  padding: 0 50rpx 50rpx;
+  margin: -50rpx 0 0 0;
+  text-align: center;
+}
+.del,.edit{
+  flex: 1;
+  line-height: 68rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #333;
+  font-size: 30rpx;
+}
+.del{background: #fff;}
+.edit{background: #333;color: #fff;}
+
+.add_album{
+  background: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
