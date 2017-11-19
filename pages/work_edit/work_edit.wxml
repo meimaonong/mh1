@@ -1,9 +1,7 @@
-<!--pages/work_edit/work_edit.wxml-->
-
 <block class='new' wx:if="{{!work && !isEdit}}">
 <view class='add_new' bindtap='newPic'>
 <view>+</view>
-<text>添加图片</text>
+<text>添加作品图</text>
 </view>
 </block>
 
