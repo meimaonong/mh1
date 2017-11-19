@@ -10,7 +10,7 @@
 <view class="w" wx:if="{{list}}">
 
 <navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" wx:for="{{list}}" wx:key="item.work_id">
-<image src="{{item.work_img}}" lazy-load='true'/>
+<image src="{{item.work_img}}" mode="aspectFill" lazy-load='true'/>
 <view class="txt"><text>{{item.work_title}}</text></view>
 <view class='op' hidden='{{isEdit ? false : true}}'>
 <view class='del' data-id="{{item.work_id}}" data-index="{{index}}" catchtap='del'>删除</view>
@@ -20,6 +20,6 @@
 
 </view>
 
-<view class='no' wx:if="{{!list}}">暂无作品</view>
+<view class='no' wx:if="{{list&&list.length==0}}">暂无作品</view>
 
 </view>

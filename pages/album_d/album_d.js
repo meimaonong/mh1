@@ -6,7 +6,7 @@ Page({
   data: {
     list: null,
     isEdit: false,
-    album_title: ''
+    album_title: '',
   },
   toggle: function() {
     var that = this

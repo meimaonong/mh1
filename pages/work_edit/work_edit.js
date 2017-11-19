@@ -20,8 +20,6 @@ Page({
     categorys: [],
     albums: [],
 
-    work_price: '',
-
     tip: false,
     tip_txt: '',
     time: null,
@@ -41,7 +39,7 @@ Page({
       return false
     }
 
-    var work_price = that.data.work_price
+    var work_price = that.data.work.work_price
   
     if (!work_price || work_price%1 != 0) {
       wx.showToast({
@@ -82,8 +80,6 @@ Page({
         title: '保存中',
       })
 
-
-      that.data.work.work_price = that.data.work_price
       that.data.work.category_id = that.data.category.category_id
       that.data.work.album_id = that.data.album.album_id
       
@@ -120,8 +116,9 @@ Page({
   },
   priceinput: function(e) {
     var work_price = e.detail.value
+    this.data.work.work_price = work_price
     this.setData({
-      work_price
+      work
     })
   },
   zj_add: function(e) {
@@ -134,7 +131,7 @@ Page({
 
     that.data.work = {
       work_id: '',
-      work_title: '测试标题',
+      work_title: '',
       work_img: '',
       w: '',
       h: '',
@@ -406,7 +403,6 @@ Page({
       success: function (res) {
         that.setData({
           work: res.data.data,
-          work_price: res.data.data.work_price,
           category: {
             category_id: res.data.data.category_id,
             category_name: res.data.data.category_name

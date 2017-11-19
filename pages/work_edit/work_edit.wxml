@@ -51,12 +51,12 @@
 <view class='p3'>
 <view class="mc mcfirst">
 <text>作品价格</text>
-<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work.work_price}}"></input>
+<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
 </view>
 </view>
 
 <view class="p3">
-<picker bindchange="bindPickerChange" value="{{index1}}" range="{{categorys}}" range-key="category_name">
+<picker bindchange="bindPickerChange" range="{{categorys}}" range-key="category_name">
 <view class="mc">
 <text>所属分类</text>
 <text class="choose" wx:if="{{category.category_name}}">{{category.category_name}}</text>
@@ -64,7 +64,7 @@
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
 </picker>
-<picker bindchange="bindPickerChange2" value="0" range="{{albums}}" range-key="album_title">
+<picker bindchange="bindPickerChange2" range="{{albums}}" range-key="album_title">
 <view class="mc">
 <text>所属专辑</text>
 <text class="choose" wx:if="{{album.album_title}}">{{album.album_title}}</text>
