@@ -1,1 +1,4 @@
-@import "../../wxss/list.wxss"
+@import "../../wxss/list.wxss";
+.container{
+  padding-bottom: 100rpx;
+}

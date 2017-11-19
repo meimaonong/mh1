@@ -29,6 +29,7 @@ Page({
       },
       success: function (res) {
         var data = res.data.data
+        
         data.workItems.map(function (item) {
           that.data.pics.push(item.work_item_img)
           item['style'] = 'height:' + (690 / parseFloat(item.ratio)) + 'rpx'

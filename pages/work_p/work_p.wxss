@@ -56,9 +56,10 @@ page{
 .op_item2{
   background: #333;
   font-size: 32rpx;
+  flex:1;
   color: #fff;
-  padding: 0 50rpx;
   height: 100%;
+  text-align: center;
   line-height: 120rpx;
 }
 

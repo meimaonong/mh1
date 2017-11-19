@@ -1,0 +1,3 @@
+<view class='container'>
+<input bindconfirm='confirm' value='{{val}}' focus="true" />
+</view>

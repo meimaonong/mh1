@@ -17,8 +17,8 @@ Page({
       album_title: '',
     },
     s_index: -1,
-    prang: [],
-    prang2: [],
+    categorys: [],
+    albums: [],
 
     work_price: '',
 
@@ -188,7 +188,8 @@ Page({
               if (num == tempFilePaths.length) {
                 that.data.work.workItems = newItem
                 that.setData({
-                  work: that.data.work
+                  work: that.data.work,
+                  isEdit: true
                 })
                 wx.hideLoading()
               }
@@ -366,7 +367,7 @@ Page({
       method: 'post',
       success: function (res) {
         that.setData({
-          prang: res.data.data
+          categorys: res.data.data
         })
       }
     })
@@ -383,7 +384,7 @@ Page({
       method: 'post',
       success: function (res) {
         that.setData({
-          prang2: res.data.data
+          albums: res.data.data
         })
 
       }
@@ -421,7 +422,7 @@ Page({
   },
   bindPickerChange: function (e) {
     var that = this
-    that.data.category = that.data.prang[e.detail.value]
+    that.data.category = that.data.categorys[e.detail.value]
     
     this.setData({
       category: that.data.category
@@ -429,7 +430,7 @@ Page({
   },
   bindPickerChange2: function (e) {
     var that = this
-    that.data.album = that.data.prang2[e.detail.value]
+    that.data.album = that.data.albums[e.detail.value]
     console.log(e.detail.value)
     this.setData({
       album: that.data.album

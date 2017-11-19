@@ -13,18 +13,43 @@
 
 
 <view class="op">
+<block wx:if="{{work.work_buy_status==0 && (work.work_check_status==0||work.work_check_status==2)}}">
 <view class="op_item2">
-<text>状态：</text>未提审
+未提审
+</view>
+<view class="op_item" data-id="{{work.work_id}}">
+<image src='/public/img/icon/edit.png'/>
+<text>编辑</text>
 </view>
 <view class="op_item" data-id="{{work.work_id}}">
 <image src='/public/img/icon/edit.png'/>
 <text>提审</text>
 </view>
-<view class="op_item" data-id="{{work.work_id}}">
+<!-- <view class="op_item" data-id="{{work.work_id}}">
 <image src='/public/img/icon/share.png'/>
-<text>分享</text>
+<text>分享</text> 
 </view>
-
+-->
+</block>
+<block wx:if="{{work.work_buy_status==0 && work.work_check_status==1}}">
+<view class="op_item2" style='flex:1'>
+待审核
+</view>
+</block>
+<block wx:if="{{work.work_buy_status==0 && work.work_check_status==3}}">
+<view class="op_item2">
+已审核
+</view>
+ <view class="op_item" data-id="{{work.work_id}}">
+<image src='/public/img/icon/share.png'/>
+<text>分享</text> 
+</view>
+</block>
+<block wx:if="{{work.work_buy_status==1}}">
+<view class="op_item2">
+已售
+</view>
+</block>
 </view>
 
 </view>

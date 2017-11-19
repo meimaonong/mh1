@@ -3,7 +3,17 @@ const app = getApp()
 
 Page({
   data: {
-    list: null
+    list: null,
+    s_index: -1,
+  },
+  edit_express: function(e) {
+    var that = this
+    var index = e.currentTarget.dataset.index
+    var txt = e.currentTarget.dataset.txt
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/express_edit/express_edit?index=${index}&id=${id}&txt=${txt}`,
+    })
   },
   getList() {
     var that = this
@@ -25,6 +35,8 @@ Page({
   },
   onLoad: function (options) {
     var that = this
-    that.getList()
+    setTimeout(function(){
+      that.getList()
+    },2000)
   }
 })

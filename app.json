@@ -1,13 +1,14 @@
 {
   "pages":[
+    "pages/work_type2/work_type2",
     "pages/home/home",
     "pages/my/my",
-    
+    "pages/express_edit/express_edit",
     "pages/info/info",
     "pages/message/message",
     "pages/work_edit/work_edit",
     "pages/work_type1/work_type1",
-    "pages/work_type2/work_type2",
+    
     "pages/work_type3/work_type3",
     "pages/process/process",
     "pages/process2/process2",

@@ -2,7 +2,7 @@
 .p1{
   position: relative;
   width: 100%;
-  height: 460rpx;
+  height: 430rpx;
   text-align: center;
   background-color: #fff;
 }
@@ -12,15 +12,15 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 460rpx;
+  height: 430rpx;
 }
 .h{
   position: relative;
   z-index: 6;
-  width: 175rpx;
-  height: 175rpx;
+  width: 150rpx;
+  height: 150rpx;
   border-radius: 50%;
-  margin:50rpx auto 0 auto;
+  margin:35rpx auto 0 auto;
 }
 .n{
   position: relative;

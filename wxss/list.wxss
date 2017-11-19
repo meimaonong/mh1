@@ -89,3 +89,29 @@
   font-size: 35rpx;
   color: #aaa;
 }
+.address,.express{
+  background: #fff;
+  color: #aaa;
+  padding: 30rpx 50rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  border-top: 1rpx solid #efefef;
+  position: relative;
+}
+.express{margin-bottom: 30rpx;}
+.address .c,.express .c{
+  color: #333;
+}
+.address{
+  margin-top: -30rpx;
+}
+.address text:first-child{margin-right:30rpx;}
+
+.c_edit{
+  position: absolute;
+  right:50rpx;
+  top:30rpx;
+  color: #0092ff;
+  font-size: 32rpx;
+
+}

@@ -1,0 +1,12 @@
+page{
+  background: #eee;
+}
+input{
+  font-size: 32rpx;
+  padding:30rpx;
+  height: 100rpx;
+  line-height: 40rpx;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}

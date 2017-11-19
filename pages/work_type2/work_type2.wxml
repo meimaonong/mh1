@@ -8,7 +8,8 @@
 
 <view class="l_box">
 
-<navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w" wx:for="{{list.work_list}}" wx:key="item.work_id">
+<block wx:for="{{list.work_list}}" wx:key="item.work_id">
+<navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w">
 <image src="{{item.work_img}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work_title}}</view>
@@ -16,6 +17,42 @@
 <view class="l_s_b">¥{{item.work_price}}</view>
 </view>
 </navigator>
+<view class='address'>
+<view>收 件 人：<text class='c'>{{item.receiver}}</text>手机号：<text class='c'>{{item.receiver_tel}}</text></view>
+<view>邮寄地址：<text class='c'>{{item.address_detail}}</text></view>
+</view>
+<view class='express'>
+快递信息：
+
+<text hidden='{{item.express?false:true}}' style='color:#333;'>{{item.express}}</text>
+<text hidden='{{item.express?true:false}}' style='color:#ccc;'>如：顺丰 1233223</text>
+<view class='c_edit' data-txt="{{item.express}}" data-index="{{index}}" data-id="{{item.sell_record_id}}" bindtap='edit_express'>编辑</view>
+
+</view>
+</block>
+
+<block wx:for="{{list.work_list}}" wx:key="item.work_id">
+<navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w">
+<image src="{{item.work_img}}" class="l_i"/>
+<view class="l_r">
+<view class="l_t">{{item.work_title}}</view>
+<view class="l_s_d">出售价格</view>
+<view class="l_s_b">¥{{item.work_price}}</view>
+</view>
+</navigator>
+<view class='address'>
+<view>收 件 人：<text class='c'>{{item.receiver}}</text>手机号：<text class='c'>{{item.receiver_tel}}</text></view>
+<view>邮寄地址：<text class='c'>{{item.address_detail}}</text></view>
+</view>
+<view class='express'>
+快递信息：
+
+<text hidden='{{item.express?false:true}}' style='color:#333;'>{{item.express}}</text>
+<text hidden='{{item.express?true:false}}' style='color:#ccc;'>如：顺丰 1233223</text>
+<view class='c_edit' data-txt="{{item.express}}" data-index="{{index}}" data-id="{{item.sell_record_id}}" bindtap='edit_express'>编辑</view>
+
+</view>
+</block>
 
 <view class='no' wx-if="{{!list.count}}">暂无已售作品</view>
 

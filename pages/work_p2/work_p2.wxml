@@ -12,19 +12,4 @@
 </view>
 
 
-<view class="op">
-<view class="op_item2">
-<text>状态：</text>未提审
-</view>
-<view class="op_item" data-id="{{work.work_id}}">
-<image src='/public/img/icon/edit.png'/>
-<text>提审</text>
-</view>
-<view class="op_item" data-id="{{work.work_id}}">
-<image src='/public/img/icon/share.png'/>
-<text>分享</text>
-</view>
-
-</view>
-
 </view>
