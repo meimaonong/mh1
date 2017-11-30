@@ -1,6 +1,7 @@
 // pages/home/home.js
 const app = getApp()
 const params = require('../../utils/params')
+const util = require('../../utils/util.js')
 
 Page({
 
@@ -16,7 +17,7 @@ Page({
       url: params.api + '/v1/data/get-home-data', //仅为示例，并非真实的接口地址
       method: 'post',
       success: function (res) {
-
+        
         that.setData({
           baseInfo: res.data.data
         })

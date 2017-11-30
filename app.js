@@ -1,4 +1,5 @@
 const params = require('utils/params')
+const util = require('utils/util.js')
 
 //app.js
 App({
@@ -33,6 +34,7 @@ App({
             },
             success: function (res) {
               that.globalData.sessionId = res.data.data
+              util.saveUserInfo(that)
               wx.hideLoading()
             }
           })
@@ -52,6 +54,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              console.log(res)
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况

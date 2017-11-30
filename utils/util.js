@@ -14,6 +14,26 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const params = require('params')
+
+const saveUserInfo = (app) => {
+  wx.request({
+    url: params.api + '/v1/user/save-user-info',
+    method: 'post',
+    header: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'access-token': app.globalData.sessionId
+    },
+    data: {
+      ...app.globalData.userInfo
+    },
+    success: function (res) {
+      
+    }
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime,
+  saveUserInfo,
 }
