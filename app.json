@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/tpl/tpl",
     "pages/home/home",
     "pages/work_type3/work_type3",
     "pages/work_type2/work_type2",
@@ -53,7 +54,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#333",
-    "navigationBarTitleText": "寻画",
+    "navigationBarTitleText": "XX",
     "navigationBarTextStyle":"light"
   }
 }

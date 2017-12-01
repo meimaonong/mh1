@@ -1,0 +1,5 @@
+<!--pages/tpl/tpl.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+
+<button formType="submit">Submit</button>
+</form>
