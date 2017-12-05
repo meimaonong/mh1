@@ -14,7 +14,7 @@
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>
 <view class="l_d">{{item.album_des}}</view>
-<view class="l_b">共计<text> {{item.num}} </text>幅作品</view>
+<view class="l_b" hidden='item.num==0'>共计<text> {{item.num}} </text>幅作品</view>
 </view>
 </navigator>
 <view class='i_op' hidden='{{isEdit ? false : true}}'>
@@ -24,6 +24,8 @@
 </view>
 
 </view>
+
+<view class='no' wx:if="{{albums&&albums.length==0}}">暂无专辑</view>
 
 </view>
 

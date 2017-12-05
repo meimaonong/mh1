@@ -1,2 +1,8 @@
 
 @import "../../wxss/list.wxss"
+.no {
+  text-align: center;
+  padding: 100rpx;
+  font-size: 35rpx;
+  color: #aaa;
+}

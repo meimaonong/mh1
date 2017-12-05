@@ -3,6 +3,12 @@
 .container{
   padding-bottom: 100rpx;
 }
+.no {
+  text-align: center;
+  padding: 100rpx;
+  font-size: 35rpx;
+  color: #aaa;
+}
 .e{
   color: #1086dd;
   font-size: 30rpx;

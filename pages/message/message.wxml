@@ -9,8 +9,8 @@
 
 <block wx:for="{{list}}" wx:key="item.message_id">
 
-<navigator class="l_w" url="/pages/work_type2/work_type2" wx:if="{{item.type==1}}" open-type='redirect'>
-<image src="{{item.work.work_img}}" class="l_i"/>
+<navigator class="l_w" wx:if="{{item.type==1}}" open-type='redirect'>
+<image src="{{imgBase+item.work.img.img_url+item.work.img.img_name}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work.work_title}}</view>
 <view class="l_d2">作品已被购买，发货后请到<text style='color:#f00;'> “已出售作品” </text>添加快递信息</view>
@@ -47,5 +47,7 @@
 </block>
 
 </view>
+
+<view class='no' wx:if="{{list&&list.length==0}}">暂无专辑</view>
 
 </view>

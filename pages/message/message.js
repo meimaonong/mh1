@@ -1,14 +1,14 @@
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
   data: {
-    list: []
+    list: null,
+    imgBase: app.globalData.params.imgBase,
   },
   getMessages: function(){
     var that = this
     wx.request({
-      url: params.api + '/v1/message/get-messagelist',
+      url: app.globalData.params.api + '/v1/message/get-messagelist',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId
@@ -18,6 +18,7 @@ Page({
         that.setData({
           list: res.data.data
         })
+        console.log(that.data.list)
       }
     })
   },
