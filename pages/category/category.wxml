@@ -2,7 +2,7 @@
 <view class="container">
   <view class="w">
       <navigator wx:for="{{list}}" wx:for-item="item" wx:key="{{item.category_id}}" url="/pages/category_list/category_list?category_id={{item.category_id}}&&category_name={{item.category_name}}">
-    <image mode="aspectFill" src="{{item.category_img}}"/>
+    <image mode="aspectFill" src="{{imgBase+item.img.img_url+item.img.img_name}}"/>
     <text>{{item.category_name}}</text>
     </navigator> 
   </view>

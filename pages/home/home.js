@@ -1,6 +1,5 @@
 // pages/home/home.js
 const app = getApp()
-const params = require('../../utils/params')
 const util = require('../../utils/util.js')
 
 Page({
@@ -9,12 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseInfo: null
+    baseInfo: null,
+    imgBase: app.globalData.params.imgBase
   },
   getHomeData: function() {
     var that = this
     wx.request({
-      url: params.api + '/v1/data/get-home-data', //仅为示例，并非真实的接口地址
+      url: app.globalData.params.api + '/v1/data/get-home-data', //仅为示例，并非真实的接口地址
       method: 'post',
       success: function (res) {
         

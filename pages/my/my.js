@@ -1,5 +1,4 @@
 // pages/my/my.js
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
@@ -17,7 +16,7 @@ Page({
   getNum: function() {
     var that = this
     wx.request({
-      url: params.api + '/v1/data/get-my-data',
+      url: app.globalData.params.api + '/v1/data/get-my-data',
       method: 'post',
       header: {
         'content-type': 'application/x-www-form-urlencoded',

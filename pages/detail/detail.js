@@ -1,16 +1,14 @@
-// pages/detail/detail.js
-
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
   data: {
-    work: null
+    work: null,
+    imgBase: app.globalData.params.imgBase
   },
   getWork: function(work_id){
     var that = this
     wx.request({
-      url: params.api + '/v1/work/get-work',
+      url: app.globalData.params.api + '/v1/work/get-work',
       method: 'post',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -22,7 +20,7 @@ Page({
       success: function (res) {
         var data = res.data.data
         data.workItems.map(function(item){
-          item['style'] = 'height:' + (690 / parseFloat(item.ratio)) + 'rpx'
+          item['style'] = 'height:' + (690 / parseFloat(item.img.img_ratio)) + 'rpx'
         })
         console.log(data)
         that.setData({

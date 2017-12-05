@@ -1,5 +1,3 @@
-// pages/album_d/album_d.js
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
@@ -7,6 +5,8 @@ Page({
     list: null,
     isEdit: false,
     album_title: '',
+
+    imgBase: app.globalData.params.imgBase,
   },
   toggle: function() {
     var that = this
@@ -25,7 +25,7 @@ Page({
         if (res.confirm) {
 
           wx.request({
-            url: params.api + '/v1/work/del-work',
+            url: app.globalData.params.api + '/v1/work/del-work',
             header: {
               'content-type': 'application/x-www-form-urlencoded',
               'access-token': app.globalData.sessionId
@@ -61,7 +61,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/work/get-worklist-by-album',
+      url: app.globalData.params.api + '/v1/work/get-worklist-by-album',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId

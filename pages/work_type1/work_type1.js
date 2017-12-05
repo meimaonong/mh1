@@ -1,15 +1,15 @@
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
   data: {
-    list: null
+    list: null,
+    imgBase: app.globalData.params.imgBase
   },
   getList() {
     var that = this
 
     wx.request({
-      url: params.api + '/v1/work/get-wait-works',
+      url: app.globalData.params.api + '/v1/work/get-wait-works',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId

@@ -1,16 +1,17 @@
 // pages/category/category.js
-const params = require('../../utils/params')
+const app = getApp()
 
 Page({
   data: {
     list: [],
+    imgBase: app.globalData.params.imgBase
   },
   onLoad: function (options) {
 
     var that = this
 
     wx.request({
-      url: params.api + '/v1/category/get-categorylist',
+      url: app.globalData.params.api + '/v1/category/get-categorylist',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -19,7 +20,6 @@ Page({
         that.setData({
           list: res.data.data
         })
-        console.log(res.data)
       }
     })
   },

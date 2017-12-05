@@ -4,7 +4,7 @@
   <view class="t">{{work.work_title}}</view>
   <!-- <view class="d">芳烃产品描述芳烃产品描述，芳烃产品描述芳烃产品描述芳烃产品描述。芳烃产品描述芳烃产品描述芳烃产品描述芳烃产品描述，芳烃产品描述。</view> -->
   <view class="item" wx:for="{{work.workItems}}" wx:key="item.work_item_id">
-    <image lazy-load='true' src="{{item.work_item_img}}" style="{{item.style}}"/>
+    <image lazy-load='true' src="{{imgBase+item.img.img_url+item.img.img_name}}" style="{{item.style}}"/>
     <view class="i_d">
     {{item.work_item_des}}
     </view>

@@ -1,11 +1,12 @@
-// pages/album/album.js
-const params = require('../../utils/params')
+
 const app = getApp()
 
 Page({
   data: {
     albums: null,
-    isEdit: false
+    isEdit: false,
+
+    imgBase: app.globalData.params.imgBase,
   },
   del: function (e) {
     var that = this
@@ -29,7 +30,7 @@ Page({
           }
 
           wx.request({
-            url: params.api + '/v1/album/del-album',
+            url: app.globalData.params.api + '/v1/album/del-album',
             header: {
               'content-type': 'application/x-www-form-urlencoded',
               'access-token': app.globalData.sessionId
@@ -76,7 +77,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/album/get-albums',
+      url: app.globalData.params.api + '/v1/album/get-albums',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId

@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/tpl/tpl",
+    
     "pages/home/home",
+    "pages/tpl/tpl",
+    "pages/category/category",
     "pages/work_type3/work_type3",
     "pages/work_type2/work_type2",
     "pages/my/my",
@@ -19,7 +21,7 @@
     "pages/album/album",
     "pages/work_p/work_p",
     "pages/work_p2/work_p2",
-    "pages/category/category",
+    
     "pages/index/index",
     "pages/category_list/category_list",
     

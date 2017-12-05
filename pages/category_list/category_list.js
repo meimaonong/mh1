@@ -1,5 +1,4 @@
-
-const params = require('../../utils/params')
+const app = getApp()
 
 Page({
   data: {
@@ -12,7 +11,9 @@ Page({
     openTip: false,
     lh: 0,
     rh: 0,
-    category_id: 0
+    category_id: 0,
+    
+    imgBase: app.globalData.params.imgBase
   },
   getList: function () {
     var that = this
@@ -24,7 +25,7 @@ Page({
     })
 
     wx.request({
-      url: params.api + '/v1/work/get-worklist-by-category',
+      url: app.globalData.params.api + '/v1/work/get-worklist-by-category',
       data: {
         category_id: that.data.category_id,
         page: that.data.page
@@ -38,7 +39,7 @@ Page({
         var list = res.data.data
 
         list.work_list.map(function (item) {
-          const h = Math.floor(345 / parseFloat(item.ratio))
+          const h = Math.floor(345 / parseFloat(item.img.img_ratio))
           item['c_h'] = `height:${h}rpx`
 
           if (that.data.lh <= that.data.rh) {
@@ -95,7 +96,7 @@ Page({
 
     var that = this
     that.setData({
-      category_id: options.category_id
+      category_id: 19
     })
     var category_name = options.category_name
 
