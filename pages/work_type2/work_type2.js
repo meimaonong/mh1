@@ -1,10 +1,11 @@
-const params = require('../../utils/params')
+
 const app = getApp()
 
 Page({
   data: {
     list: null,
     s_index: -1,
+    imgBase: app.globalData.params.imgBase,
   },
   edit_express: function(e) {
     var that = this
@@ -19,7 +20,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/work/get-sell-works',
+      url: app.globalData.params.api + '/v1/order/get-sell-orders',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId

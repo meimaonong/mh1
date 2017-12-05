@@ -3,7 +3,7 @@ const app = getApp()
 Page({
   data: {
     list: null,
-    imgBase: app.globalData.params.imgBase
+    imgBase: app.globalData.params.imgBase,
   },
   getList() {
     var that = this

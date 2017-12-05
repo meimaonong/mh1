@@ -10,16 +10,16 @@
 
 <block wx:for="{{list.work_list}}" wx:key="item.work_id">
 <navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w">
-<image src="{{item.work_img}}" class="l_i"/>
+<image src="{{imgBase+item.work.img.img_url+item.work.img.img_name}}" class="l_i"/>
 <view class="l_r">
-<view class="l_t">{{item.work_title}}</view>
+<view class="l_t">{{item.work.work_title}}</view>
 <view class="l_s_d">购买价格</view>
-<view class="l_s_b">¥{{item.work_price}}</view>
+<view class="l_s_b">¥{{item.work.work_price}}</view>
 </view>
 </navigator>
 <view class='address'>
-<view>收 件 人：<text class='c'>{{item.receiver}}</text>手机号：<text class='c'>{{item.receiver_tel}}</text></view>
-<view>邮寄地址：<text class='c'>{{item.address_detail}}</text></view>
+<view>收 件 人：<text class='c'>{{item.address.receiver}}</text>手机号：<text class='c'>{{item.address.receiver_tel}}</text></view>
+<view>邮寄地址：<text class='c'>{{item.address.address_detail}}</text></view>
 </view>
 <view class='express'>
 快递信息：
