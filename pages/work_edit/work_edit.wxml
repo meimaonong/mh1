@@ -53,6 +53,10 @@
 <text>作品价格</text>
 <input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
 </view>
+<view class="mc mcfirst">
+<text>作品尺寸</text>
+<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
+</view>
 </view>
 
 <view class="p3">

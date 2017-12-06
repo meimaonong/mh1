@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/work_edit/work_edit",
     "pages/home/home",
     "pages/tpl/tpl",
     "pages/category/category",
@@ -10,7 +10,7 @@
     "pages/express_edit/express_edit",
     "pages/info/info",
     "pages/message/message",
-    "pages/work_edit/work_edit",
+    
     "pages/work_type1/work_type1",
     "pages/process/process",
     "pages/process2/process2",

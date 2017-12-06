@@ -3,7 +3,7 @@ const app = getApp()
 Page({
 
   data: {
-    work: null,
+    work: [],
     isEdit: true,
     category: {
       category_id: -1,
@@ -446,7 +446,7 @@ Page({
       that.getWork(options.work_id)
     } else {
       that.setData({
-        isEdit: false
+        isEdit: true
       })
     }
     

@@ -203,8 +203,10 @@ icon.clear{
   line-height: 100rpx;
 }
 .p3 .mc.mcfirst{
-  border-bottom: none;
   display: flex;
+}
+.p3 .mc.mcfirst:last-child{
+  border-bottom: none;
 }
 .p3 .mc input{
   flex: 1;
