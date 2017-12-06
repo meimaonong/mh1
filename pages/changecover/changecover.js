@@ -1,15 +1,14 @@
 // pages/process/process.js
-const params = require('../../utils/params')
+
 const app = getApp()
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     imgs: [],
     selIndex: 0,
+
+    imgBase: app.globalData.params.imgBase,
   },
   chooseImg: function () {
 
@@ -24,7 +23,7 @@ Page({
         var tempFilePaths = res.tempFilePaths
 
         wx.uploadFile({
-          url: params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
+          url: app.globalData.params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
           header: {
             'access-token': app.globalData.sessionId
           },
@@ -35,15 +34,19 @@ Page({
             var pages = getCurrentPages();
             var prevPage = pages[pages.length - 2];  //上一个页面
             var work = prevPage.data.work
-            work['work_img'] = params.api + '/' + r.data.fileUrl
-            work['w'] = r.data.imageWidth
-            work['h'] = r.data.imageHeight
-            work['ratio'] = r.data.ratio
+
+            work.img = Object.assign(work.img, {
+              img_name: r.data.img_name,
+              img_url: r.data.img_url,
+              img_width: r.data.img_width,
+              img_height: r.data.img_height,
+              img_ratio: r.data.img_ratio,
+            })
             
             prevPage.setData({
               work: work
             })
-            console.log(prevPage.data.work)
+            //console.log(prevPage.data.work)
             wx.navigateBack()
           }
         })
@@ -61,17 +64,11 @@ Page({
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2];  //上一个页面
     var work = prevPage.data.work
-    if (work['work_img'] != that.data.imgs[index]) {
+    if ((that.data.imgBase + work.img.img_url + work.img.img_name) != that.data.imgs[index]) {
       if (that.data.imgs.length==work.workItems.length) {
-        work['w'] = work.workItems[index]['w']
-        work['h'] = work.workItems[index]['h']
-        work['ratio'] = work.workItems[index]['ratio']
-        work['work_img'] = work.workItems[index]['work_item_img']
+        work.img = Object.assign(work.img, work.workItems[index].img)
       }else{
-        work['w'] = work.workItems[index - 1]['w']
-        work['h'] = work.workItems[index - 1]['h']
-        work['ratio'] = work.workItems[index - 1]['ratio']
-        work['work_img'] = work.workItems[index - 1]['work_item_img']
+        work.img = Object.assign(work.img, work.workItems[index - 1].img)
       }
     }
 
@@ -86,53 +83,6 @@ Page({
       imgs: JSON.parse(that.options.imgs),
       selIndex: that.options.selIndex
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+  
 })

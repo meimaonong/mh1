@@ -1,5 +1,3 @@
-// pages/work_edit/work_edit.js
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
@@ -11,7 +9,7 @@ Page({
       category_id: -1,
       category_name: '',
     },
-    
+    imgBase: app.globalData.params.imgBase,
     album: {
       album_id: -1,
       album_title: '',
@@ -85,7 +83,7 @@ Page({
       
       
       wx.request({
-        url: params.api + '/v1/work/save-work',
+        url: app.globalData.params.api + '/v1/work/save-work',
         header: {
           'content-type': 'application/x-www-form-urlencoded',
           'access-token': app.globalData.sessionId
@@ -132,10 +130,10 @@ Page({
     that.data.work = {
       work_id: '',
       work_title: '',
-      work_img: '',
-      w: '',
-      h: '',
-      ratio: '',
+      work_img_id: '',
+      img: {},
+      work_w: '',
+      work_h: '',
       work_price: "",
       category_id: '',
       album_id: '',
@@ -158,7 +156,7 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: params.api + '/v1/file/image-upload',
+            url: app.globalData.params.api + '/v1/file/image-upload',
             header: {
               'access-token': app.globalData.sessionId
             },
@@ -170,16 +168,22 @@ Page({
                 work_item_title: "",
                 num: index,
                 work_item_des: '',
-                work_item_img: params.api + '/' + r.data.fileUrl,
-                w: r.data.imageWidth,
-                h: r.data.imageHeight,
-                ratio: r.data.ratio,
+                img: {
+                  img_name: r.data.img_name,
+                  img_url: r.data.img_url,
+                  img_width: r.data.img_width,
+                  img_height: r.data.img_height,
+                  img_ratio: r.data.img_ratio,
+                }
               }
               if (index === 0) {
-                that.data.work.work_img = params.api + '/' + r.data.fileUrl
-                that.data.work.w = r.data.imageWidth
-                that.data.work.h = r.data.imageHeight
-                that.data.work.ratio = r.data.ratio
+                that.data.work.img = Object.assign(that.data.work.img, {
+                  img_name: r.data.img_name,
+                  img_url: r.data.img_url,
+                  img_width: r.data.img_width,
+                  img_height: r.data.img_height,
+                  img_ratio: r.data.img_ratio,
+                })
               }
               num++
               if (num == tempFilePaths.length) {
@@ -233,7 +237,7 @@ Page({
     var wh = []
 
     that.data.work.workItems.map(function (item) {
-      tarr.push(item.work_item_img)
+      tarr.push(that.imgBase + item.img.img_url + item.img.img_name)
     })
 
     var selIndex = tarr.indexOf(img)
@@ -317,7 +321,7 @@ Page({
         let num = 0
         tempFilePaths.map(function (value, index, array) {
           wx.uploadFile({
-            url: params.api + '/v1/file/image-upload',
+            url: app.globalData.params.api + '/v1/file/image-upload',
             header: {
               'access-token': app.globalData.sessionId
             },
@@ -329,10 +333,13 @@ Page({
                 work_item_title: "",
                 work_item_des: "",
                 num: index,
-                work_item_img: params.api + '/' + r.data.fileUrl,
-                w: r.data.imageWidth,
-                h: r.data.imageHeight,
-                ratio: r.data.ratio,
+                img: {
+                  img_name: r.data.img_name,
+                  img_url: r.data.img_url,
+                  img_width: r.data.img_width,
+                  img_height: r.data.img_height,
+                  img_ratio: r.data.img_ratio,
+                }
               }
               num++
               if (num == tempFilePaths.length) {
@@ -356,7 +363,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/category/get-categorylist',
+      url: app.globalData.params.api + '/v1/category/get-categorylist',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId
@@ -373,7 +380,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/album/get-albums',
+      url: app.globalData.params.api + '/v1/album/get-albums',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId
@@ -391,7 +398,7 @@ Page({
     var that = this
 
     wx.request({
-      url: params.api + '/v1/work/get-work',
+      url: app.globalData.params.api + '/v1/work/get-work',
       header: {
         'content-type': 'application/x-www-form-urlencoded',
         'access-token': app.globalData.sessionId

@@ -5,6 +5,14 @@ Page({
     work: null,
     imgBase: app.globalData.params.imgBase
   },
+  preview: function (e) {
+    var that = this
+    var index = e.currentTarget.dataset.index
+    wx.previewImage({
+      current: that.data.pics[index],
+      urls: that.data.pics
+    })
+  },
   getWork: function(work_id){
     var that = this
     wx.request({
@@ -20,11 +28,13 @@ Page({
       success: function (res) {
         var data = res.data.data
         data.workItems.map(function(item){
+          that.data.pics.push(that.data.imgBase + item.img.img_url + item.img.img_name)
           item['style'] = 'height:' + (690 / parseFloat(item.img.img_ratio)) + 'rpx'
         })
-        console.log(data)
+
         that.setData({
-          work: data
+          work: data,
+          pics: that.data.pics
         })
       }
     })

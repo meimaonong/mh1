@@ -1,5 +1,3 @@
-// pages/process/process.js
-const params = require('../../utils/params')
 const app = getApp()
 
 Page({
@@ -43,7 +41,7 @@ Page({
         var tempFilePaths = res.tempFilePaths
 
         wx.uploadFile({
-          url: params.api + '/v1/file/image-upload',
+          url: app.globalData.params.api + '/v1/file/image-upload',
           header: {
             'access-token': app.globalData.sessionId
           },
@@ -54,14 +52,17 @@ Page({
             var pages = getCurrentPages();
             var prevPage = pages[pages.length - 2];  //上一个页面
             var work = prevPage.data.work
-            var img_url = params.api + '/' + r.data.fileUrl
+            var img_url = app.globalData.params.api + '/' + r.data.fileUrl
 
-            work['workItems'][that.data.index]['work_item_img'] = img_url
-            work['workItems'][that.data.index]['w'] = r.data.imageWidth
-            work['workItems'][that.data.index]['h'] = r.data.imageHeight
-            work['workItems'][that.data.index]['ratio'] = r.data.ratio
+            work['workItems'][that.data.index]['img'] = Object.assign(work['workItems'][that.data.index]['img'], {
+              img_name: r.data.img_name,
+              img_url: r.data.img_url,
+              img_width: r.data.img_width,
+              img_height: r.data.img_height,
+              img_ratio: r.data.img_ratio,
+            })
 
-            var height = 'height:' + parseInt(750 / parseFloat(ratio)) + 'rpx'
+            var height = 'height:' + parseInt(750 / parseFloat(r.data.img_ratio)) + 'rpx'
 
             that.setData({
               height,

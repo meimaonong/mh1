@@ -10,15 +10,15 @@
 <view class="e_w">
 
 <view class='head' data-txt="{{ work.work_title }}" bindtap='editTit'>
-<image mode='aspectFill' src='{{ work.work_img }}'></image>
+<image mode='aspectFill' src='{{imgBase+work.img.img_url+work.img.img_name}}'></image>
 <view class='tit'>{{ work.work_title ? work.work_title : '点击修改标题' }}</view>
-<view class='cbtn' data-cover="{{ work.work_img }}" catchtap='changecover'>修改封面</view>
+<view class='cbtn' data-cover="{{ imgBase+work.img.img_url+work.img.img_name }}" catchtap='changecover'>修改封面</view>
 </view>
 
 
 <view wx:for="{{work.workItems}}" wx:key="item.work_item_img" class='op_box_w'>
 <view class='op_box'>
-<image mode='aspectFill' data-ratio="{{item.ratio}}" data-index="{{ index }}" src='{{ item.work_item_img }}' data-img='{{ item.work_item_img }}' bindtap='changeimg'></image>
+<image mode='aspectFill' data-ratio="{{item.img.img_ratio}}" data-index="{{ index }}" src='{{ imgBase+item.img.img_url+item.img.img_name }}' data-img='{{ imgBase+item.img.img_url+item.img.img_name }}' bindtap='changeimg'></image>
 <view class='txt' bindtap='editTxt' data-index="{{ index }}" data-txt="{{ item.work_item_des }}" style="{{ item.work_item_des ? '' : 'color:#ccc;' }}">{{ item.work_item_des ? item.work_item_des : '可输入文字' }}</view>
 <view class='op'>
 <view class="top" bindtap='m_up' data-index="{{ index }}" wx:if="{{ index!==0 }}">
