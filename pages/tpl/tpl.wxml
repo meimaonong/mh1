@@ -3,3 +3,7 @@
 
 <button formType="submit">Submit</button>
 </form>
+
+<button bindtap="getQRCode">生成小程序码</button>
+
+

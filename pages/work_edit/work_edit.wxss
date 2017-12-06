@@ -5,7 +5,6 @@
 
 
 .e_w{
-  border-top: 1rpx solid #eee;
   background: #fff;
   margin-bottom: 30rpx;
 }

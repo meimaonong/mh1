@@ -1,3 +1,6 @@
 <view class='container'>
-<textarea bindconfirm='confirm' value='{{val}}' focus="true" />
+<form bindsubmit="formSubmit">
+<textarea bindconfirm='confirm' value='{{val}}' name="txt" focus="true" />
+<button formType="submit">Submit</button>
+</form>
 </view>

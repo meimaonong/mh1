@@ -8,15 +8,23 @@ Page({
   },
   del: function (e) {
     var that = this
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var work = prevPage.data.work
+
+    if (work.workItems.length == 1) {
+      wx.showToast({
+        title: '至少保留一项',
+        image: '/public/img/icon/error.png'
+      })
+      return
+    }
 
     wx.showModal({
       title: '确定删除此项？',
       content: '',
       success: function (res) {
         if (res.confirm) {
-          var pages = getCurrentPages();
-          var prevPage = pages[pages.length - 2];  //上一个页面
-          var work = prevPage.data.work
           work.workItems.splice(that.data.index, 1)
           prevPage.setData({
             work
@@ -39,6 +47,11 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
+
+        wx.showLoading({
+          title: '上传中',
+          mask: true,
+        })
 
         wx.uploadFile({
           url: app.globalData.params.api + '/v1/file/image-upload',
@@ -71,6 +84,7 @@ Page({
             prevPage.setData({
               work: work
             })
+            wx.hideLoading()
             wx.navigateBack()
           }
         })
@@ -82,7 +96,7 @@ Page({
   onLoad: function (options) {
 
     var that = this
-    console.log(options)
+
     var ratio = options.ratio
     var height = 'height:' + parseInt(750 / parseFloat(ratio)) + 'rpx'
     that.setData({

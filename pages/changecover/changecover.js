@@ -22,6 +22,11 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
 
+        wx.showLoading({
+          title: '上传中',
+          mask: true,
+        })
+
         wx.uploadFile({
           url: app.globalData.params.api + '/v1/file/image-upload', //仅为示例，非真实的接口地址
           header: {
@@ -47,6 +52,7 @@ Page({
               work: work
             })
             //console.log(prevPage.data.work)
+            wx.hideLoading()
             wx.navigateBack()
           }
         })

@@ -9,6 +9,24 @@ Page({
     index: -1,
     val: '',
   },
+  formSubmit: function (e) {
+    var val = e.detail.value.txt
+    var that = this
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    var work = prevPage.data.work
+
+    if (that.data.type == 1) {
+      work['work_title'] = val
+    } else {
+      work['workItems'][that.data.index].work_item_des = val
+    }
+    //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+    prevPage.setData({
+      work
+    })
+    wx.navigateBack()
+  },
   confirm: function (e) {
     var val = e.detail.value
     var that = this

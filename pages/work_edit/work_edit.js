@@ -207,7 +207,7 @@ Page({
 
     if (that.data.work.workItems.length == 1) {
       wx.showToast({
-        title: '至少要保留一项',
+        title: '至少保留一项',
         image: '/public/img/icon/wrong.png',
         duration: 2000
       })
@@ -237,7 +237,7 @@ Page({
     var wh = []
 
     that.data.work.workItems.map(function (item) {
-      tarr.push(that.imgBase + item.img.img_url + item.img.img_name)
+      tarr.push(that.data.imgBase + item.img.img_url + item.img.img_name)
     })
 
     var selIndex = tarr.indexOf(img)
