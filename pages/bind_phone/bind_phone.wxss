@@ -1,0 +1,39 @@
+.p3{
+  background: #fff;
+  margin-top: 30rpx;
+}
+.p3 .mc{
+  display: flex;
+  position: relative;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #999;
+  border-bottom: 1rpx solid #efefef;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+}
+
+.p3 .mc:last-child{
+  border-bottom: none;
+}
+.p3 .mc input{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+}
+
+.getCode{
+  color: #3CC51F;
+  margin-right: -30rpx;
+  padding: 0 30rpx;
+  border-left: 1px solid #efefef;
+}
+
+.bindbtn{
+  margin: 30rpx;
+  background: #333;
+  color: #fff;
+}

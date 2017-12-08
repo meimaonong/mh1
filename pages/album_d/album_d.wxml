@@ -20,6 +20,6 @@
 
 </view>
 
-<view class='no' wx:if="{{list&&list.length==0}}">暂无作品</view>
+<view class='no' wx:if="{{list&&list.length==0}}">暂无溶剂</view>
 
 </view>

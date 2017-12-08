@@ -216,6 +216,15 @@ icon.clear{
   line-height: 100rpx;
   padding-left: 50rpx;
 }
+.p3 .mc input.cc{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 50rpx;
+  text-align: center;
+}
 .choose{
   margin-left: 50rpx;
   color: #353535;

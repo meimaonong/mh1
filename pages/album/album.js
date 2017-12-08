@@ -22,7 +22,7 @@ Page({
           console.log(parseInt(num));
           if (parseInt(num) > 0) {
             wx.showToast({
-              title: '作品不为空',
+              title: '溶剂不为空',
               image: '/public/img/icon/wrong.png',
               duration: 2000
             })

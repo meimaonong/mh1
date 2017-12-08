@@ -1,129 +1,69 @@
-/* pages/adress_edit/adress_edit.wxss */
-.w{
-  padding: 50rpx 30rpx;
+.p3{
   background: #fff;
-  border-top: 1rpx solid #efefef;
+  margin-top: 30rpx;
 }
-.b{
+.p3 .mc{
   display: flex;
-  flex-direction: row;
-  padding-bottom: 20rpx;
-}
-.b label{
-  width: 160rpx;
+  position: relative;
+
+  font-size: 30rpx;
   color: #999;
-  line-height: 80rpx;
-  font-size: 32rpx;
-  text-align: right;
-}
-.b input, .b textarea{
-  flex: 1;
-  min-height:60rpx;
-  line-height: 60rpx;
-  padding: 10rpx 20rpx;
-  background: #efefef;
-  font-size: 32rpx;
-  color: #333;
-}
-.b textarea{
-  padding: 20rpx 20rpx;
-  min-height: 120rpx;
-  line-height: 40rpx;
-}
-.save, .back{
-  margin: 50rpx 20rpx 0 20rpx;
+  border-bottom: 1rpx solid #efefef;
   line-height: 100rpx;
-  text-align: center;
-  border-radius: 12rpx;
+  margin: 0 30rpx;
 }
-.save {
-  border:1rpx solid #333;
-  background-color: #333;
+.p3 .mc text{
+  display: inline-block;
+  width: 5em;
+}
+
+.p3 .mc:last-child{
+  border-bottom: none;
+}
+
+.p3 .pz{
+  flex: 1;
+  display: flex;
+}
+
+.p3 .mc input{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+}
+.p3 .mc textarea{
+  flex: 1;
+  color: #333;
+  height: 100rpx;
+  font-size: 32rpx;
+  line-height: 1;
+  padding: 30rpx 0 30rpx 50rpx;
+}
+.p3 image{
+  width:15rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 37rpx;
+  right: 10rpx;
+  transform:rotate(90deg); 
+}
+.bindbtn{
+  margin: 30rpx;
+  background: #333;
   color: #fff;
 }
-.back {
-  border: 1rpx solid #ccc;
-  background-color: #fff;
-  color: #333;
+.dsel{
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-left: 50rpx;
+  flex: 1;
 }
-
- /* 省市区联动 */
-
-.citypickers{
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  right:0;
-  bottom:0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.citypicker{
-  background: #fff;
-}
-.citybody {
-  position: fixed;
-  z-index: 1001;
-  bottom: 0px;
-  background: #fff;
-}
-
-.cityheader {
-  position: absolute;
-  top:0px;
+.dsel .picker{
   width: 100%;
-  z-index: 4;
-}
-
-.city-cancel {
-  float: left;
-  margin: 20rpx;
-  color: #818181;
-}
-
-.city-true {
-  float: right;
-  margin: 20rpx;
-  color: #2FB42E
-}
-
-.section .picker {
-  background-color: #fff;
-  border-bottom: 1px #d9d9d9 solid;
-  border-top: 1px #d9d9d9 solid;
-  padding: 20rpx;
-}
-
-
-.input {
-  padding-top: 300rpx;
-  width: 100%;
-}
-
-.input input {
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px #d9d9d9 solid;
-  border-top: 1px #d9d9d9 solid;
-  padding: 20rpx 50rpx;
-}
-
-.section {
-  padding-top: 20rpx;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }

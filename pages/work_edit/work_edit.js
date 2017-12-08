@@ -3,7 +3,7 @@ const app = getApp()
 Page({
 
   data: {
-    work: [],
+    work: null,
     isEdit: true,
     category: {
       category_id: -1,
@@ -31,7 +31,7 @@ Page({
     if (!that.data.work.work_title) {
       wx.showToast({
         title: '请输入标题',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return false
@@ -42,7 +42,16 @@ Page({
     if (!work_price || work_price%1 != 0) {
       wx.showToast({
         title: '请输入正确价格',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
+        duration: 2000
+      })
+      return false
+    }
+
+    if (!work_price || work_price % 1 != 0) {
+      wx.showToast({
+        title: '请输入正确价格',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return false
@@ -51,7 +60,7 @@ Page({
     if (that.data.album.album_id <= 0) {
       wx.showToast({
         title: '请选择专辑',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return false
@@ -60,7 +69,7 @@ Page({
     if (that.data.category.category_id <= 0) {
       wx.showToast({
         title: '请选择分类',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return false
@@ -115,6 +124,20 @@ Page({
   priceinput: function(e) {
     var work_price = e.detail.value
     this.data.work.work_price = work_price
+    this.setData({
+      work
+    })
+  },
+  winput: function (e) {
+    var work_w = e.detail.value
+    this.data.work.work_w = work_w
+    this.setData({
+      work
+    })
+  },
+  hinput: function (e) {
+    var work_h = e.detail.value
+    this.data.work.work_h = work_h
     this.setData({
       work
     })
@@ -208,7 +231,7 @@ Page({
     if (that.data.work.workItems.length == 1) {
       wx.showToast({
         title: '至少保留一项',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return

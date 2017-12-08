@@ -2,7 +2,7 @@
 <view class="container" wx:if="{{list}}">
 
 <view class="l_h">
-<view class="l_txt">已购作品</view>
+<view class="l_txt">已购溶剂</view>
 <view class="l_des">共 <text>{{list.count}}</text> 幅</view>
 </view>
 
@@ -28,7 +28,7 @@
 </view>
 </block>
 
-<view class='no' wx-if="{{!list.count}}">暂无已购作品</view>
+<view class='no' wx-if="{{!list.count}}">暂无已购溶剂</view>
 
 </view>
 

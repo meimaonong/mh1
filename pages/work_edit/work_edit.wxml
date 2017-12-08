@@ -1,7 +1,7 @@
-<block class='new' wx:if="{{!work && !isEdit}}">
+<block class='new' wx:if="{{!work && isEdit}}">
 <view class='add_new' bindtap='newPic'>
 <view>+</view>
-<text>添加作品图</text>
+<text>添加溶剂图</text>
 </view>
 </block>
 
@@ -50,12 +50,15 @@
 
 <view class='p3'>
 <view class="mc mcfirst">
-<text>作品价格</text>
-<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
+<text>溶剂尺寸</text>
+<input placeholder="请输入宽度" type='number' class='cc' bindinput='winput' placeholder-style="color:#ccc;" value="{{work?work.work_w:''}}"></input>
+<text style='color:#000;'>x</text>
+<input placeholder="请输入高度" type='number' class='cc' bindinput='hinput' placeholder-style="color:#ccc;" value="{{work?work.work_h:''}}"></input>
+<text style='color:#000;'>cm</text>
 </view>
 <view class="mc mcfirst">
-<text>作品尺寸</text>
-<input placeholder="请输入价格" bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
+<text>溶剂价格</text>
+<input placeholder="请输入价格" type='number' bindinput='priceinput' placeholder-style="color:#ccc;" value="{{work?work.work_price:''}}"></input>
 </view>
 </view>
 

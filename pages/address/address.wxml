@@ -14,7 +14,7 @@
 </view>
 <view class="b_a">
 <image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
-<view class="b_p_d">{{item.address_detail}}</view>
+<view class="b_p_d">{{item.province.name + item.city.name + item.district.name + item.address_detail}}</view>
 </view>
 <view class='i_op' hidden='{{isEdit ? false : true}}'>
 <view class='del' data-id="{{item.address_id}}" data-index="{{index}}" catchtap='del'>删除</view>

@@ -11,6 +11,6 @@
 </view>
 <view class="op">
 <view class="price">￥{{work.work_price}}</view>
-<view class="buy">购买作品</view>
+<view class="buy">购买溶剂</view>
 </view>
 </view>

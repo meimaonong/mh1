@@ -1,28 +1,28 @@
-<!--pages/adress_edit/adress_edit.wxml-->
-<view class="container">
-
-<form bindsubmit="formSubmit">
-
-<view class="w">
-
-<view class="b">
-<label>收货人：</label>
-<input value='{{address.receiver}}' name="receiver"></input>
+<view class='p3'>
+<view class="mc">
+<text>收货人</text>
+<input placeholder="请输入手机号" type='number' placeholder-style="color:#ccc;"></input>
 </view>
-<view class="b">
-<label>手机号：</label>
-<input value='{{address.receiver_tel}}' name="receiver_tel"></input>
+<view class="mc">
+<text>手机号</text>
+<input placeholder="请输入验证码" type='number' placeholder-style="color:#ccc;"></input>
 </view>
-<view class="b">
-<label>邮寄地址：</label>
-<textarea auto-height value='{{address.address_detail}}' name="address_detail" />
+<view class="mc">
+<text>省市区选择</text>
+<picker range-key="name" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{objectMultiArray}}" class='dsel'>
+    <view class="picker" wx:if="{{selProvince.id}}">
+      {{selProvince.name}}-{{selCity.name}}-{{selDistrict.name}}      
+    </view>
+    <view class="picker" style='color:#ccc' wx:else>
+      请选择省市区
+    </view>
+  </picker>
+</view>
+<view class="mc">
+<text>详细地址</text>
+<textarea placeholder='请输入详细地址' placeholder-style="color:#ccc;"></textarea>
+</view>
 </view>
 
-</view>
+<button class='bindbtn'>{{btn_txt}}</button>
 
- <button class="save" formType="submit"> 保存 </button>
-<button class="back" bindtap='back'> 返回 </button> 
-
-</form>
-
-</view>

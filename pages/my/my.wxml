@@ -7,18 +7,18 @@
 <view class="n">{{userInfo.nickName}}</view>
 <navigator url="/pages/work_edit/work_edit" class="btn_w">
 <button type="default" class="btn" hover-class="other-button-hover">
-<text>+</text> 发布作品 </button>
+<text>+</text> 发布盘口 </button>
 </navigator>
 </view>
 
 <view class="p2">
 <navigator url="/pages/work_type1/work_type1">
 <image src="http://svn.meimaonong.com/m1.png"/>
-<text>待审作品<block wx:if="{{wait_num}}">({{wait_num}})</block></text>
+<text>待审溶剂<block wx:if="{{wait_num}}">({{wait_num}})</block></text>
 </navigator>
 <navigator url="/pages/album/album" class="n2">
 <image src="http://svn.meimaonong.com/m2.png"/>
-<text>我的专辑<block wx:if="{{album_num}}">({{album_num}})</block></text>
+<text>我的盘口<block wx:if="{{album_num}}">({{album_num}})</block></text>
 </navigator>
 <navigator url="/pages/message/message">
 <image src="http://svn.meimaonong.com/m3.png"/>
@@ -32,11 +32,11 @@
 
 <view class="p3">
 <navigator url="/pages/work_type2/work_type2">
-<text>已出售作品<block wx:if="{{sell_num}}">({{sell_num}})</block></text>
+<text>已出售溶剂<block wx:if="{{sell_num}}">({{sell_num}})</block></text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </navigator>
 <navigator url="/pages/work_type3/work_type3">
-<text>已购买作品<block wx:if="{{buy_num}}">({{buy_num}})</block></text>
+<text>已购买溶剂<block wx:if="{{buy_num}}">({{buy_num}})</block></text>
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </navigator>
 <navigator url="/pages/address/address">
