@@ -92,11 +92,9 @@ Page({
     }
   },
   onLoad: function (options) {
-
-
     var that = this
     that.setData({
-      category_id: 19
+      category_id: options.category_id
     })
     var category_name = options.category_name
 

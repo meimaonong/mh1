@@ -12,6 +12,13 @@ page{
   font-size: 40rpx;
   border-bottom: 1rpx solid #eee;
 }
+.t .size{
+  padding-top: 15rpx;
+  font-size: 28rpx;
+}
+.t .size text{
+  color: #aaa;
+}
 .d {
   font-size: 30rpx;
   line-height: 45rpx;
@@ -63,3 +70,4 @@ page{
   color: #fff;
   background-color: #333;
 }
+

@@ -4,25 +4,20 @@ const app = getApp()
 Page({
   data: {
     albums: null,
-    isEdit: false,
 
     imgBase: app.globalData.params.imgBase,
   },
-  del: function (e) {
+  del: function (index, album_id, num) {
     var that = this
-    var index = e.currentTarget.dataset.index
-    var album_id = e.currentTarget.dataset.id
-    var num = e.currentTarget.dataset.num
 
     wx.showModal({
       title: '确定删除？',
       content: '',
       success: function (res) {
         if (res.confirm) {
-          console.log(parseInt(num));
           if (parseInt(num) > 0) {
             wx.showToast({
-              title: '溶剂不为空',
+              title: '作品不为空',
               image: '/public/img/icon/wrong.png',
               duration: 2000
             })
@@ -59,23 +54,34 @@ Page({
       }
     })
   },
-  edit: function (e) {
+  edit: function (album_id) {
     var that = this
-    var album_id = e.currentTarget.dataset.id
-    that.setData({ isEdit: false })
     wx.navigateTo({
       url: '/pages/album_edit/album_edit?album_id=' + album_id,
     })
   },
-  toggle: function () {
+  show_action: function(e) {
     var that = this
-    that.setData({
-      isEdit: !that.data.isEdit
+    var tobj = e.currentTarget.dataset
+    wx.showActionSheet({
+      itemList: ['编辑', '删除'],
+      success: function (res) {
+        if (res.tapIndex == 0) {
+          that.edit(tobj.id)
+        } else if (res.tapIndex == 1) {
+          that.del(tobj.index, tobj.id, tobj.num)
+        }
+      },
+      fail: function (res) {
+        //console.log(res.errMsg)
+      }
     })
   },
   getAlbums: function() {
     var that = this
-
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: app.globalData.params.api + '/v1/album/get-albums',
       header: {
@@ -87,7 +93,7 @@ Page({
         that.setData({
           albums: res.data.data
         })
-
+        wx.hideLoading()
       }
     })
   },

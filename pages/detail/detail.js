@@ -3,7 +3,8 @@ const app = getApp()
 Page({
   data: {
     work: null,
-    imgBase: app.globalData.params.imgBase
+    imgBase: app.globalData.params.imgBase,
+    pics: []
   },
   preview: function (e) {
     var that = this

@@ -2,7 +2,7 @@
 <view class="container">
 
 <view class="l_h">
-<view class="l_txt">已出售溶剂</view>
+<view class="l_txt">已出售作品</view>
 <view class="l_des">共 <text>2</text> 幅</view>
 </view>
 
@@ -12,7 +12,7 @@
 <view class="l_r">
 <view class="l_t">传统国画精粹</view>
 <view class="l_d">学习鉴赏大师级国画精选</view>
-<view class="l_b">共计<text> 52 </text>幅溶剂</view>
+<view class="l_b">共计<text> 52 </text>幅作品</view>
 </view>
 </navigator>
 <navigator url="/pages/category/category" class="l_w">
@@ -38,7 +38,7 @@
 <view class="l_r">
 <view class="l_t">传统国画精粹</view>
 <view class="l_d">学习鉴赏大师级国画精选</view>
-<view class="l_b">共计<text> 52 </text>幅溶剂</view>
+<view class="l_b">共计<text> 52 </text>幅作品</view>
 </view>
 </navigator>
 </view>

@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/address_edit/address_edit",
     "pages/bind_phone/bind_phone",
-    
+    "pages/about_us/about_us",
+    "pages/fee_detail/fee_detail",
+    "pages/buy_detail/buy_detail",
     "pages/work_edit/work_edit",
     "pages/tpl/tpl",
     "pages/category/category",
@@ -44,7 +46,7 @@
         "iconPath": "public/img/tab/icon-find-n.png",
         "selectedIconPath": "public/img/tab/icon-find-s.png",
         "pagePath": "pages/category/category",
-        "text": "寻溶剂"
+        "text": "寻画"
       },
       {
         "iconPath": "public/img/tab/icon-person-n.png",
@@ -57,7 +59,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#333",
-    "navigationBarTitleText": "第5城交易",
+    "navigationBarTitleText": "寻画",
     "navigationBarTextStyle":"light"
   }
 }

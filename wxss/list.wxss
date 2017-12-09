@@ -28,6 +28,21 @@
   padding:50rpx;
   margin-bottom: 30rpx;
   background: #fff;
+  position: relative;
+}
+.list_i_op{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20rpx;
+}
+.list_i_op image{
+  width: 100%;
+  height: 100%;
+  margin-top: 15rpx;
+  vertical-align: top;
 }
 .l_i{
   width: 155rpx;

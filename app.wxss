@@ -9,3 +9,26 @@ page {
     background: none; 
     opacity: 0.7;
 }
+
+.publish{
+  position: fixed;
+  left: 287rpx;
+  bottom: 30rpx;
+  width: 175rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  overflow: hidden;
+  background: #ffcf0d;
+}
+.publish image {
+  width: 37rpx;
+  height: 32rpx;
+  margin: 24rpx 0 0 40rpx;
+  float: left;
+}
+.publish text{
+  float: left;
+  padding-left: 10rpx;
+}

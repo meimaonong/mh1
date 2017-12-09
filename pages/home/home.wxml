@@ -26,5 +26,9 @@
   </view>
 </view>
 
+<navigator class='publish' url='/pages/work_edit/work_edit'>
+<image src='http://svn.meimaonong.com/camera.png'></image>
+<text>发布</text>
+</navigator>
 
 </view>

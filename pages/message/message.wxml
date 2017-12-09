@@ -1,5 +1,5 @@
 
-<view class="container">
+<view class="container" wx:if='{{list}}'>
 
 <view class="l_h">
 <view class="l_txt">我的消息</view>
@@ -13,7 +13,7 @@
 <image src="{{imgBase+item.work.img.img_url+item.work.img.img_name}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work.work_title}}</view>
-<view class="l_d2">溶剂已被购买，发货后请到<text style='color:#f00;'> “已出售溶剂” </text>添加快递信息</view>
+<view class="l_d2">作品已被购买，发货后请到<text style='color:#f00;'> “已出售作品” </text>添加快递信息</view>
 </view>
 </navigator>
 
@@ -21,7 +21,7 @@
 <image src="{{item.work.work_img}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work.work_title}}</view>
-<view class="l_d2">您已购买“{{item.work.work_title}}”，请到<text style='color:#f00;'> “已购买溶剂” </text>关注快递信息</view>
+<view class="l_d2">您已购买“{{item.work.work_title}}”，请到<text style='color:#f00;'> “已购买作品” </text>关注快递信息</view>
 </view>
 </navigator>
 
@@ -29,7 +29,7 @@
 <image src="{{item.work.work_img}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work.work_title}}</view>
-<view class="l_d2">快递信息已添加，请到 <text style='color:#f00;'>“已购买溶剂” </text>查看快递信息</view>
+<view class="l_d2">快递信息已添加，请到 <text style='color:#f00;'>“已购买作品” </text>查看快递信息</view>
 </view>
 </navigator>
 

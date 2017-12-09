@@ -1,7 +1,10 @@
 <!--pages/detail/detail.wxml-->
 <view class="container" wx:if="{{work}}">
 <view class="w">
-  <view class="t">{{work.work_title}}</view>
+  <view class="t">
+  {{work.work_title}}
+  <view class='size'><text>尺寸：</text>{{work.work_w}} x {{work.work_h}} cm</view>
+  </view>
   <view class="item" wx:for="{{work.workItems}}" wx:key="item.work_item_id">
     <image lazy-load='true' src="{{imgBase+item.img.img_url+item.img.img_name}}" style="{{item.style}}" data-index="{{index}}" bindtap='preview'/>
     <view class="i_d">
@@ -11,6 +14,8 @@
 </view>
 <view class="op">
 <view class="price">￥{{work.work_price}}</view>
-<view class="buy">购买溶剂</view>
+<view class="buy">购买作品</view>
 </view>
 </view>
+
+

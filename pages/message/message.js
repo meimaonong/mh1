@@ -7,6 +7,9 @@ Page({
   },
   getMessages: function(){
     var that = this
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: app.globalData.params.api + '/v1/message/get-messagelist',
       header: {
@@ -18,7 +21,7 @@ Page({
         that.setData({
           list: res.data.data
         })
-        console.log(that.data.list)
+        wx.hideLoading()
       }
     })
   },

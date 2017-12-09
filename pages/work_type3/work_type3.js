@@ -8,7 +8,9 @@ Page({
   },
   getList() {
     var that = this
-
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: app.globalData.params.api + '/v1/order/get-buy-orders',
       header: {
@@ -21,6 +23,7 @@ Page({
         that.setData({
           list: r
         })
+        wx.hideLoading()
       }
     })
   },

@@ -15,7 +15,7 @@ Page({
       content: '',
       success: function (res) {
         if (res.confirm) {
-
+      
           wx.request({
             url: params.api + '/v1/address/del-address',
             header: {
@@ -62,7 +62,9 @@ Page({
   },
   getAddressList: function () {
     var that = this
-
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: params.api + '/v1/address/get-addresslist',
       header: {
@@ -74,7 +76,7 @@ Page({
         that.setData({
           list: res.data.data
         })
-
+        wx.hideLoading()
       }
     })
   },
