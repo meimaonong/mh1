@@ -5,8 +5,7 @@
 </view>
 <view class="l_box" wx:if="{{albums}}">
 
-<view class='nw'  wx:for="{{albums}}" wx:key="item.album_id">
-<navigator longtap="show_action" data-id="{{item.album_id}}" data-num="{{item.num}}" data-index="{{index}}" url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w">
+<navigator wx:for="{{albums}}" wx:key="item.album_id" url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w">
 <image src="{{imgBase+item.cover_img_url+item.cover_img_name}}" mode="aspectFill" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>
@@ -15,7 +14,6 @@
 </view>
 <view class='list_i_op' data-id="{{item.album_id}}" data-num="{{item.num}}" data-index="{{index}}" catchtap="show_action"><image src='http://svn.meimaonong.com/op2.png' mode='widthFix'></image></view>
 </navigator>
-</view>
 
 </view>
 

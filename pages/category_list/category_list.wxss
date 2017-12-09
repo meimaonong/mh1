@@ -1,6 +1,5 @@
-/* pages/category_list/category_list.wxss */
 page{
-  background-color: #fff;
+  background: #f0eff5;
 }
 .hide{
   display: none;
@@ -20,6 +19,8 @@ page{
 }
 .w navigator{
   padding-bottom: 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
 }
 .nv {
   width: 100%;
@@ -30,7 +31,7 @@ page{
   overflow: hidden;
 }
 .ct_img{
-  width: 345rpx;
+  width: 100%;
   vertical-align: top;
 }
 
@@ -42,12 +43,14 @@ page{
   overflow: hidden;
   text-overflow:ellipsis;
   white-space: nowrap;
+  padding: 0 15rpx;
 }
 .ct_p {
   text-align: left;
   color: #333;
   font-size: 32rpx;
   line-height: 40rpx;
+  padding: 0 15rpx;
 }
 
 .tip{

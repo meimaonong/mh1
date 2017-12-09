@@ -8,6 +8,7 @@ Page({
     buy_num: 0,
     msg_num: 0,
     album_num: 0,
+    bindPhone: '',
     userInfo: {
       avatarUrl: '',
       nickName: '',
@@ -30,7 +31,8 @@ Page({
           sell_num: parseInt(r.sell_num),
           buy_num: parseInt(r.buy_num),
           msg_num: parseInt(r.msg_num),
-          album_num: parseInt(r.album_num)
+          album_num: parseInt(r.album_num),
+          bindPhone: r.bindPhone,
         })
       }
     })

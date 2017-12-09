@@ -1,5 +1,5 @@
 .container{
-  border-top: 1rpx solid #e5e5e5;
+  
 }
 .l_h{
   display: flex;
@@ -8,7 +8,7 @@
   height: 96rpx;
   background: #fff;
   line-height: 96rpx;
-  border-bottom: 1rpx solid #f5f5f5;
+  border-bottom: 1rpx solid #f0eff5;
 }
 .l_txt{
   flex: 1;
@@ -26,9 +26,9 @@
   display: flex;
   flex-direction: row;
   padding:50rpx;
-  margin-bottom: 30rpx;
   background: #fff;
   position: relative;
+  margin-bottom: 1px;
 }
 .list_i_op{
   width: 40rpx;

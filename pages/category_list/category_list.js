@@ -44,12 +44,12 @@ Page({
 
           if (that.data.lh <= that.data.rh) {
             that.setData({
-              lh: that.data.lh + h + 120,
+              lh: that.data.lh + h + 120 + 20,
               left: [...that.data.left, item]
             })
           } else {
             that.setData({
-              rh: that.data.rh + h + 120,
+              rh: that.data.rh + h + 120 + 20,
               right: [...that.data.right, item]
             })
           }

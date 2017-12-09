@@ -1,4 +1,4 @@
-/* pages/category/category.wxss */
+
 .w {
   box-sizing: border-box;
   padding: 50rpx 0 50rpx 50rpx;
