@@ -6,7 +6,7 @@
 <view class="l_box" wx:if="{{albums}}">
 
 <navigator wx:for="{{albums}}" wx:key="item.album_id" url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w">
-<image src="{{imgBase+item.cover_img_url+item.cover_img_name}}" mode="aspectFill" class="l_i"/>
+<image src="{{imgBase+item.cover_img_url+ 'w400/' + item.cover_img_name}}" mode="aspectFill" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>
 <view class="l_d">{{item.album_des}}</view>

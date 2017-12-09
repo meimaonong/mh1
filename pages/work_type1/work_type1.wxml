@@ -9,7 +9,7 @@
 <view class="l_box">
 
 <navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" class="l_w" wx:for="{{list.work_list}}" wx:key="item.work_id">
-<image src="{{imgBase+item.img.img_url+item.img.img_name}}" class="l_i"/>
+<image src="{{imgBase+item.img.img_url+ 'w400/' + item.img.img_name}}" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.work_title}}</view>
 <view class="l_s_d">出售价格</view>
