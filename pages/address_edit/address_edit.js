@@ -19,6 +19,8 @@ Page({
     selCity: {},
     selDistrict: {},
 
+    initGet: false,
+
     objectMultiArray: [
       [], 
       [], 
@@ -86,6 +88,7 @@ Page({
         that.setData({
           address: res.data.data
         })
+        that.initAddress('', '', res.data.data.province_id, res.data.data.city_id)
       }
     })
   },
@@ -105,7 +108,7 @@ Page({
     //console.log(that.data.address)
     var address = Object.assign(that.data.address, e.detail.value)
     
-    if (address['receiver_tel'] && address['receiver'].length > 0 && address['address_detail'].length > 0) {
+    if (address['receiver_tel'] && address['receiver'].length > 0 && address['address_detail'].length > 0 && that.data.selProvince.id && that.data.selCity.id && that.data.selDistrict.id) {
       if (that.check_tel(address['receiver_tel'])) {
 
       } else {
@@ -128,7 +131,10 @@ Page({
     wx.request({
       url: app.globalData.params.api + '/v1/address/save-address',
       data: {
-        ...address
+        ...address,
+        province_id: that.data.selProvince.id,
+        city_id: that.data.selCity.id,
+        district_id: that.data.selDistrict.id,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -144,6 +150,10 @@ Page({
         var pages = getCurrentPages();
         var prevPage = pages[pages.length - 2];  //上一个页面
         var addresses = prevPage.data.list
+
+        res.data.data['province'] = that.data.selProvince
+        res.data.data['city'] = that.data.selCity
+        res.data.data['district'] = that.data.selDistrict
         
         if (address['address_id']) {
           addresses.map(function (item) {
@@ -152,7 +162,7 @@ Page({
             }
           })
         } else {
-          addresses.push({ ...res.data.data, num: 0 })
+          addresses.unshift({ ...res.data.data })
         }
         
         prevPage.setData({
@@ -164,7 +174,7 @@ Page({
     })
   },
 
-  initAddress(province_code, city_code) {
+  initAddress(province_code, city_code, filter_province_code, filter_city_code) {
     var that = this
 
     wx.request({
@@ -172,6 +182,8 @@ Page({
       data: {
         province_code: province_code ? province_code : '',
         city_code: city_code ? city_code : '',
+        filter_province_code: filter_province_code ? filter_province_code : '',
+        filter_city_code: filter_city_code ? filter_city_code : '',
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -185,6 +197,40 @@ Page({
         that.setData({
           objectMultiArray: that.data.objectMultiArray
         })
+
+        // 有address_id初始化
+        if (that.data.initGet) {
+          that.setData({initGet: false})
+          let t1, t2, t3
+          res.data.data.province.map(function(val, index, arr){
+            if (val['id'] == that.data.address.province_id) {
+              t1 = index
+              that.setData({
+                selProvince: val
+              })
+            }
+          })
+          res.data.data.city.map(function (val, index, arr) {
+            if (val['id'] == that.data.address.city_id) {
+              t2 = index
+              that.setData({
+                selCity: val
+              })
+            }
+          })
+          res.data.data.district.map(function (val, index, arr) {
+            if (val['id'] == that.data.address.district_id) {
+              t3 = index
+              that.setData({
+                selDistrict: val
+              })
+            }
+          })
+          console.log(t1, t2, t3)
+          that.setData({
+            multiIndex: [t1, t2, t3]
+          })
+        }
         
       }
     })
@@ -192,8 +238,8 @@ Page({
 
   onLoad: function(options) {
     var that = this
-
     if (options.address_id) {
+      that.setData({ initGet: true})
       that.getAddress(options.address_id)
       wx.setNavigationBarTitle({
         title: '编辑收货地址'

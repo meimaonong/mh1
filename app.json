@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/home/home",
     "pages/address_edit/address_edit",
     "pages/bind_phone/bind_phone",
-    "pages/home/home",
+    
     "pages/work_edit/work_edit",
     "pages/tpl/tpl",
     "pages/category/category",
