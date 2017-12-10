@@ -3,8 +3,7 @@
 
 <view class='head'>
 <view class='t'>{{album_title}}</view>
-<view class='e' hidden='{{isEdit ? true : false}}' bindtap='toggle'>编辑</view>
-<view class='e' hidden='{{isEdit ? false : true}}' bindtap='toggle'>取消</view>
+
 </view>
 
 <view class="w" wx:if="{{list}}">
@@ -12,10 +11,8 @@
 <navigator url="/pages/work_p/work_p?work_id={{item.work_id}}" wx:for="{{list}}" wx:key="item.work_id">
 <image src="{{imgBase+item.img.img_url+ 'w600/' + item.img.img_name}}" mode="aspectFill" lazy-load='true'/>
 <view class="txt"><text>{{item.work_title}}</text></view>
-<view class='op' hidden='{{isEdit ? false : true}}'>
-<view class='del' data-id="{{item.work_id}}" data-index="{{index}}" catchtap='del'>删除</view>
-<view class='edit' data-id="{{item.work_id}}" data-index="{{index}}" catchtap='edit'>修改</view>
-</view>
+
+<view class='list_i_op' data-id="{{item.work_id}}" data-index="{{index}}" catchtap="show_action"><image src='http://svn.meimaonong.com/op3.png' mode='widthFix'></image></view>
 </navigator>
 
 </view>

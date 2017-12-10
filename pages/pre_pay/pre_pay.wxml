@@ -1,0 +1,51 @@
+<view class="container">
+
+<view class="b">
+
+<view class='b_empty'>
+请选择地址
+</view>
+
+<view class='b_i' style='display:none;'>
+<view class="b_t">周扬</view>
+<view class="b_p">
+<image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
+<view class="b_p_d">13399888888</view>
+</view>
+<view class="b_a">
+<image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
+<view class="b_p_d">江苏南京市鼓楼区</view>
+</view>
+</view>
+<view class='b_arrow'>
+<image src="http://svn.meimaonong.com/arrow.png"></image>
+</view>
+
+</view>
+
+<view class="l_w">
+<image class="l_i"src="http://api.p1.org/uploads/imgs3/w400/1.jpg"></image>
+<view class="l_r">
+<view class="l_t">测试0</view>
+<view class="l_s_d">出售价格</view>
+<view class="l_s_b">¥3200</view>
+</view>
+</view>
+
+<view class='pre_price'>
+<view class='pre_item'>
+<view class='pre_l'>画作金额</view>
+<view class='pre_r'>¥3,600.00</view>
+</view>
+<view class='pre_item'>
+<view class='pre_l'>运费</view>
+<view class='pre_r'>¥0.00</view>
+</view>
+</view>
+
+<view class='price_total'>¥3,600.00</view>
+
+<view class='pay_btn'>微信支付</view>
+
+</view>
+

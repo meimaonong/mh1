@@ -18,7 +18,7 @@ Page({
           if (parseInt(num) > 0) {
             wx.showToast({
               title: '作品不为空',
-              image: '/public/img/icon/wrong.png',
+              image: '/public/img/icon/error.png',
               duration: 2000
             })
             return

@@ -1,0 +1,129 @@
+.b{
+  background: #fff;
+  margin-bottom: 30rpx;
+  padding: 50rpx 0 50rpx 50rpx;
+  display: flex;
+}
+.b_empty{
+  flex: 9;
+  line-height: 120rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+.b_i{
+  flex: 9;
+}
+.b_arrow{
+  flex: 1;
+  display: flex;
+  align-items:center;
+}
+.b_arrow image{
+  width:15rpx;
+  height:25rpx;
+}
+.b_t{
+  color: #333;
+  font-size: 32rpx;
+  padding-bottom: 8rpx;
+}
+.b_p, .b_a{
+  display: flex;
+  flex-direction: row;
+  line-height: 50rpx;
+  color: #999;
+  font-size: 30rpx;
+  padding:16rpx 0 0;
+}
+.b_p_i{
+  width: 28rpx;
+  height: 35rpx;
+  position: relative;
+  top: 6rpx;
+}
+.b_p_d{
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.l_w{
+  display: flex;
+  flex-direction: row;
+  padding:50rpx;
+  background: #fff;
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.l_i {
+width:155rpx;
+height:155rpx;
+background:#eee;
+}
+
+.l_r{
+  flex: 1;
+  padding-left: 50rpx;
+}
+.l_t{
+  font-size: 32rpx;
+  color: #333;
+}
+.l_d{
+  font-size: 30rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+.l_d2{
+  font-size: 30rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+.l_s_d{
+  font-size: 30rpx;
+  color: #999;
+  padding-top: 30rpx;
+}
+.l_s_b{
+  font-size: 35rpx;
+  color: #333;
+  padding-top: 10rpx;
+}
+
+.pre_price {
+  background: #fff;
+  padding: 20rpx 0;
+  margin-bottom: 1rpx;
+}
+.pre_item{
+  overflow: hidden;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 55rpx;
+  padding: 0 50rpx;
+}
+.pre_item .pre_l {
+  float: left;
+}
+.pre_item .pre_r {
+  float: right;
+}
+
+.price_total{
+  text-align: right;
+  color: #333;
+  font-size: 40rpx;
+  background: #fff;
+  padding: 0 50rpx;
+  line-height: 100rpx;
+}
+
+.pay_btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #25b925;
+  text-align: center;
+  color: #fff;
+  line-height: 100rpx;
+}

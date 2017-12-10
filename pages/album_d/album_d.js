@@ -8,16 +8,9 @@ Page({
 
     imgBase: app.globalData.params.imgBase,
   },
-  toggle: function() {
+
+  del: function (index, work_id) {
     var that = this
-    that.setData({
-      isEdit: !that.data.isEdit
-    })
-  },
-  del: function(e) {
-    var that = this
-    var index = e.currentTarget.dataset.index
-    var work_id = e.currentTarget.dataset.id
     wx.showModal({
       title: '确定删除？',
       content: '',
@@ -49,9 +42,9 @@ Page({
       }
     })
   },
-  edit: function (e) {
+  edit: function (work_id) {
     var that = this
-    var work_id = e.currentTarget.dataset.id
+
     that.setData({ isEdit: false})
     wx.navigateTo({
       url: '/pages/work_edit/work_edit?work_id=' + work_id,
@@ -59,7 +52,9 @@ Page({
   },
   getWorks: function(album_id) {
     var that = this
-
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       url: app.globalData.params.api + '/v1/work/get-worklist-by-album',
       header: {
@@ -74,13 +69,27 @@ Page({
         that.setData({
           list: res.data.data
         })
-
+        wx.hideLoading()
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  show_action: function (e) {
+    var that = this
+    var tobj = e.currentTarget.dataset
+    wx.showActionSheet({
+      itemList: ['编辑', '删除'],
+      success: function (res) {
+        if (res.tapIndex == 0) {
+          that.edit(tobj.id)
+        } else if (res.tapIndex == 1) {
+          that.del(tobj.index, tobj.id)
+        }
+      },
+      fail: function (res) {
+        //console.log(res.errMsg)
+      }
+    })
+  },
   onLoad: function (options) {
     var that = this
     that.setData({

@@ -2,8 +2,6 @@
 .container{
   padding-bottom: 150rpx;
 }
-
-
 .e_w{
   background: #fff;
   margin-bottom: 30rpx;
@@ -77,6 +75,8 @@ icon.clear{
 .op_box image{
   width: 150rpx;
   height: 150rpx;
+  position: relative;
+  z-index: 10;
 }
 .txt{
   flex: 1;
@@ -84,6 +84,7 @@ icon.clear{
   padding: 0 20rpx;
   font-size: 30rpx;
   color: #333;
+  word-break:break-all;
 }
 .op{
   width: 50rpx;

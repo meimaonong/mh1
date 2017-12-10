@@ -1,11 +1,12 @@
 
-const params = require('../../utils/params')
+
 const app = getApp()
 
 Page({
   data: {
     work: null,
-    pics: []
+    pics: [],
+    imgBase: app.globalData.params.imgBase,
   },
   preview: function (e) {
     var that = this
@@ -18,8 +19,8 @@ Page({
   getWork: function (work) {
     var that = this
     work.workItems.map(function (item) {
-      that.data.pics.push(item.work_item_img)
-      item['style'] = 'height:' + (690 / parseFloat(item.ratio)) + 'rpx'
+      that.data.pics.push(that.data.imgBase + item.img.img_url + 'w1080/' + item.img.img_name)
+      item['style'] = 'height:' + (690 / parseFloat(item.img.img_ratio)) + 'rpx'
     })
     that.setData({
       work: work,

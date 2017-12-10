@@ -114,7 +114,7 @@ Page({
       } else {
         wx.showToast({
           title: '手机号格式不正确',
-          image: '/public/img/icon/wrong.png',
+          image: '/public/img/icon/error.png',
           duration: 2000
         })
         return
@@ -122,7 +122,7 @@ Page({
     } else {
       wx.showToast({
         title: '请完善信息',
-        image: '/public/img/icon/wrong.png',
+        image: '/public/img/icon/error.png',
         duration: 2000
       })
       return

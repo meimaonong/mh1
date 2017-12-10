@@ -1,6 +1,8 @@
 {
   "pages":[
+    
     "pages/home/home",
+    "pages/pre_pay/pre_pay",
     "pages/address_edit/address_edit",
     "pages/bind_phone/bind_phone",
     "pages/about_us/about_us",
