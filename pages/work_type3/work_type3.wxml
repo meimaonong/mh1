@@ -18,8 +18,8 @@
 </view>
 </navigator>
 <view class='address'>
-<view>收 件 人：<text class='c'>{{item.address.receiver}}</text>手机号：<text class='c'>{{item.address.receiver_tel}}</text></view>
-<view>邮寄地址：<text class='c'>{{item.address.address_detail}}</text></view>
+<view>收 件 人：<text class='c'>{{item.receiver}}</text>手机号：<text class='c'>{{item.receiver_tel}}</text></view>
+<view>邮寄地址：<text class='c'>{{item.province.name}} {{item.city.name}} {{item.district.name}} {{item.address_detail}}</text></view>
 </view>
 <view class='express'>
 快递信息：

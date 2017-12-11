@@ -18,14 +18,14 @@
 </view>
 </navigator>
 <view class='address'>
-<view>收 件 人：<text class='c'>{{item.address.receiver}}</text>手机号：<text class='c'>{{item.address.receiver_tel}}</text></view>
-<view>邮寄地址：<text class='c'>{{item.address.address_detail}}</text></view>
+<view>收 件 人：<text class='c'>{{item.receiver}}</text>手机号：<text class='c'>{{item.receiver_tel}}</text></view>
+<view>邮寄地址：<text class='c'>{{item.province.name}} {{item.city.name}} {{item.district.name}} {{item.address_detail}}</text></view>
 </view>
 <view class='express'>
 快递信息：
-<text hidden='{{item.express?false:true}}' style='color:#333;'>{{item.express}}</text>
-<text hidden='{{item.express?true:false}}' style='color:#ccc;'>如：顺丰 1233223</text>
-<view class='c_edit' data-txt="{{item.express}}" data-index="{{index}}" data-id="{{item.sell_record_id}}" bindtap='edit_express'>编辑</view>
+<text hidden='{{item.express_id?false:true}}' style='color:#333;'>{{item.express_name ? item.express_name + '：' : ''}}{{item.express_no}}</text>
+<text hidden='{{item.express_id&&item.express_id!=0?true:false}}' style='color:#ccc;'>暂无</text>
+<view class='c_edit' data-expressid="{{item.express_id}}" data-expressno="{{item.express_no}}" data-index="{{index}}" data-id="{{item.order_id}}" bindtap='edit_express'>编辑</view>
 </view>
 </block>
 

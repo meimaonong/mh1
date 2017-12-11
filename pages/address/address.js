@@ -3,12 +3,27 @@ const app = getApp()
 Page({
   data: {
     list: null,
-    isEdit: false
+    select_id: '',
   },
-  del: function (e) {
+  show_action: function (e) {
     var that = this
-    var index = e.currentTarget.dataset.index
-    var address_id = e.currentTarget.dataset.id
+    var tobj = e.currentTarget.dataset
+    wx.showActionSheet({
+      itemList: ['编辑', '删除'],
+      success: function (res) {
+        if (res.tapIndex == 0) {
+          that.edit(tobj.id)
+        } else if (res.tapIndex == 1) {
+          that.del(tobj.index, tobj.id, tobj.num)
+        }
+      },
+      fail: function (res) {
+        //console.log(res.errMsg)
+      }
+    })
+  },
+  del: function (index,address_id) {
+    var that = this
 
     wx.showModal({
       title: '确定删除？',
@@ -46,18 +61,11 @@ Page({
       }
     })
   },
-  edit: function (e) {
+  edit: function (address_id) {
     var that = this
-    var address_id = e.currentTarget.dataset.id
     that.setData({ isEdit: false })
     wx.navigateTo({
       url: '/pages/address_edit/address_edit?address_id=' + address_id,
-    })
-  },
-  toggle: function () {
-    var that = this
-    that.setData({
-      isEdit: !that.data.isEdit
     })
   },
   getAddressList: function () {
@@ -80,8 +88,29 @@ Page({
       }
     })
   },
+  sel(e){
+    var that = this
+    var tobj = e.currentTarget.dataset
+
+    if (that.data.select_id) {
+      var pages = getCurrentPages();
+      var prevPage = pages[pages.length - 2];  //上一个页面
+      var address = prevPage.data.address
+
+      prevPage.setData({
+        address: tobj.item
+      })
+      wx.navigateBack()
+    }
+  },
   onLoad: function (options) {
     var that = this
     that.getAddressList()
+
+    // 从购买选择地址过来
+    if (options.select_id) {
+      that.setData({ select_id: options.select_id })
+    }
+
   },
 })

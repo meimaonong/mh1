@@ -71,7 +71,7 @@
 <image src="http://svn.meimaonong.com/arrow.png"/>
 </view>
 </picker>
-<picker bindchange="bindPickerChange2" range="{{albums}}" range-key="album_title">
+<picker bindchange="bindPickerChange2" range="{{albums}}" range-key="album_title" value="album_index">
 <view class="mc">
 <text>所属专辑</text>
 <text class="choose" wx:if="{{album.album_title}}">{{album.album_title}}</text>

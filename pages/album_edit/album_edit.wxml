@@ -2,21 +2,22 @@
 <view class="container">
 <form bindsubmit="formSubmit">
 
-<view class="w">
+<view class='p3'>
 
-<view class="b">
-<label>专辑名称：</label>
-<input value='{{album.album_title}}' name="album_title"></input>
-</view>
-<view class="b">
-<label>专辑描述：</label>
-<textarea auto-height value='{{album.album_des}}' name="album_des" />
+<view class="mc">
+<text>专辑名称</text>
+<input placeholder="请输入专辑名称" placeholder-style="color:#ccc;" value='{{album.album_title}}' name="album_title"></input>
 </view>
 
+<view class="mc">
+<text>专辑描述</text>
+<textarea placeholder='请输入专辑描述' placeholder-style="color:#ccc;" value='{{album.album_des}}' name="album_des"></textarea>
 </view>
 
- <button class="save" formType="submit"> 保存 </button>
-<button class="back" bindtap='back'> 返回 </button> 
+</view>
+
+ <button class="savebtn" formType="submit"> 保存 </button>
+
 
 </form>
 

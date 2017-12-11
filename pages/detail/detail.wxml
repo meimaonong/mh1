@@ -14,7 +14,7 @@
 </view>
 <view class="op">
 <view class="price">￥{{work.work_price}}</view>
-<navigator class="buy" url='/pages/pre_pay/pre_pay'>购买作品</navigator>
+<navigator class="buy" url='/pages/pre_pay/pre_pay?work_id={{work.work_id}}'>购买作品</navigator>
 </view>
 </view>
 

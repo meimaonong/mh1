@@ -16,6 +16,9 @@ Page({
   },
   getWork: function(work_id){
     var that = this
+    wx.showLoading({
+      title: '',
+    })
     wx.request({
       url: app.globalData.params.api + '/v1/work/get-work',
       method: 'post',
@@ -37,6 +40,7 @@ Page({
           work: data,
           pics: that.data.pics
         })
+        wx.hideLoading()
       }
     })
   },

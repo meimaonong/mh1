@@ -1,51 +1,60 @@
 /* pages/adress_edit/adress_edit.wxss */
-
-.w{
-  padding: 50rpx 30rpx;
+.p3{
   background: #fff;
-  border-top: 1rpx solid #efefef;
+  margin-top: 30rpx;
 }
-.b{
+.p3 .mc{
   display: flex;
-  flex-direction: row;
-  padding-bottom: 20rpx;
-}
-.b label{
-  width: 160rpx;
+  position: relative;
+
+  font-size: 30rpx;
   color: #999;
-  line-height: 80rpx;
-  font-size: 32rpx;
-  text-align: right;
-}
-.b input, .b textarea{
-  flex: 1;
-  min-height:60rpx;
-  line-height: 60rpx;
-  padding: 10rpx 20rpx;
-  background: #efefef;
-  font-size: 32rpx;
-  color: #333;
-}
-.b textarea{
-  padding: 20rpx 20rpx;
-  min-height: 120rpx;
-  line-height: 40rpx;
-}
-.save, .back{
-  margin: 50rpx 20rpx 0 20rpx;
+  border-bottom: 1rpx solid #efefef;
   line-height: 100rpx;
-  text-align: center;
-  border-radius: 12rpx;
+  margin: 0 30rpx;
 }
-.save {
-  border:1rpx solid #333;
-  background-color: #333;
-  color: #fff;
+.p3 .mc text{
+  display: inline-block;
+  width: 5em;
 }
-.back {
-  border: 1rpx solid #ccc;
-  background-color: #fff;
+
+.p3 .mc:last-child{
+  border-bottom: none;
+}
+
+.p3 .pz{
+  flex: 1;
+  display: flex;
+}
+
+.p3 .mc input{
+  flex: 1;
   color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+}
+.p3 .mc textarea{
+  flex: 1;
+  color: #333;
+  height: 100rpx;
+  font-size: 32rpx;
+  line-height: 1;
+  padding: 30rpx 0 30rpx 50rpx;
+}
+.p3 image{
+  width:15rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 37rpx;
+  right: 10rpx;
+  transform:rotate(90deg); 
+}
+.savebtn{
+  margin: 30rpx;
+  background: #333;
+  color: #fff;
 }
 
  

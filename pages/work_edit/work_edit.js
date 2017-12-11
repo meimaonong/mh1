@@ -4,7 +4,7 @@ Page({
 
   data: {
     work: null,
-    isEdit: true,
+    isEdit: false,
     category: {
       category_id: -1,
       category_name: '',
@@ -396,6 +396,7 @@ Page({
         that.setData({
           categorys: res.data.data
         })
+        
       }
     })
   },
@@ -432,14 +433,15 @@ Page({
       method: 'post',
       success: function (res) {
         that.setData({
+          isEdit: true,
           work: res.data.data,
           category: {
-            category_id: res.data.data.category_id,
-            category_name: res.data.data.category_name
+            category_id: res.data.data.category.category_id,
+            category_name: res.data.data.category.category_name
           },
           album: {
-            album_id: res.data.data.album_id,
-            album_title: res.data.data.album_title
+            album_id: res.data.data.album.album_id,
+            album_title: res.data.data.album.album_title
           },
         })
 

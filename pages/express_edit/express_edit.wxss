@@ -10,3 +10,62 @@ input{
   background: #fff;
   box-sizing: border-box;
 }
+
+.bindbtn{
+  margin: 30rpx;
+  background: #333;
+  color: #fff;
+}
+
+.p3{
+  background: #fff;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}
+.p3 .mc{
+  display: block;
+  position: relative;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #999;
+  border-bottom: 1rpx solid #efefef;
+  line-height: 100rpx;
+}
+.p3 .mc.mcfirst{
+  display: flex;
+}
+.p3 .mc.mcfirst:last-child{
+  border-bottom: none;
+}
+.p3 .mc input{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+}
+.p3 .mc input.cc{
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 50rpx;
+  text-align: center;
+}
+.choose{
+  margin-left: 50rpx;
+  color: #353535;
+  font-size: 32rpx;
+}
+.p3 picker:last-child .mc{
+  border-bottom: none;
+}
+.p3 image{
+  width:15rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 37rpx;
+  right: 0;
+}

@@ -82,7 +82,7 @@ background:#eee;
 .l_s_d{
   font-size: 30rpx;
   color: #999;
-  padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
 .l_s_b{
   font-size: 35rpx;

@@ -3,7 +3,7 @@
 <view class='p3'>
 <view class="mc">
 <text>收货人姓名</text>
-<input placeholder="请输入收货人姓名" type='number' placeholder-style="color:#ccc;" name="receiver" value='{{address.receiver}}'></input>
+<input placeholder="请输入收货人姓名" placeholder-style="color:#ccc;" name="receiver" value='{{address.receiver}}'></input>
 </view>
 <view class="mc">
 <text>手机号</text>

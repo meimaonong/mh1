@@ -1,3 +1,24 @@
 <view class='container'>
-<input bindconfirm='confirm' value='{{val}}' focus="true" />
+<form bindsubmit="formSubmit">
+<view class='p3'>
+
+<picker bindchange="bindPickerChange" range="{{expresses}}" range-key="express_name" value='selIndex'>
+<view class="mc">
+<text>快递类型</text>
+<text class="choose" wx:if="{{express.express_name}}">{{express.express_name}}</text>
+<text class="choose" wx:if="{{!express.express_name}}" style="color:#ccc;">请选择类型</text>
+<image src="http://svn.meimaonong.com/arrow.png"/>
+</view>
+</picker>
+
+<view class="mc" style='display:flex'>
+<text>快递单号</text>
+<input placeholder="请输入快递单号" type='number' placeholder-style="color:#ccc;" name="express_no" value="{{expressno}}"></input>
+</view>
+
+</view>
+
+<button formType="submit" class='bindbtn'>保存</button>
+
+</form>
 </view>

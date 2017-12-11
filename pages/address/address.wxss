@@ -1,7 +1,15 @@
-/* pages/adress/adress.wxss */
+
 .container{
   padding-bottom: 100rpx;
 }
+
+.no {
+  text-align: center;
+  padding: 100rpx;
+  font-size: 35rpx;
+  color: #aaa;
+}
+
 .b_h{
   height: 94rpx;
   line-height: 94rpx;
@@ -21,6 +29,7 @@
   background: #fff;
   margin-bottom: 30rpx;
   padding: 50rpx;
+  position: relative;
 }
 .b_t{
   color: #333;
@@ -75,4 +84,19 @@
   left: 0;
   bottom: 0;
   z-index: 10;
+}
+
+.list_i_op{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20rpx;
+}
+.list_i_op image{
+  width: 100%;
+  height: 100%;
+  margin-top: 15rpx;
+  vertical-align: top;
 }

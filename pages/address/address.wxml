@@ -1,12 +1,7 @@
 <!--pages/adress/adress.wxml-->
 <view class="container" wx:if="{{list}}">
 
-<view class="b_h">
-<view class='e' hidden='{{isEdit ? true : false}}' bindtap='toggle'>编辑</view>
-<view class='e' hidden='{{isEdit ? false : true}}' bindtap='toggle'>取消</view>
-</view>
-
-<view class="b" wx:for="{{list}}" wx:key="item.address_id">
+<view class="b" wx:for="{{list}}" wx:key="item.address_id" data-item="{{item}}" data-id="{{item.address_id}}"  bindtap='sel'>
 <view class="b_t">{{item.receiver}}</view>
 <view class="b_p">
 <image src="http://svn.meimaonong.com/p1.png" class="b_p_i"/>
@@ -15,16 +10,22 @@
 <view class="b_a">
 <image src="http://svn.meimaonong.com/p2.png" class="b_p_i"/>
 <view class="b_p_d">{{item.province.name + item.city.name + item.district.name + item.address_detail}}</view>
+
+<view wx:if="{{!select_id}}" class='list_i_op' data-id="{{item.address_id}}" data-index="{{index}}" catchtap="show_action">
+<image src='http://svn.meimaonong.com/op2.png' mode='widthFix'></image>
 </view>
 
-<view class='i_op' hidden='{{isEdit ? false : true}}'>
-<view class='del' data-id="{{item.address_id}}" data-index="{{index}}" catchtap='del'>删除</view>
-<view class='edit' data-id="{{item.address_id}}" data-index="{{index}}" catchtap='edit'>修改</view>
+<view wx:if="{{select_id}}" class='list_i_op'>
+<image wx:if="{{select_id==item.address_id}}" src='http://svn.meimaonong.com/sel.png' mode='widthFix'></image>
+<image wx:if="{{select_id!=item.address_id}}" src='http://svn.meimaonong.com/sel_no.png' mode='widthFix'></image>
 </view>
 
 </view>
 
+</view>
 
 </view>
+
+<view class='no' wx:if="{{list&&list.length==0}}">暂无地址</view>
 
 <navigator class='add_address' url='/pages/address_edit/address_edit'>添加</navigator>

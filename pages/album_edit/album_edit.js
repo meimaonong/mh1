@@ -1,5 +1,5 @@
 // pages/adress_edit/adress_edit.js
-const params = require('../../utils/params')
+
 const app = getApp()
 
 Page({
@@ -14,7 +14,7 @@ Page({
   getAlbum: function(album_id){
     var that = this
     wx.request({
-      url: params.api + '/v1/album/get-album',
+      url: app.globalData.params.api + '/v1/album/get-album',
       data: {
         album_id
       },
@@ -35,7 +35,7 @@ Page({
     var album = Object.assign(that.data.album, e.detail.value)
 
     wx.request({
-      url: params.api + '/v1/album/save-album',
+      url: app.globalData.params.api + '/v1/album/save-album',
       data: {
         ...album
       },

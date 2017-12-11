@@ -28,7 +28,8 @@
 .getCode{
   color: #3CC51F;
   margin-right: -30rpx;
-  padding: 0 30rpx;
+  text-align: center;
+  width: 200rpx;
   border-left: 1px solid #efefef;
 }
 

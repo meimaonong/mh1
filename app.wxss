@@ -7,7 +7,7 @@ page {
 }
 .navigator-hover {
     background: none; 
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .publish{

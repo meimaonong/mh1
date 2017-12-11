@@ -5,7 +5,7 @@
 <image src="http://svn.meimaonong.com/mybg.jpg" class="bg"/>
 <image src="{{userInfo.avatarUrl}}" class="h"/>
 <view class="n">{{userInfo.nickName}}</view>
-<view class="bind" wx:if="{{bindPhone}}">{{bindPhone}}  <navigator url="/pages/bind_phone/bind_phone">设置</navigator></view>
+<view class="bind" wx:if="{{bindPhone}}">{{bindPhone}}  <navigator url="/pages/bind_phone/bind_phone">修改</navigator></view>
 <view class="bind" wx:if="{{!bindPhone}}"><navigator url="/pages/bind_phone/bind_phone">去绑定手机 ></navigator></view>
 </view>
 

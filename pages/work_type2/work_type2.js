@@ -10,10 +10,11 @@ Page({
   edit_express: function(e) {
     var that = this
     var index = e.currentTarget.dataset.index
-    var txt = e.currentTarget.dataset.txt
+    var expressno = e.currentTarget.dataset.expressno
+    var expressid = e.currentTarget.dataset.expressid
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/express_edit/express_edit?index=${index}&id=${id}&txt=${txt}`,
+      url: `/pages/express_edit/express_edit?index=${index}&id=${id}&expressid=${expressid}&expressno=${expressno}`,
     })
   },
   getList() {
