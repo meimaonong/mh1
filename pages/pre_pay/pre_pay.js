@@ -4,6 +4,7 @@ Page({
   data: {
     work: null,
     address: null,
+    imgBase: app.globalData.params.imgBase,
   },
   changAddress() {
     var that = this

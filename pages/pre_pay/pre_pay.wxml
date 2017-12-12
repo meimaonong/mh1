@@ -24,7 +24,7 @@
 </view>
 
 <view class="l_w">
-<image class="l_i"src="http://api.p1.org/uploads/imgs3/w400/1.jpg"></image>
+<image class="l_i"src="{{imgBase + work.img.img_url + 'w400/' + work.img.img_name}}"></image>
 <view class="l_r">
 <view class="l_t">{{work.work_title}}</view>
 <view class="l_s_d">{{work.work_w}} x {{work.work_h}} cm</view>
