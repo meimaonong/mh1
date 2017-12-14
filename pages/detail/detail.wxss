@@ -63,7 +63,7 @@ page{
 
 .price, .buy{
   flex: 1;
-  line-height: 120rpx;
+  line-height: 100rpx;
   text-align: center; 
 }
 .buy{

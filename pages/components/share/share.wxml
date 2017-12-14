@@ -1,5 +1,8 @@
-<view class="x-share-bg" hidden="{{!isShow}}" bindtouchstart="toggle">
-<view class="x-share-cp" catchtouchstart>
+<view class="x-share-bg" hidden="{{!isShow}}" catchtouchstart="toggle">
+
+</view>
+
+<view class="x-share-cp" hidden="{{!isShow}}">
 <view class="x-share-zone">
   <view class="x-share-item">
     <image class="x-share-item-img" style="width:30%" mode="aspectFit" src="/public/img/icon/pyq_icon.png"></image>
@@ -8,14 +11,15 @@
   <view class="x-share-item">
     <image class="x-share-item-img" mode="aspectFit" src="/public/img/icon/hy_icon.png"></image>
     <text class="x-share-item-txt">微信好友</text>
+    <button open-type="share" bindtap="toggle" class="x-share-hidden-btn"></button>
   </view>
   <view class="x-share-item">
+  
   </view>
 </view>
 <view class="x-share-cancel" catchtap="toggle">取消分享</view>
 </view>
-</view>
 
-<view class="x-share-btn" catchtap="toggle">
+<view class="x-share-btn" catchtap="toggle" style="{{mstyle}}">
 <image class="x-share-btn-img" src='/public/img/icon/share_white.png'></image>
 </view>
