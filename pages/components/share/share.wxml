@@ -1,10 +1,7 @@
-<view class="x-share-bg" hidden="{{!isShow}}" catchtouchstart="toggle">
-
-</view>
-
+<view class="x-share-bg" hidden="{{!isShow}}" catchtouchstart="toggle"></view>
 <view class="x-share-cp" hidden="{{!isShow}}">
 <view class="x-share-zone">
-  <view class="x-share-item">
+  <view class="x-share-item" bindtap="getAuthSave">
     <image class="x-share-item-img" style="width:30%" mode="aspectFit" src="/public/img/icon/pyq_icon.png"></image>
     <text class="x-share-item-txt">微信朋友圈</text>
   </view>
@@ -19,6 +16,17 @@
 </view>
 <view class="x-share-cancel" catchtap="toggle">取消分享</view>
 </view>
+
+<view class="x-share-py-bg" hidden="{{!isShow2}}" catchtouchmove="move"></view>
+<view class="x-share-py" hidden="{{!isShow2}}">
+<view class="x-share-py-head">分享到朋友圈</view>
+<view class="x-share-py-pic-w">
+<image class="x-share-py-pic" mode="aspectFit" wx:if="{{share_url}}" style="{{imgStyle}}" bindload="loadFunc" src="{{share_url}}"></image>
+</view>
+<text class="x-share-py-txt1">图片已保存到相册</text>
+<text class="x-share-py-txt2">快到朋友圈去分享吧~</text>
+<view class="x-share-py-go" bindtap="toggle2">去朋友圈分享</view>
+</view> 
 
 <view class="x-share-btn" catchtap="toggle" style="{{mstyle}}">
 <image class="x-share-btn-img" src='/public/img/icon/share_white.png'></image>

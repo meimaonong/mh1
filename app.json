@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/share_demo/share_demo",
     "pages/home/home",
+    "pages/share_demo/share_demo",
+    
     "pages/detail/detail",
     "pages/pre_pay/pre_pay",
     "pages/address_edit/address_edit",
@@ -62,7 +63,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#333",
-    "navigationBarTitleText": "xx",
+    "navigationBarTitleText": "寻画",
     "navigationBarTextStyle":"light"
   }
 }

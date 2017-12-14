@@ -19,5 +19,5 @@
 
 </view>
 
-<x-share mstyle="bottom:150rpx;"></x-share>
+<x-share mstyle="bottom:150rpx;" work_id="{{work.work_id}}"></x-share>
 

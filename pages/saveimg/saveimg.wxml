@@ -1,0 +1,2 @@
+<!--pages/saveimg/saveimg.wxml-->
+<button bindtap="getAuthSave">保存图片</button>

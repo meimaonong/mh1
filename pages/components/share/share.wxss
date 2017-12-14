@@ -1,4 +1,4 @@
-.x-share-bg{
+.x-share-bg, .x-share-py-bg{
   position: fixed;
   z-index: 101;
   background: rgba(0, 0, 0, 0.5);
@@ -6,7 +6,6 @@
   right: 0;
   top: 0;
   bottom: 0;
-  transition: all 2s ease-in;
 }
 .x-share-cp{
   position: fixed;
@@ -16,7 +15,6 @@
   height: 300rpx;
   left: 0;
   bottom: 0;
-  transition: all 2s ease-in;
 }
 .x-share-zone{
   height: 200rpx;
@@ -75,4 +73,52 @@
   width: 50%;
   height: 50%;
   margin: 0 auto;
+}
+
+.x-share-py{
+  position: fixed;
+  border-radius: 10rpx;
+  z-index: 102;
+  background: #fff;
+  width: 600rpx;
+  height: 900rpx;
+  margin: -450rpx 0 0 -300rpx;
+  left: 50%;
+  top: 50%;
+}
+
+.x-share-py-head {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  text-align: center;
+  color: #666;
+}
+.x-share-py-pic-w{
+  height: 590rpx;
+  margin-bottom: 10rpx;
+}
+.x-share-py-pic{
+  display: block;
+  width:500rpx;
+  height: 588rpx;
+  margin:0 auto;
+  border: 1rpx solid #eee;
+}
+.x-share-py-txt1, .x-share-py-txt2{
+  line-height: 45rpx;
+  display: block;
+  color: #999;
+  text-align: center;
+  font-size: 30rpx;
+}
+.x-share-py-go{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  text-align: center;
+  color: #333;
+  margin-top: 10rpx;
+  border-top: 1px solid #eee;
+  box-sizing: border-box;
 }

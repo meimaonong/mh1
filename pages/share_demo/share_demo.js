@@ -32,7 +32,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this
-    that.getWork(6)
+    that.getWork(10)
   },
   onShareAppMessage: function (res) {
     var that = this
