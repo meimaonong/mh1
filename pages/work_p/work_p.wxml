@@ -3,7 +3,7 @@
 <view class="w">
   <view class="t">{{work.work_title}}</view>
   <view class="item" wx:for="{{work.workItems}}" wx:key="item.work_item_id">
-    <image lazy-load='true' src="{{imgBase+item.img.img_url+item.img.img_name}}" style="{{item.style}}" data-index="{{index}}" bindtap='preview'/>
+    <image lazy-load='true' src="{{imgBase+item.img.img_url+item.img.img_name}}?imageView2/2/w/1080" style="{{item.style}}" data-index="{{index}}" bindtap='preview'/>
     <view class="i_d">
     {{item.work_item_des}}
     </view>

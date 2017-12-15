@@ -6,7 +6,7 @@
 <view class="l_box" wx:if="{{albums}}">
 
 <navigator wx:for="{{albums}}" wx:key="item.album_id" url="/pages/album_d/album_d?album_title={{item.album_title}}&album_id={{item.album_id}}" class="l_w">
-<image wx:if="{{item.cover_img_name}}" src="{{imgBase+item.cover_img_url+ 'w400/' + item.cover_img_name}}" mode="aspectFill" class="l_i"/>
+<image wx:if="{{item.cover_img_name}}" src="{{imgBase+item.cover_img_url + item.cover_img_name}}?imageView2/2/w/400" mode="aspectFill" class="l_i"/>
 <image wx:if="{{!item.cover_img_name}}" src="http://svn.meimaonong.com/type1.png" mode="aspectFill" class="l_i"/>
 <view class="l_r">
 <view class="l_t">{{item.album_title}}</view>

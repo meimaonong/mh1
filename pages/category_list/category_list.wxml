@@ -4,7 +4,7 @@
 
 <navigator url="/pages/detail/detail?work_id={{item.work_id}}"  wx:for="{{left}}" wx:for-item="item" wx:key="{{item.work_id}}">
     <view class="ct_img_w">
-    <image src="{{imgBase+item.img.img_url+ 'w600/' + item.img.img_name}}" class="ct_img" style='{{item.c_h}}'/>
+    <image src="{{imgBase+item.img.img_url+ item.img.img_name}}?imageView2/2/w/600" class="ct_img" style='{{item.c_h}}'/>
     </view>
     <view class="ct_n">{{item.work_title}}</view>
     <view class='ct_p'>￥{{item.work_price}}</view>
@@ -16,7 +16,7 @@
 
 <navigator url="/pages/detail/detail?work_id={{item.work_id}}"  wx:for="{{right}}" wx:for-item="item" wx:key="{{item.work_id}}">
     <view class="ct_img_w">
-    <image src="{{imgBase+item.img.img_url+item.img.img_name}}" class="ct_img" style="{{item.c_h}}"/>
+    <image src="{{imgBase+item.img.img_url+item.img.img_name}}?imageView2/2/w/600" class="ct_img" style="{{item.c_h}}"/>
     </view>
     <view class="ct_n">{{item.work_title}}</view>
     <view class='ct_p'>￥{{item.work_price}}</view>

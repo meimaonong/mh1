@@ -38,7 +38,7 @@ Page({
     var that = this
     return {
       title: that.data.work.work_title,
-      imageUrl: that.data.imgBase + that.data.work.img.img_url + 'w1080/' + that.data.work.img.img_name,
+      imageUrl: that.data.imgBase + that.data.work.img.img_url + that.data.work.img.img_name + '?imageView2/2/w/1080',
       path: '/pages/detail/detail?work_id=' + that.data.work.work_id,
       success: function (res) {
         // 转发成功

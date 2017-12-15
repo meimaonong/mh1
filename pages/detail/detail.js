@@ -32,7 +32,7 @@ Page({
       success: function (res) {
         var data = res.data.data
         data.workItems.map(function(item){
-          that.data.pics.push(that.data.imgBase + item.img.img_url + 'w1080/' +  item.img.img_name)
+          that.data.pics.push(that.data.imgBase + item.img.img_url +  item.img.img_name + '?imageView2/2/w/1080')
           item['style'] = 'height:' + (690 / parseFloat(item.img.img_ratio)) + 'rpx'
         })
 
@@ -59,7 +59,7 @@ Page({
     // }
     return {
       title: that.data.work.work_title,
-      imageUrl: that.data.imgBase + that.data.work.img.img_url + 'w1080/' + that.data.work.img.img_name,
+      imageUrl: that.data.imgBase + that.data.work.img.img_url + that.data.work.img.img_name + '?imageView2/2/w/1080',
       path: '/pages/detail/detail?work_id=' + that.data.work.work_id,
       success: function (res) {
         // 转发成功
