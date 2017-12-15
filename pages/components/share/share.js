@@ -83,29 +83,6 @@ Component({
         }
       })
     },
-    save() {
-      //文件下载
-      var imgSrc = "http://cdn.meimaonong.com/uploads/imgs3/9.jpg"
-      wx.showLoading({
-        title: '',
-        mask: true,
-      })
-      wx.downloadFile({
-        url: imgSrc,
-        success:
-        function (res) {
-          //图片保存到本地
-          wx.saveImageToPhotosAlbum({
-            filePath: res.tempFilePath,
-            success:
-            function (data) {
-              wx.hideLoading()
-            }
-
-          })
-        }
-      })
-    },
     shareto() {
       var that = this
       that.toggle()
