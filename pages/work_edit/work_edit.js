@@ -477,5 +477,12 @@ Page({
     
     that.getCategorys()
     that.getAlbums()
-  }
+  },
+  onShow() {
+    if (!app.globalData.tel) {
+      wx.redirectTo({
+        url: '/pages/bind_phone/bind_phone',
+      })
+    }
+  },
 })

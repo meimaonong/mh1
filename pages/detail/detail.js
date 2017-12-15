@@ -49,7 +49,6 @@ Page({
     var work_id = options.work_id
     that.getWork(work_id)
   },
-
   onShareAppMessage: function (res) {
 
     var that = this

@@ -32,7 +32,6 @@ Page({
           buy_num: parseInt(r.buy_num),
           msg_num: parseInt(r.msg_num),
           album_num: parseInt(r.album_num),
-          bindPhone: r.bindPhone,
         })
       }
     })
@@ -57,5 +56,10 @@ Page({
     
     console.log(app.globalData.userInfo)
   },
-
+  onShow() {
+    var that = this
+    that.setData({
+      bindPhone: app.globalData.tel
+    })
+  }
 })

@@ -48,6 +48,7 @@ Page({
         code
       },
       success: function (res) {
+        app.globalData.tel = res.data.data
         wx.hideLoading()
         if (res.data.code == 0) {
           wx.reLaunch({

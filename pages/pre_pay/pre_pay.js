@@ -112,5 +112,12 @@ Page({
     if (work_id) {
       that.getPreWork(work_id)
     }
-  }
+  },
+  onShow() {
+    if (!app.globalData.tel) {
+      wx.redirectTo({
+        url: '/pages/bind_phone/bind_phone',
+      })
+    }
+  },
 })

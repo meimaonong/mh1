@@ -35,7 +35,8 @@ App({
               code: res.code
             },
             success: function (res) {
-              that.globalData.sessionId = res.data.data
+              that.globalData.sessionId = res.data.data.token
+              that.globalData.tel = res.data.data.tel
               util.saveUserInfo(that)
               wx.hideLoading()
             }
@@ -84,6 +85,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    sessionId: null
+    sessionId: null,
+    tel: '',
   }
 })
