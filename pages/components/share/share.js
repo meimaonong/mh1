@@ -89,7 +89,7 @@ Component({
       that.toggle2()
       wx.showLoading({
         title: '',
-        mask: true,
+        //mask: true,
       })
       that.setData({
         share_url: ''
@@ -110,12 +110,14 @@ Component({
             share_url: that.data.imgBase + data
           })*/
           var share_url = that.data.imgBase + data
+          console.log('下载地址',share_url)
           wx.downloadFile({
             url: share_url,
             success: function (res) {
               that.setData({
                 share_url
               })
+              wx.hideLoading()
               //图片保存到本地
               wx.saveImageToPhotosAlbum({
                 filePath: res.tempFilePath,
