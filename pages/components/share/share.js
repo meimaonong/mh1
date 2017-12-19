@@ -109,7 +109,7 @@ Component({
           /*that.setData({
             share_url: that.data.imgBase + data
           })*/
-          var share_url = that.data.imgBase + data
+          var share_url = app.globalData.params.api + '/' + data
           console.log('下载地址',share_url)
           wx.downloadFile({
             url: share_url,
